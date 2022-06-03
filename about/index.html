@@ -112,17 +112,6 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
@@ -259,17 +248,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -449,7 +427,7 @@
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
-                        backSpeed: 50,
+                        backSpeed: 100,
                         showCursor: true
                     });
                 </script>
@@ -487,6 +465,11 @@
 
 
 
+<div class="statis">
+    <span class="count"><a href="/tags">1</a></span>
+    <span class="name">标签</span>
+</div>
+
 
                     </div>
                     <div class="col s12 m12 l4">
@@ -506,6 +489,11 @@
 
 
 
+
+<div class="statis">
+    <span class="count"><a href="/tags">1</a></span>
+    <span class="name">标签</span>
+</div>
 
 
                                 </div>
@@ -705,7 +693,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: []
+                data: ["入门"]
             }
         ],
         yAxis: [
@@ -718,7 +706,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [],
+                data: [1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -886,6 +874,12 @@
     <div class="other-skills chip-container" data-aos="zoom-in-up">
         <div class="sub-title center-align"><i class="fa fa-book"></i>&nbsp;&nbsp;其他技能</div>
         <div class="tag-chips center-align">
+            
+            
+            <a href="/tags/%E5%85%A5%E9%97%A8/">
+                <span class="chip center-align waves-effect waves-light chip-default">入门</span>
+            </a>
+            
             
         </div>
     </div>
