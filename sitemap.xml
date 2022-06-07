@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://huahai2022.github.io/2022/94a9ad918675/</loc>
+    
+    <lastmod>2022-06-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://huahai2022.github.io/2022/4349d066f044/</loc>
     
     <lastmod>2022-06-03</lastmod>
@@ -75,6 +84,13 @@
   
   <url>
     <loc>http://huahai2022.github.io/tags/%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2022-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://huahai2022.github.io/tags/%E6%96%87%E5%AD%A6/</loc>
     <lastmod>2022-06-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
