@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2022-06-07T06:13:44.530Z</updated>
+  <updated>2022-06-07T12:41:11.763Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -15,6 +15,123 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux各个版本详解</title>
+    <link href="http://huahai2022.github.io/2022/1bfcef28269f/"/>
+    <id>http://huahai2022.github.io/2022/1bfcef28269f/</id>
+    <published>2022-06-07T12:41:11.000Z</published>
+    <updated>2022-06-07T12:41:11.763Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>安装VMware和linux系统</title>
+    <link href="http://huahai2022.github.io/2022/c80bf2e130fb/"/>
+    <id>http://huahai2022.github.io/2022/c80bf2e130fb/</id>
+    <published>2022-06-07T12:40:30.000Z</published>
+    <updated>2022-06-07T13:02:55.969Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;linux是每一个程序员应当掌握的一种操作程序，有很多windows系统所不具备的特点，linux之下又分成很多版本，详见。那么就让我们来安装linux系统来辅助我们今后的学习。&lt;/p&gt;
+&lt;h3 id=&quot;1-下载VMware-Workstation&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="http://huahai2022.github.io/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="http://huahai2022.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>csapp 第四章：处理器体系结构</title>
+    <link href="http://huahai2022.github.io/2022/05c34f352328/"/>
+    <id>http://huahai2022.github.io/2022/05c34f352328/</id>
+    <published>2022-06-07T12:03:08.000Z</published>
+    <updated>2022-06-07T12:03:08.205Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>csapp 第三章：程序的机器级指令</title>
+    <link href="http://huahai2022.github.io/2022/738039201ed8/"/>
+    <id>http://huahai2022.github.io/2022/738039201ed8/</id>
+    <published>2022-06-07T12:02:03.000Z</published>
+    <updated>2022-06-07T12:02:03.567Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>csapp 第二章：信息的表示和处理</title>
+    <link href="http://huahai2022.github.io/2022/a87674e764b0/"/>
+    <id>http://huahai2022.github.io/2022/a87674e764b0/</id>
+    <published>2022-06-07T12:01:21.000Z</published>
+    <updated>2022-06-07T12:01:21.095Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>csapp 阅读说明</title>
+    <link href="http://huahai2022.github.io/2022/207aa8bcfbc9/"/>
+    <id>http://huahai2022.github.io/2022/207aa8bcfbc9/</id>
+    <published>2022-06-07T12:00:46.000Z</published>
+    <updated>2022-06-07T12:00:46.125Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>csapp 第一章：计算机系统漫游</title>
+    <link href="http://huahai2022.github.io/2022/8e8ef11763d9/"/>
+    <id>http://huahai2022.github.io/2022/8e8ef11763d9/</id>
+    <published>2022-06-07T12:00:17.000Z</published>
+    <updated>2022-06-07T12:18:28.522Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;第一章通过描述一个经典的”hello  world”程序来讲解程序运行时，计算机软、硬件之间的协调合作。&lt;/p&gt;
+&lt;h3 id=&quot;1-1信息就是位加上下文&quot;&gt;&lt;a href=&quot;#1-1信息就是位加上下文&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="csapp" scheme="http://huahai2022.github.io/categories/csapp/"/>
+    
+    
+    <category term="计算机基础" scheme="http://huahai2022.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>高考加油！</title>
@@ -29,7 +146,9 @@
         
         
     <summary type="html">&lt;p&gt;距离我的高考已经整整一年，祝学弟学妹能考上心仪的大学。o(&lt;em&gt;￣▽￣&lt;/em&gt;)ブ&lt;/p&gt;
-&lt;img src=&quot;/2022/94a9ad918675/QQ%E5%9B%BE%E7%89%8720220607111129.jpg&quot;</summary>
+
+
+&lt;p&gt;1.你要尽全力去保护你的梦想，那些嘲笑你梦想的人注定会失败。我相信，只要有梦想，我就会变得与众不同，你也一样。当你最认为困难的时候，其实就是你最接近成功的时候。&lt;/p&gt;</summary>
         
       
     
