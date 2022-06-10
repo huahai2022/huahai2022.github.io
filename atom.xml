@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2022-06-07T12:41:11.763Z</updated>
+  <updated>2022-06-10T03:25:24.916Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>鸟哥的linux私房菜 第五部分：linux系统管理员</title>
+    <link href="http://huahai2022.github.io/2022/3c47607f6105/"/>
+    <id>http://huahai2022.github.io/2022/3c47607f6105/</id>
+    <published>2022-06-10T03:25:24.000Z</published>
+    <updated>2022-06-10T03:25:24.916Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>鸟哥的linux私房菜 第四部分：linux使用者管理</title>
+    <link href="http://huahai2022.github.io/2022/05c591a32fe2/"/>
+    <id>http://huahai2022.github.io/2022/05c591a32fe2/</id>
+    <published>2022-06-10T03:25:01.000Z</published>
+    <updated>2022-06-10T03:25:01.089Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>鸟哥的linux私房菜 第三部分：学习shell与shell script</title>
+    <link href="http://huahai2022.github.io/2022/46efe46e7e54/"/>
+    <id>http://huahai2022.github.io/2022/46efe46e7e54/</id>
+    <published>2022-06-10T03:24:25.000Z</published>
+    <updated>2022-06-10T03:24:25.690Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>鸟哥的linux私房菜 第二部分：linux文件、目录和磁盘格式</title>
+    <link href="http://huahai2022.github.io/2022/60aa4c65b95b/"/>
+    <id>http://huahai2022.github.io/2022/60aa4c65b95b/</id>
+    <published>2022-06-10T03:23:37.000Z</published>
+    <updated>2022-06-10T03:23:37.939Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>鸟哥的linux私房菜 第一部分：linux的规则与安装</title>
+    <link href="http://huahai2022.github.io/2022/76e200d046fd/"/>
+    <id>http://huahai2022.github.io/2022/76e200d046fd/</id>
+    <published>2022-06-10T03:22:42.000Z</published>
+    <updated>2022-06-10T11:08:02.997Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第一部分：linux的规则与安装&quot;&gt;&lt;a href=&quot;#第一部分：linux的规则与安装&quot; class=&quot;headerlink&quot; title=&quot;第一部分：linux的规则与安装&quot;&gt;&lt;/a&gt;第一部分：linux的规则与安装&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="鸟哥的linux私房菜" scheme="http://huahai2022.github.io/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C/"/>
+    
+    
+    <category term="linux" scheme="http://huahai2022.github.io/tags/linux/"/>
+    
+    <category term="读书笔记" scheme="http://huahai2022.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>linux各个版本详解</title>
