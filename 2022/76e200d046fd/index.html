@@ -52,9 +52,9 @@ var _hmt = _hmt || [];
 })();
 </script>
 
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="忧郁小王子的乌托邦" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="忧郁小王子的乌托邦" type="application/atom+xml">
 </head>
 
 
@@ -538,6 +538,10 @@ var _hmt = _hmt || [];
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">计算机基础</span>
+                            </a>
+                        
                             <a href="/tags/linux/">
                                 <span class="chip bg-color">linux</span>
                             </a>
@@ -574,21 +578,21 @@ var _hmt = _hmt || [];
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-10
+                    2022-06-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    5.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    18 分
                 </div>
                 
 
@@ -701,7 +705,7 @@ var _hmt = _hmt || [];
 <p>[^图像转载自<a target="_blank" rel="noopener" href="https://blog.csdn.net/gaiazhang/article/details/73290419]">https://blog.csdn.net/gaiazhang/article/details/73290419]</a>: </p>
 <ul>
 <li>南桥：负责连接速度较慢的设备接口，包括硬盘、USB设备、网卡等</li>
-<li>北桥：负责连接速度较快的CPU、内存和先看等</li>
+<li>北桥：负责连接速度较快的CPU、内存和显卡等</li>
 </ul>
 <p>主板上设计的插口还有CPU、内存、显卡接口、SATA接口插槽</p>
 <h4 id="0-2-1执行脑袋运算与判断的CPU"><a href="#0-2-1执行脑袋运算与判断的CPU" class="headerlink" title="0.2.1执行脑袋运算与判断的CPU"></a>0.2.1执行脑袋运算与判断的CPU</h4><p>主板上半部分的中央就是CPU插槽，目前主流CPU都是双核以上的架构，就是一块CPU封装当中嵌入了两个以上的运算内核，就是一个物理的CPU外壳，含有两个以上的CPU单位。不同的CPU型号上有着不同的引脚，能够搭配的主板芯片组也不同，主机升级时不能只考虑CPU还要考虑主板上支持CPU的型号。</p>
@@ -725,6 +729,162 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <h4 id="0-2-2内存"><a href="#0-2-2内存" class="headerlink" title="0.2.2内存"></a>0.2.2内存</h4><p>内存的频率和宽带；即是数据读入内存中的速度，个人电脑的内存主要组件为动态随机存取内存（Dynamic Random Access Memory,DRAM)只有在通电时才能记录和使用，断电之后就消失，被称为挥发性内存。DRAM使用较为广泛的有SDRAM和DDR SDRAM两种，两者除了工作电压的不同，DDR采用了双倍数据传输速度，类似CPU的倍频。<img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/IMG_20220610_190610.jpg"></p>
+<p>内存的容量：内存容量也十分重要，因为所有的数据都要加载到内存中才能被CPU读取，如果容量不够大的话，会导致大容量数据无法完全加载，需要将暂时没有用到的数据进行清理才能进行数据加载。对服务器而言，内存的容量比CPU的速度还要重要。</p>
+<ul>
+<li><p>多通道设计</p>
+<p>因为所有的数据都必须存放在内存中，所以内存的数据位宽越大越好，传统主线位宽为64位，为加大位宽，将两个内存集合在一起，这就是双通道设计。服务器要求的内存速度更快，中级服务器经常提供三通道，甚至四通道的内存环境，如E5-2650 v3可以接受的最大通道数就是四通道且为DDR4。</p>
+</li>
+<li><p>DRAM和SRAM</p>
+<p>通过二级缓存将很常用的程序或者数据放置到CPU的内部，提升性能，二级缓存整合在CPU的内部，L内存的速度必须与CPU的频率相同，而DRAM无法达到这个速度，需要用SRAM（Static Random Access Memory）静态随机存取内存。</p>
+</li>
+</ul>
+<img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220610232120145.png" style="zoom:67%;">
+
+<ul>
+<li><p>只读存储器（ROM）</p>
+<p>主板上的显卡和内置网卡，该功能是否要启动以及启动时的参数被记录在一个叫做CMOS的芯片上，该芯片需要而歪歪的电源作为记录，所以主板上会有一个纽扣电池。类似CPU和内存，该组件的参数也是可以调整的，那么CMOS上的数据如何读取更新呢？开机时按下【DEL】，你会进入一个叫做BIOS的界面，这个程序是写死在主板上面的一个储存芯片之中，该芯片在没有通电的时候也能记录数据，这就是只读存储器，是一种非易失的存储。</p>
+<p>固件就是固定在硬件上面的控制软件，很多时候也是通过ROM来进行软件的写入。如BIOS程序就是一块硬件，控制着启动时各项硬件参数的获取；由此可见BIOS对电脑十分重要，随电脑的发展，BIOS也要进行变化，但是使用ROM写入的BIOS无法变化，所以现在多用FLASH ROM来写入BIOS。</p>
+</li>
+</ul>
+<h4 id="0-2-3显卡"><a href="#0-2-3显卡" class="headerlink" title="0.2.3显卡"></a>0.2.3显卡</h4><p>显卡英文名称VGA(Video Graphics Array),负责图形影响的显示扮演。因为图形影像的显示在于分辨率和颜色深度，而图像的显示会占用内存，因此显卡上有集成内存成为显存，显存容量影响屏幕分辨率和颜色深度。（显卡的显存）</p>
+<p>3D图像加速的发展</p>
+<ul>
+<li>早期3D游戏的运算任务有CPU来完成，但是CPU并不是针对图形加速而做的，且CPU平时已经相当忙碌了。</li>
+<li>显卡厂商加入一块GPU来进行运算，加速3D。</li>
+<li>现在，显卡主要通过GPU的控制芯片来与CPU、内存进行通讯，也是高速运行的组件，传输越快越好。（显卡的运算）</li>
+</ul>
+<p>显卡规格发展经历了PCL、AGP、PCLe的发展，目前显卡多为PCLe，PCLe采用类似管道的加速理念，如PCLe x1宽带位250MB/s,而PCLe x16的宽带达到了32GB/s。</p>
+<h4 id="0-2-4硬盘与存储设备"><a href="#0-2-4硬盘与存储设备" class="headerlink" title="0.2.4硬盘与存储设备"></a>0.2.4硬盘与存储设备</h4><p>电脑的存储设备：硬盘，软盘，MO，CD，DVD，磁带机，U盘等，其中最常见的当属硬盘。</p>
+<ul>
+<li><p>硬盘的物理组成：许许多多的光盘碟片、机械手臂、磁头与主轴马达。依据桌面和移动电脑分为2.5英寸和3.5英寸。</p>
+<p>工作原理：数据写在具有磁性的碟片上，通过在机械手臂上的磁头完成读写，通过主轴马达让碟片进行转动，完成读写的操作，单一碟片的容量有限，硬盘上会有两个以上的碟片。</p>
+</li>
+</ul>
+<img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/333.jpg" alt="查看源图像" style="zoom:10%;">
+
+<ul>
+<li><p>碟片上的数据</p>
+<p>扇区：在碟片同心圆上面切出一个个小区块，有机械手臂读写，这个小区快就是磁盘的最小物理存储单位，成为扇区；同一个同心圆的扇区组合成的圆成为磁道。并且一个磁盘里面可能含有多个碟片，所有碟片上的同一个磁道称为柱面。</p>
+<p>磁片读取方式：从外圈向内圈进行读写，因为外圈圆比较大，占用的面积比内圈多，因此外围会有着更多的扇区，数据写在外区，转一圈，数据读写量比内圈多，所以默认由外圈开始读写。</p>
+<img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220611104800437.png" alt="image-20220611104800437" style="zoom:25%;">
+</li>
+<li><p>传输接口</p>
+<p>为提升磁盘的传输速度，磁盘和主板的连接接口经过了多次改良有，如下</p>
+<ul>
+<li><p>SATA接口</p>
+<p>左边的是数据线，对应插口为数据插口，右侧为电源线，对应插口为数据插槽。</p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/aHR0cDovL3d3dy4xMzU2bmV0LmNvbS91cGxvYWRzL2FsbGltZy8xNDEwMDgvMjMxMjVSOTQ2LTMucG5n.png"></p>
+<p>SATA的传输速度</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>宽带(Gbits/s)</th>
+<th>速度（MB/s）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SATA1.0</td>
+<td>1.5</td>
+<td>150</td>
+</tr>
+<tr>
+<td>SATA2.0</td>
+<td>3</td>
+<td>300</td>
+</tr>
+<tr>
+<td>SATA3.0</td>
+<td>6</td>
+<td>600</td>
+</tr>
+</tbody></table>
+<p>因为SATA传输接口传输数据时，传输10位编码仅有8位进行数据，另外两位是检验用，所以上面的速度总是宽带的0.8倍。</p>
+</li>
+<li><p>SAS接口</p>
+<p>SAS又称为串行式SCSL接口（Serial Attached SCSL),接口速度比SATA快，连接SAS的硬盘碟片的转速和传输的速度都比SATA硬盘好，但是价格贵；并且个人电脑上一般没有SAS接口，需要外接转接卡才能支持。</p>
+<table>
+<thead>
+<tr>
+<th align="left">版本</th>
+<th align="left">宽带(Gbits/s)</th>
+<th align="left">速度（MB/s)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">SAS 1</td>
+<td align="left">3</td>
+<td align="left">300</td>
+</tr>
+<tr>
+<td align="left">SAS 2</td>
+<td align="left">6</td>
+<td align="left">600</td>
+</tr>
+<tr>
+<td align="left">SAS 3</td>
+<td align="left">12</td>
+<td align="left">1200</td>
+</tr>
+</tbody></table>
+<p>[^可以看到SAS接口依然存在数据算法的关系，10位编码中有8位数据]: </p>
+</li>
+<li><p>USB接口</p>
+<p>USB是外接式磁盘接口，适用于磁盘是外接式的接口。USB的传输速率：</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>宽带（Mbits/s)</th>
+<th>速度（MB/s)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>USB 1.0</td>
+<td>12</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>USB 2.0</td>
+<td>480</td>
+<td>60</td>
+</tr>
+<tr>
+<td>USB 3.0</td>
+<td>5G</td>
+<td>500</td>
+</tr>
+<tr>
+<td>USB 3.1</td>
+<td>10G</td>
+<td>1000</td>
+</tr>
+</tbody></table>
+<p>[^由此可见USB接口没有数据检验的过程，但是USB传输数据的速率远小于理论速率]:</p>
+</li>
+</ul>
+</li>
+<li><p>固态硬盘（Solid State Disk,SSD)</p>
+<p>传统硬盘的缺陷：传统硬盘与要利用驱动马达来转动碟片，但是通常情况下没有连续读写，大部分情况下只是读写一大堆小文件，因此传统磁盘要转好多圈才能督导所有的数据；如果数据放置地比较零散，读写的速度延迟就会更高。</p>
+<p>固态硬盘发展：厂商拿闪存去制作成高容量的设备，利用SATA接口或SAS接口，外形像磁盘，但是闪存替换了磁头和碟片，被称为固态硬盘。</p>
+<p>固态硬盘的优势：通过闪存直接进行读写，降低数据延迟的同时还很省电。但早期固态硬盘因闪存写入次数的限制造成SSD的寿命只有两年，目前通过RAID的机制来防止SSD的损坏。</p>
+</li>
+<li><p>选购和使用须知</p>
+<p>如果你想在电脑主机中增加一块硬盘，除了主板可接受的插槽接口还需要考虑什么呢？</p>
+<ul>
+<li><p>HDD还是SSD：以SSD作为系统盘，数据存储放在HDD上，系统运行快速的同时，数据存储量也大</p>
+</li>
+<li><p>容量：HDD已经有8TB的产品，目前SSD的多为128~256GB</p>
+</li>
+<li><p>缓冲存储器：这个缓存将硬盘常用的数据存储起来，加速系统的读写能力</p>
+</li>
+<li><p>转速：HDD硬盘利用主轴马达来驱动碟片写数据，转速越快越好</p>
+</li>
+<li><p>使用须知：电脑通电之后，绝对不要移动主机，避免震动硬盘，导致硬盘数据错误；也要按正常方式关机</p>
+</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>
@@ -788,6 +948,10 @@ var _hmt = _hmt || [];
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">计算机基础</span>
+                                </a>
                             
                                 <a href="/tags/linux/">
                                     <span class="chip bg-color">linux</span>
@@ -1220,7 +1384,7 @@ var _hmt = _hmt || [];
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5.4k</span>
+                        class="white-color">7.4k</span>
             
             
             
