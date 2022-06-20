@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="鸟哥的linux私房菜 第三部分：学习shell与shell script, 忧郁小王子的乌托邦">
-    <meta name="description" content="">
+    <meta name="description" content="第三部分：学习shell与shell script第九章：vim程序编辑器9.1 vi与vim9.2 vi的使用9.2.1简易执行范例9.2.2按键说明9.2.3一个案例练习9.2.4 vim的缓存、恢复与打开时的警告信息9.3 vim的额">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -52,9 +52,9 @@ var _hmt = _hmt || [];
 })();
 </script>
 
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="忧郁小王子的乌托邦" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="忧郁小王子的乌托邦" type="application/atom+xml">
 </head>
 
 
@@ -536,12 +536,29 @@ var _hmt = _hmt || [];
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">读书笔记</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C/" class="post-category">
+                                鸟哥的linux私房菜
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -557,21 +574,21 @@ var _hmt = _hmt || [];
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-10
+                    2022-06-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    923
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -594,7 +611,7 @@ var _hmt = _hmt || [];
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="第三部分：学习shell与shell-script"><a href="#第三部分：学习shell与shell-script" class="headerlink" title="第三部分：学习shell与shell script"></a>第三部分：学习shell与shell script</h1><h2 id="第九章：vim程序编辑器"><a href="#第九章：vim程序编辑器" class="headerlink" title="第九章：vim程序编辑器"></a>第九章：vim程序编辑器</h2><h3 id="9-1-vi与vim"><a href="#9-1-vi与vim" class="headerlink" title="9.1 vi与vim"></a>9.1 vi与vim</h3><h3 id="9-2-vi的使用"><a href="#9-2-vi的使用" class="headerlink" title="9.2 vi的使用"></a>9.2 vi的使用</h3><h4 id="9-2-1简易执行范例"><a href="#9-2-1简易执行范例" class="headerlink" title="9.2.1简易执行范例"></a>9.2.1简易执行范例</h4><h4 id="9-2-2按键说明"><a href="#9-2-2按键说明" class="headerlink" title="9.2.2按键说明"></a>9.2.2按键说明</h4><h4 id="9-2-3一个案例练习"><a href="#9-2-3一个案例练习" class="headerlink" title="9.2.3一个案例练习"></a>9.2.3一个案例练习</h4><h4 id="9-2-4-vim的缓存、恢复与打开时的警告信息"><a href="#9-2-4-vim的缓存、恢复与打开时的警告信息" class="headerlink" title="9.2.4 vim的缓存、恢复与打开时的警告信息"></a>9.2.4 vim的缓存、恢复与打开时的警告信息</h4><h3 id="9-3-vim的额外功能"><a href="#9-3-vim的额外功能" class="headerlink" title="9.3 vim的额外功能"></a>9.3 vim的额外功能</h3><h4 id="9-3-1可视区块（Visual-Block"><a href="#9-3-1可视区块（Visual-Block" class="headerlink" title="9.3.1可视区块（Visual Block)"></a>9.3.1可视区块（Visual Block)</h4><h4 id="9-3-2多文件编辑"><a href="#9-3-2多文件编辑" class="headerlink" title="9.3.2多文件编辑"></a>9.3.2多文件编辑</h4><h4 id="9-3-3多窗口功能"><a href="#9-3-3多窗口功能" class="headerlink" title="9.3.3多窗口功能"></a>9.3.3多窗口功能</h4><h4 id="9-3-4-vim的关键词补全功能"><a href="#9-3-4-vim的关键词补全功能" class="headerlink" title="9.3.4 vim的关键词补全功能"></a>9.3.4 vim的关键词补全功能</h4><h4 id="9-3-5-vim环境设置与记录：-x2F-vimrc、-x2F-viminfo"><a href="#9-3-5-vim环境设置与记录：-x2F-vimrc、-x2F-viminfo" class="headerlink" title="9.3.5 vim环境设置与记录：~/.vimrc、 ~/.viminfo"></a>9.3.5 vim环境设置与记录：~/.vimrc、 ~/.viminfo</h4><h4 id="9-3-6-vim常用命令示意图"><a href="#9-3-6-vim常用命令示意图" class="headerlink" title="9.3.6 vim常用命令示意图"></a>9.3.6 vim常用命令示意图</h4><h3 id="9-4其他vim使用注意事项"><a href="#9-4其他vim使用注意事项" class="headerlink" title="9.4其他vim使用注意事项"></a>9.4其他vim使用注意事项</h3><h4 id="9-4-1中文编码的问题"><a href="#9-4-1中文编码的问题" class="headerlink" title="9.4.1中文编码的问题"></a>9.4.1中文编码的问题</h4><h4 id="9-4-2-DOS与linux的换行符"><a href="#9-4-2-DOS与linux的换行符" class="headerlink" title="9.4.2 DOS与linux的换行符"></a>9.4.2 DOS与linux的换行符</h4><h4 id="9-4-3语系编码转换"><a href="#9-4-3语系编码转换" class="headerlink" title="9.4.3语系编码转换"></a>9.4.3语系编码转换</h4><h3 id="9-5重点回顾"><a href="#9-5重点回顾" class="headerlink" title="9.5重点回顾"></a>9.5重点回顾</h3><h2 id="第十章：认识与学习BASH"><a href="#第十章：认识与学习BASH" class="headerlink" title="第十章：认识与学习BASH"></a>第十章：认识与学习BASH</h2><h3 id="10-1认识BASH这个shell"><a href="#10-1认识BASH这个shell" class="headerlink" title="10.1认识BASH这个shell"></a>10.1认识BASH这个shell</h3><h4 id="10-1-1硬件、内核与shell"><a href="#10-1-1硬件、内核与shell" class="headerlink" title="10.1.1硬件、内核与shell"></a>10.1.1硬件、内核与shell</h4><h4 id="10-1-2为何要学命令行模式的shell"><a href="#10-1-2为何要学命令行模式的shell" class="headerlink" title="10.1.2为何要学命令行模式的shell"></a>10.1.2为何要学命令行模式的shell</h4><h4 id="10-1-3系统的合法shell与-x2F-etc-x2F-shells功能"><a href="#10-1-3系统的合法shell与-x2F-etc-x2F-shells功能" class="headerlink" title="10.1.3系统的合法shell与/etc/shells功能"></a>10.1.3系统的合法shell与/etc/shells功能</h4><h4 id="10-1-4-Bash-shell的功能"><a href="#10-1-4-Bash-shell的功能" class="headerlink" title="10.1.4 Bash shell的功能"></a>10.1.4 Bash shell的功能</h4><h4 id="10-1-5查询命令是否为Bash-shell的内置命令：type"><a href="#10-1-5查询命令是否为Bash-shell的内置命令：type" class="headerlink" title="10.1.5查询命令是否为Bash shell的内置命令：type"></a>10.1.5查询命令是否为Bash shell的内置命令：type</h4><h4 id="10-1-6命令的执行与快速编辑按钮"><a href="#10-1-6命令的执行与快速编辑按钮" class="headerlink" title="10.1.6命令的执行与快速编辑按钮"></a>10.1.6命令的执行与快速编辑按钮</h4><h3 id="10-2-shell的变量功能"><a href="#10-2-shell的变量功能" class="headerlink" title="10.2 shell的变量功能"></a>10.2 shell的变量功能</h3><h4 id="10-2-1什么是变量"><a href="#10-2-1什么是变量" class="headerlink" title="10.2.1什么是变量"></a>10.2.1什么是变量</h4><h4 id="10-2-2变量的使用与设置：echo、变量的设置规则、unset"><a href="#10-2-2变量的使用与设置：echo、变量的设置规则、unset" class="headerlink" title="10.2.2变量的使用与设置：echo、变量的设置规则、unset"></a>10.2.2变量的使用与设置：echo、变量的设置规则、unset</h4><h4 id="10-2-3环境变量的功能"><a href="#10-2-3环境变量的功能" class="headerlink" title="10.2.3环境变量的功能"></a>10.2.3环境变量的功能</h4><h4 id="10-2-4影响显示结果的语系变量（locale"><a href="#10-2-4影响显示结果的语系变量（locale" class="headerlink" title="10.2.4影响显示结果的语系变量（locale)"></a>10.2.4影响显示结果的语系变量（locale)</h4><h4 id="10-2-5变量的有效范围"><a href="#10-2-5变量的有效范围" class="headerlink" title="10.2.5变量的有效范围"></a>10.2.5变量的有效范围</h4><h4 id="10-2-6变量键盘读取、数组与声明：read、array、declare"><a href="#10-2-6变量键盘读取、数组与声明：read、array、declare" class="headerlink" title="10.2.6变量键盘读取、数组与声明：read、array、declare"></a>10.2.6变量键盘读取、数组与声明：read、array、declare</h4><h4 id="10-2-7与文件系统及程序的限制关系：ulimit"><a href="#10-2-7与文件系统及程序的限制关系：ulimit" class="headerlink" title="10.2.7与文件系统及程序的限制关系：ulimit"></a>10.2.7与文件系统及程序的限制关系：ulimit</h4><h4 id="10-2-8变量内容的删除、取代与替换（可选）"><a href="#10-2-8变量内容的删除、取代与替换（可选）" class="headerlink" title="10.2.8变量内容的删除、取代与替换（可选）"></a>10.2.8变量内容的删除、取代与替换（可选）</h4><h3 id="10-3命令别名与历史命令"><a href="#10-3命令别名与历史命令" class="headerlink" title="10.3命令别名与历史命令"></a>10.3命令别名与历史命令</h3><h4 id="10-3-1命令别名设置：alias、unalias"><a href="#10-3-1命令别名设置：alias、unalias" class="headerlink" title="10.3.1命令别名设置：alias、unalias"></a>10.3.1命令别名设置：alias、unalias</h4><h4 id="10-3-2历史命令：history"><a href="#10-3-2历史命令：history" class="headerlink" title="10.3.2历史命令：history"></a>10.3.2历史命令：history</h4><h3 id="10-4Bash-shell的操作环境"><a href="#10-4Bash-shell的操作环境" class="headerlink" title="10.4Bash shell的操作环境"></a>10.4Bash shell的操作环境</h3><h4 id="10-4-1路径与命令查找顺序"><a href="#10-4-1路径与命令查找顺序" class="headerlink" title="10.4.1路径与命令查找顺序"></a>10.4.1路径与命令查找顺序</h4><h4 id="10-4-2-bash的登录与欢迎信息：-x2F-etc-x2F-issue、-x2F-etc-x2F-motd"><a href="#10-4-2-bash的登录与欢迎信息：-x2F-etc-x2F-issue、-x2F-etc-x2F-motd" class="headerlink" title="10.4.2 bash的登录与欢迎信息：/etc/issue、/etc/motd"></a>10.4.2 bash的登录与欢迎信息：/etc/issue、/etc/motd</h4><h4 id="10-4-3-bash的环境配置文件"><a href="#10-4-3-bash的环境配置文件" class="headerlink" title="10.4.3 bash的环境配置文件"></a>10.4.3 bash的环境配置文件</h4><h4 id="10-4-4终端的环境设置：stty、set"><a href="#10-4-4终端的环境设置：stty、set" class="headerlink" title="10.4.4终端的环境设置：stty、set"></a>10.4.4终端的环境设置：stty、set</h4><h4 id="10-4-5通配符与特殊符号"><a href="#10-4-5通配符与特殊符号" class="headerlink" title="10.4.5通配符与特殊符号"></a>10.4.5通配符与特殊符号</h4><h3 id="10-5数据流重定向"><a href="#10-5数据流重定向" class="headerlink" title="10.5数据流重定向"></a>10.5数据流重定向</h3><h4 id="10-5-1什么是数据流重定向"><a href="#10-5-1什么是数据流重定向" class="headerlink" title="10.5.1什么是数据流重定向"></a>10.5.1什么是数据流重定向</h4><h4 id="10-5-2命令执行的判断根据：；、-amp-amp-、"><a href="#10-5-2命令执行的判断根据：；、-amp-amp-、" class="headerlink" title="10.5.2命令执行的判断根据：；、&amp;&amp;、||"></a>10.5.2命令执行的判断根据：；、&amp;&amp;、||</h4><h3 id="10-6管道命令（pipe"><a href="#10-6管道命令（pipe" class="headerlink" title="10.6管道命令（pipe)"></a>10.6管道命令（pipe)</h3><h4 id="10-6-1选取命令：cut、grep"><a href="#10-6-1选取命令：cut、grep" class="headerlink" title="10.6.1选取命令：cut、grep"></a>10.6.1选取命令：cut、grep</h4><h4 id="10-6-2排序命令：sort、wc、uniq"><a href="#10-6-2排序命令：sort、wc、uniq" class="headerlink" title="10.6.2排序命令：sort、wc、uniq"></a>10.6.2排序命令：sort、wc、uniq</h4><h4 id="10-6-3双向重定位：tee"><a href="#10-6-3双向重定位：tee" class="headerlink" title="10.6.3双向重定位：tee"></a>10.6.3双向重定位：tee</h4><h4 id="10-6-4字符转换命令：tr、col、join、paste、expand"><a href="#10-6-4字符转换命令：tr、col、join、paste、expand" class="headerlink" title="10.6.4字符转换命令：tr、col、join、paste、expand"></a>10.6.4字符转换命令：tr、col、join、paste、expand</h4><h4 id="10-6-5划分命令：split"><a href="#10-6-5划分命令：split" class="headerlink" title="10.6.5划分命令：split"></a>10.6.5划分命令：split</h4><h4 id="10-6-6参数代换：xargs"><a href="#10-6-6参数代换：xargs" class="headerlink" title="10.6.6参数代换：xargs"></a>10.6.6参数代换：xargs</h4><h4 id="10-6-7关于减号【-】的用途"><a href="#10-6-7关于减号【-】的用途" class="headerlink" title="10.6.7关于减号【-】的用途"></a>10.6.7关于减号【-】的用途</h4><h3 id="10-7重点回顾"><a href="#10-7重点回顾" class="headerlink" title="10.7重点回顾"></a>10.7重点回顾</h3><h2 id="第十一章：正则表达式与文件格式化处理"><a href="#第十一章：正则表达式与文件格式化处理" class="headerlink" title="第十一章：正则表达式与文件格式化处理"></a>第十一章：正则表达式与文件格式化处理</h2><h3 id="11-1开始之前：什么是正则表达式"><a href="#11-1开始之前：什么是正则表达式" class="headerlink" title="11.1开始之前：什么是正则表达式"></a>11.1开始之前：什么是正则表达式</h3><h3 id="11-2基础正则表达式"><a href="#11-2基础正则表达式" class="headerlink" title="11.2基础正则表达式"></a>11.2基础正则表达式</h3><h4 id="11-2-1语系对正则表达式的影响"><a href="#11-2-1语系对正则表达式的影响" class="headerlink" title="11.2.1语系对正则表达式的影响"></a>11.2.1语系对正则表达式的影响</h4><h4 id="11-2-2-grep的一些高级选项"><a href="#11-2-2-grep的一些高级选项" class="headerlink" title="11.2.2 grep的一些高级选项"></a>11.2.2 grep的一些高级选项</h4><h4 id="11-2-3基础正则表达式练习"><a href="#11-2-3基础正则表达式练习" class="headerlink" title="11.2.3基础正则表达式练习"></a>11.2.3基础正则表达式练习</h4><h4 id="11-2-4基础正则表达式字符集合（characters"><a href="#11-2-4基础正则表达式字符集合（characters" class="headerlink" title="11.2.4基础正则表达式字符集合（characters)"></a>11.2.4基础正则表达式字符集合（characters)</h4><h4 id="11-2-5-sed工具"><a href="#11-2-5-sed工具" class="headerlink" title="11.2.5 sed工具"></a>11.2.5 sed工具</h4><h3 id="11-3扩展正则表达式"><a href="#11-3扩展正则表达式" class="headerlink" title="11.3扩展正则表达式"></a>11.3扩展正则表达式</h3><h3 id="11-4文件格式化与相关处理"><a href="#11-4文件格式化与相关处理" class="headerlink" title="11.4文件格式化与相关处理"></a>11.4文件格式化与相关处理</h3><h4 id="11-4-1格式化打印：printf"><a href="#11-4-1格式化打印：printf" class="headerlink" title="11.4.1格式化打印：printf"></a>11.4.1格式化打印：printf</h4><h4 id="11-4-2-awk-好用的数据处理工具"><a href="#11-4-2-awk-好用的数据处理工具" class="headerlink" title="11.4.2 awk:好用的数据处理工具"></a>11.4.2 awk:好用的数据处理工具</h4><h4 id="11-4-3文件比对工具"><a href="#11-4-3文件比对工具" class="headerlink" title="11.4.3文件比对工具"></a>11.4.3文件比对工具</h4><h4 id="11-4-4文件打印设置：pr"><a href="#11-4-4文件打印设置：pr" class="headerlink" title="11.4.4文件打印设置：pr"></a>11.4.4文件打印设置：pr</h4><h3 id="11-5重点回顾"><a href="#11-5重点回顾" class="headerlink" title="11.5重点回顾"></a>11.5重点回顾</h3><h2 id="第十二章：学习shell脚本"><a href="#第十二章：学习shell脚本" class="headerlink" title="第十二章：学习shell脚本"></a>第十二章：学习shell脚本</h2><h3 id="12-1什么是shell脚本"><a href="#12-1什么是shell脚本" class="headerlink" title="12.1什么是shell脚本"></a>12.1什么是shell脚本</h3><h4 id="12-1-1为什么要学习shell脚本"><a href="#12-1-1为什么要学习shell脚本" class="headerlink" title="12.1.1为什么要学习shell脚本"></a>12.1.1为什么要学习shell脚本</h4><h4 id="12-1-2第一个脚本的编写与执行"><a href="#12-1-2第一个脚本的编写与执行" class="headerlink" title="12.1.2第一个脚本的编写与执行"></a>12.1.2第一个脚本的编写与执行</h4><h4 id="12-1-3建立shell脚本的良好编写习惯"><a href="#12-1-3建立shell脚本的良好编写习惯" class="headerlink" title="12.1.3建立shell脚本的良好编写习惯"></a>12.1.3建立shell脚本的良好编写习惯</h4><h3 id="12-2简单的shell脚本练习"><a href="#12-2简单的shell脚本练习" class="headerlink" title="12.2简单的shell脚本练习"></a>12.2简单的shell脚本练习</h3><h4 id="12-2-1简单范例"><a href="#12-2-1简单范例" class="headerlink" title="12.2.1简单范例"></a>12.2.1简单范例</h4><h4 id="12-2-2脚本的执行方式差异"><a href="#12-2-2脚本的执行方式差异" class="headerlink" title="12.2.2脚本的执行方式差异"></a>12.2.2脚本的执行方式差异</h4><h3 id="12-3善用判断式"><a href="#12-3善用判断式" class="headerlink" title="12.3善用判断式"></a>12.3善用判断式</h3><h4 id="12-3-1利用test命令的测试功能"><a href="#12-3-1利用test命令的测试功能" class="headerlink" title="12.3.1利用test命令的测试功能"></a>12.3.1利用test命令的测试功能</h4><h4 id="12-3-2利用判断符号"><a href="#12-3-2利用判断符号" class="headerlink" title="12.3.2利用判断符号[]"></a>12.3.2利用判断符号[]</h4><h4 id="12-3-3-shell脚本的默认变量（-0……"><a href="#12-3-3-shell脚本的默认变量（-0……" class="headerlink" title="12.3.3 shell脚本的默认变量（$0……)"></a>12.3.3 shell脚本的默认变量（$0……)</h4><h3 id="12-4条件判断式"><a href="#12-4条件判断式" class="headerlink" title="12.4条件判断式"></a>12.4条件判断式</h3><h4 id="12-4-1利用if…then"><a href="#12-4-1利用if…then" class="headerlink" title="12.4.1利用if…then"></a>12.4.1利用if…then</h4><h4 id="12-4-2利用case…esac判断"><a href="#12-4-2利用case…esac判断" class="headerlink" title="12.4.2利用case…esac判断"></a>12.4.2利用case…esac判断</h4><h4 id="12-4-3利用function功能"><a href="#12-4-3利用function功能" class="headerlink" title="12.4.3利用function功能"></a>12.4.3利用function功能</h4><h3 id="12-5循环（loop"><a href="#12-5循环（loop" class="headerlink" title="12.5循环（loop)"></a>12.5循环（loop)</h3><h4 id="12-5-1-while-do-done、until-do-done-不定循环"><a href="#12-5-1-while-do-done、until-do-done-不定循环" class="headerlink" title="12.5.1 while do done、until do done(不定循环)"></a>12.5.1 while do done、until do done(不定循环)</h4><h4 id="12-5-2-for…do…done-固定循环"><a href="#12-5-2-for…do…done-固定循环" class="headerlink" title="12.5.2 for…do…done(固定循环)"></a>12.5.2 for…do…done(固定循环)</h4><h4 id="12-5-3-for…do…done的数值处理"><a href="#12-5-3-for…do…done的数值处理" class="headerlink" title="12.5.3 for…do…done的数值处理"></a>12.5.3 for…do…done的数值处理</h4><h4 id="12-5-4搭配随机数与数组的实验"><a href="#12-5-4搭配随机数与数组的实验" class="headerlink" title="12.5.4搭配随机数与数组的实验"></a>12.5.4搭配随机数与数组的实验</h4><h3 id="12-6-shell的脚本跟踪与调试"><a href="#12-6-shell的脚本跟踪与调试" class="headerlink" title="12.6 shell的脚本跟踪与调试"></a>12.6 shell的脚本跟踪与调试</h3><h3 id="12-7重点回顾"><a href="#12-7重点回顾" class="headerlink" title="12.7重点回顾"></a>12.7重点回顾</h3>
                 
             </div>
             <hr/>
@@ -657,7 +674,15 @@ var _hmt = _hmt || [];
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">读书笔记</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -854,11 +879,27 @@ var _hmt = _hmt || [];
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            dragon
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C/" class="post-category">
+                                    鸟哥的linux私房菜
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">读书笔记</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -891,11 +932,27 @@ var _hmt = _hmt || [];
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            dragon
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C/" class="post-category">
+                                    鸟哥的linux私房菜
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">读书笔记</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1081,7 +1138,7 @@ var _hmt = _hmt || [];
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13.4k</span>
+                        class="white-color">16.8k</span>
             
             
             

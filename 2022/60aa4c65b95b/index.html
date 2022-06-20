@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="鸟哥的linux私房菜 第二部分：linux文件、目录和磁盘格式, 忧郁小王子的乌托邦">
-    <meta name="description" content="">
+    <meta name="description" content="第二部分： linux文件、目录与磁盘格式第五章：linux的文件权限与目录配置5.1用户与用户组5.2 linux文件权限概念5.2.1 linux文件属性5.2.2 如何修改文件属性与权限5.2.3目录与文件权限的意义5.2.4 lin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -52,9 +52,9 @@ var _hmt = _hmt || [];
 })();
 </script>
 
-<meta name="generator" content="Hexo 6.2.0">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="忧郁小王子的乌托邦" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="忧郁小王子的乌托邦" type="application/atom+xml">
 </head>
 
 
@@ -536,12 +536,29 @@ var _hmt = _hmt || [];
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">读书笔记</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C/" class="post-category">
+                                鸟哥的linux私房菜
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -557,21 +574,21 @@ var _hmt = _hmt || [];
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-10
+                    2022-06-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    886
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -594,7 +611,7 @@ var _hmt = _hmt || [];
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="第二部分：-linux文件、目录与磁盘格式"><a href="#第二部分：-linux文件、目录与磁盘格式" class="headerlink" title="第二部分： linux文件、目录与磁盘格式"></a>第二部分： linux文件、目录与磁盘格式</h1><h2 id="第五章：linux的文件权限与目录配置"><a href="#第五章：linux的文件权限与目录配置" class="headerlink" title="第五章：linux的文件权限与目录配置"></a>第五章：linux的文件权限与目录配置</h2><h3 id="5-1用户与用户组"><a href="#5-1用户与用户组" class="headerlink" title="5.1用户与用户组"></a>5.1用户与用户组</h3><h3 id="5-2-linux文件权限概念"><a href="#5-2-linux文件权限概念" class="headerlink" title="5.2 linux文件权限概念"></a>5.2 linux文件权限概念</h3><h4 id="5-2-1-linux文件属性"><a href="#5-2-1-linux文件属性" class="headerlink" title="5.2.1 linux文件属性"></a>5.2.1 linux文件属性</h4><h4 id="5-2-2-如何修改文件属性与权限"><a href="#5-2-2-如何修改文件属性与权限" class="headerlink" title="5.2.2 如何修改文件属性与权限"></a>5.2.2 如何修改文件属性与权限</h4><h4 id="5-2-3目录与文件权限的意义"><a href="#5-2-3目录与文件权限的意义" class="headerlink" title="5.2.3目录与文件权限的意义"></a>5.2.3目录与文件权限的意义</h4><h4 id="5-2-4-linux文件种类与扩展名"><a href="#5-2-4-linux文件种类与扩展名" class="headerlink" title="5.2.4 linux文件种类与扩展名"></a>5.2.4 linux文件种类与扩展名</h4><h3 id="5-3-linux目录配置"><a href="#5-3-linux目录配置" class="headerlink" title="5.3 linux目录配置"></a>5.3 linux目录配置</h3><h4 id="5-3-1-linux目录配置的依据——FHS"><a href="#5-3-1-linux目录配置的依据——FHS" class="headerlink" title="5.3.1 linux目录配置的依据——FHS"></a>5.3.1 linux目录配置的依据——FHS</h4><h4 id="5-3-2-目录树（directory-tree"><a href="#5-3-2-目录树（directory-tree" class="headerlink" title="5.3.2 目录树（directory tree)"></a>5.3.2 目录树（directory tree)</h4><h4 id="5-3-3-绝对路径与相对路径"><a href="#5-3-3-绝对路径与相对路径" class="headerlink" title="5.3.3 绝对路径与相对路径"></a>5.3.3 绝对路径与相对路径</h4><h4 id="5-3-4-CentOS的观察"><a href="#5-3-4-CentOS的观察" class="headerlink" title="5.3.4 CentOS的观察"></a>5.3.4 CentOS的观察</h4><h3 id="5-4重点回顾"><a href="#5-4重点回顾" class="headerlink" title="5.4重点回顾"></a>5.4重点回顾</h3><h2 id="第六章：linux文件与目录管理"><a href="#第六章：linux文件与目录管理" class="headerlink" title="第六章：linux文件与目录管理"></a>第六章：linux文件与目录管理</h2><h3 id="6-1目录与路径"><a href="#6-1目录与路径" class="headerlink" title="6.1目录与路径"></a>6.1目录与路径</h3><h4 id="6-1-1相对路径与绝对路径"><a href="#6-1-1相对路径与绝对路径" class="headerlink" title="6.1.1相对路径与绝对路径"></a>6.1.1相对路径与绝对路径</h4><h4 id="6-1-2目录的相关操作"><a href="#6-1-2目录的相关操作" class="headerlink" title="6.1.2目录的相关操作"></a>6.1.2目录的相关操作</h4><h4 id="6-1-3关于执行文件路径的变量：-PATH"><a href="#6-1-3关于执行文件路径的变量：-PATH" class="headerlink" title="6.1.3关于执行文件路径的变量：$PATH"></a>6.1.3关于执行文件路径的变量：$PATH</h4><h3 id="6-2文件与目录管理"><a href="#6-2文件与目录管理" class="headerlink" title="6.2文件与目录管理"></a>6.2文件与目录管理</h3><h4 id="6-2-1文件与目录的查看：ls"><a href="#6-2-1文件与目录的查看：ls" class="headerlink" title="6.2.1文件与目录的查看：ls"></a>6.2.1文件与目录的查看：ls</h4><h4 id="6-2-2复制、删除与移动：cp、rm、mv"><a href="#6-2-2复制、删除与移动：cp、rm、mv" class="headerlink" title="6.2.2复制、删除与移动：cp、rm、mv"></a>6.2.2复制、删除与移动：cp、rm、mv</h4><h4 id="6-2-3获取路径的文件名与目录名称"><a href="#6-2-3获取路径的文件名与目录名称" class="headerlink" title="6.2.3获取路径的文件名与目录名称"></a>6.2.3获取路径的文件名与目录名称</h4><h3 id="6-3文件内容查看"><a href="#6-3文件内容查看" class="headerlink" title="6.3文件内容查看"></a>6.3文件内容查看</h3><h4 id="6-3-1直接查看文件内容"><a href="#6-3-1直接查看文件内容" class="headerlink" title="6.3.1直接查看文件内容"></a>6.3.1直接查看文件内容</h4><h4 id="6-3-2可翻页查看"><a href="#6-3-2可翻页查看" class="headerlink" title="6.3.2可翻页查看"></a>6.3.2可翻页查看</h4><h4 id="6-3-3数据截取"><a href="#6-3-3数据截取" class="headerlink" title="6.3.3数据截取"></a>6.3.3数据截取</h4><h4 id="6-3-4非纯文本文件：od"><a href="#6-3-4非纯文本文件：od" class="headerlink" title="6.3.4非纯文本文件：od"></a>6.3.4非纯文本文件：od</h4><h4 id="6-3-5修改文件时间或创建新文件：touch"><a href="#6-3-5修改文件时间或创建新文件：touch" class="headerlink" title="6.3.5修改文件时间或创建新文件：touch"></a>6.3.5修改文件时间或创建新文件：touch</h4><h3 id="6-4文件与目录的默认权限与隐藏权限"><a href="#6-4文件与目录的默认权限与隐藏权限" class="headerlink" title="6.4文件与目录的默认权限与隐藏权限"></a>6.4文件与目录的默认权限与隐藏权限</h3><h4 id="6-4-1文件默认权限：umask"><a href="#6-4-1文件默认权限：umask" class="headerlink" title="6.4.1文件默认权限：umask"></a>6.4.1文件默认权限：umask</h4><h4 id="6-4-2文件隐藏属性"><a href="#6-4-2文件隐藏属性" class="headerlink" title="6.4.2文件隐藏属性"></a>6.4.2文件隐藏属性</h4><h4 id="6-4-3文件特殊权限：SUID，SGID，SBIT"><a href="#6-4-3文件特殊权限：SUID，SGID，SBIT" class="headerlink" title="6.4.3文件特殊权限：SUID，SGID，SBIT"></a>6.4.3文件特殊权限：SUID，SGID，SBIT</h4><h4 id="6-4-4观察文件类型"><a href="#6-4-4观察文件类型" class="headerlink" title="6.4.4观察文件类型"></a>6.4.4观察文件类型</h4><h3 id="6-5命令与文件的查找"><a href="#6-5命令与文件的查找" class="headerlink" title="6.5命令与文件的查找"></a>6.5命令与文件的查找</h3><h4 id="6-5-1脚本文件的查找"><a href="#6-5-1脚本文件的查找" class="headerlink" title="6.5.1脚本文件的查找"></a>6.5.1脚本文件的查找</h4><h4 id="6-5-2文件的查找"><a href="#6-5-2文件的查找" class="headerlink" title="6.5.2文件的查找"></a>6.5.2文件的查找</h4><h3 id="6-6极重要的复习，权限与命令间的关系"><a href="#6-6极重要的复习，权限与命令间的关系" class="headerlink" title="6.6极重要的复习，权限与命令间的关系"></a>6.6极重要的复习，权限与命令间的关系</h3><h3 id="6-7重点回顾"><a href="#6-7重点回顾" class="headerlink" title="6.7重点回顾"></a>6.7重点回顾</h3><h2 id="第七章：linux磁盘与文件系统管理"><a href="#第七章：linux磁盘与文件系统管理" class="headerlink" title="第七章：linux磁盘与文件系统管理"></a>第七章：linux磁盘与文件系统管理</h2><h3 id="7-1认识linux文件系统"><a href="#7-1认识linux文件系统" class="headerlink" title="7.1认识linux文件系统"></a>7.1认识linux文件系统</h3><h4 id="7-1-1磁盘组成与分区的复习"><a href="#7-1-1磁盘组成与分区的复习" class="headerlink" title="7.1.1磁盘组成与分区的复习"></a>7.1.1磁盘组成与分区的复习</h4><h4 id="7-1-2文件系统特征"><a href="#7-1-2文件系统特征" class="headerlink" title="7.1.2文件系统特征"></a>7.1.2文件系统特征</h4><h4 id="7-1-3-linux的ext2文件系统（inode"><a href="#7-1-3-linux的ext2文件系统（inode" class="headerlink" title="7.1.3 linux的ext2文件系统（inode)"></a>7.1.3 linux的ext2文件系统（inode)</h4><h4 id="7-1-4与目录树的关系"><a href="#7-1-4与目录树的关系" class="headerlink" title="7.1.4与目录树的关系"></a>7.1.4与目录树的关系</h4><h4 id="7-1-5-ext2-x2F-ext3-x2F-ext4文件的存取与日志式文件系统的功能"><a href="#7-1-5-ext2-x2F-ext3-x2F-ext4文件的存取与日志式文件系统的功能" class="headerlink" title="7.1.5 ext2/ext3/ext4文件的存取与日志式文件系统的功能"></a>7.1.5 ext2/ext3/ext4文件的存取与日志式文件系统的功能</h4><h4 id="7-1-6-linux文件系统的运行"><a href="#7-1-6-linux文件系统的运行" class="headerlink" title="7.1.6 linux文件系统的运行"></a>7.1.6 linux文件系统的运行</h4><h4 id="7-1-7-挂载点的意义（mount-point）"><a href="#7-1-7-挂载点的意义（mount-point）" class="headerlink" title="7.1.7 挂载点的意义（mount point）"></a>7.1.7 挂载点的意义（mount point）</h4><h4 id="7-1-8其他linux支持的文件系统与VFS"><a href="#7-1-8其他linux支持的文件系统与VFS" class="headerlink" title="7.1.8其他linux支持的文件系统与VFS"></a>7.1.8其他linux支持的文件系统与VFS</h4><h4 id="7-1-9-XFS文件系统简介"><a href="#7-1-9-XFS文件系统简介" class="headerlink" title="7.1.9 XFS文件系统简介"></a>7.1.9 XFS文件系统简介</h4><h3 id="7-2文件系统的简单操作"><a href="#7-2文件系统的简单操作" class="headerlink" title="7.2文件系统的简单操作"></a>7.2文件系统的简单操作</h3><h4 id="7-2-1磁盘与目录的容量"><a href="#7-2-1磁盘与目录的容量" class="headerlink" title="7.2.1磁盘与目录的容量"></a>7.2.1磁盘与目录的容量</h4><h4 id="7-2-2硬链接与符号链接：ln"><a href="#7-2-2硬链接与符号链接：ln" class="headerlink" title="7.2.2硬链接与符号链接：ln"></a>7.2.2硬链接与符号链接：ln</h4><h3 id="7-3磁盘的分区、格式化、检验与挂在"><a href="#7-3磁盘的分区、格式化、检验与挂在" class="headerlink" title="7.3磁盘的分区、格式化、检验与挂在"></a>7.3磁盘的分区、格式化、检验与挂在</h3><h4 id="7-3-1观察磁盘分区状态"><a href="#7-3-1观察磁盘分区状态" class="headerlink" title="7.3.1观察磁盘分区状态"></a>7.3.1观察磁盘分区状态</h4><h4 id="7-3-2磁盘分区：gdisk-x2F-fdisk"><a href="#7-3-2磁盘分区：gdisk-x2F-fdisk" class="headerlink" title="7.3.2磁盘分区：gdisk/fdisk"></a>7.3.2磁盘分区：gdisk/fdisk</h4><h4 id="7-3-3磁盘格式化（创建文件系统）"><a href="#7-3-3磁盘格式化（创建文件系统）" class="headerlink" title="7.3.3磁盘格式化（创建文件系统）"></a>7.3.3磁盘格式化（创建文件系统）</h4><h4 id="7-3-4文件系统检验"><a href="#7-3-4文件系统检验" class="headerlink" title="7.3.4文件系统检验"></a>7.3.4文件系统检验</h4><h4 id="7-3-5文件系统挂载与卸载"><a href="#7-3-5文件系统挂载与卸载" class="headerlink" title="7.3.5文件系统挂载与卸载"></a>7.3.5文件系统挂载与卸载</h4><h4 id="7-3-6磁盘-x2F-文件系统参数自定义"><a href="#7-3-6磁盘-x2F-文件系统参数自定义" class="headerlink" title="7.3.6磁盘/文件系统参数自定义"></a>7.3.6磁盘/文件系统参数自定义</h4><h3 id="7-4设置启动挂载"><a href="#7-4设置启动挂载" class="headerlink" title="7.4设置启动挂载"></a>7.4设置启动挂载</h3><h4 id="7-4-1启动挂载-x2F-etc-x2F-fstab及-x2F-etc-x2F-mtab"><a href="#7-4-1启动挂载-x2F-etc-x2F-fstab及-x2F-etc-x2F-mtab" class="headerlink" title="7.4.1启动挂载/etc/fstab及/etc/mtab"></a>7.4.1启动挂载/etc/fstab及/etc/mtab</h4><h4 id="7-4-2特殊设备loop挂载（镜像文件不刻录就挂载使用）"><a href="#7-4-2特殊设备loop挂载（镜像文件不刻录就挂载使用）" class="headerlink" title="7.4.2特殊设备loop挂载（镜像文件不刻录就挂载使用）"></a>7.4.2特殊设备loop挂载（镜像文件不刻录就挂载使用）</h4><h3 id="7-5内存交换分区（swap-之创建"><a href="#7-5内存交换分区（swap-之创建" class="headerlink" title="7.5内存交换分区（swap)之创建"></a>7.5内存交换分区（swap)之创建</h3><h4 id="7-5-1使用物理分区创建内存交换分区"><a href="#7-5-1使用物理分区创建内存交换分区" class="headerlink" title="7.5.1使用物理分区创建内存交换分区"></a>7.5.1使用物理分区创建内存交换分区</h4><h4 id="7-5-2使用文件创建内存交换文件"><a href="#7-5-2使用文件创建内存交换文件" class="headerlink" title="7.5.2使用文件创建内存交换文件"></a>7.5.2使用文件创建内存交换文件</h4><h3 id="7-6文件系统的特殊观察与操作"><a href="#7-6文件系统的特殊观察与操作" class="headerlink" title="7.6文件系统的特殊观察与操作"></a>7.6文件系统的特殊观察与操作</h3><h4 id="7-6-1磁盘空间之浪费问题"><a href="#7-6-1磁盘空间之浪费问题" class="headerlink" title="7.6.1磁盘空间之浪费问题"></a>7.6.1磁盘空间之浪费问题</h4><h4 id="7-6-2利用GNU的parted进行分区操作（可选）"><a href="#7-6-2利用GNU的parted进行分区操作（可选）" class="headerlink" title="7.6.2利用GNU的parted进行分区操作（可选）"></a>7.6.2利用GNU的parted进行分区操作（可选）</h4><h3 id="7-7重点回顾"><a href="#7-7重点回顾" class="headerlink" title="7.7重点回顾"></a>7.7重点回顾</h3><h2 id="第八章：文件和文件系统的压缩"><a href="#第八章：文件和文件系统的压缩" class="headerlink" title="第八章：文件和文件系统的压缩"></a>第八章：文件和文件系统的压缩</h2><h3 id="8-1压缩文件的用途与技术"><a href="#8-1压缩文件的用途与技术" class="headerlink" title="8.1压缩文件的用途与技术"></a>8.1压缩文件的用途与技术</h3><h3 id="8-2-linux系统常见的压缩技术"><a href="#8-2-linux系统常见的压缩技术" class="headerlink" title="8.2 linux系统常见的压缩技术"></a>8.2 linux系统常见的压缩技术</h3><h4 id="8-2-1-gzip、zcat-x2F-zmore-x2F-zless-x2F-zgrep"><a href="#8-2-1-gzip、zcat-x2F-zmore-x2F-zless-x2F-zgrep" class="headerlink" title="8.2.1 gzip、zcat/zmore/zless/zgrep"></a>8.2.1 gzip、zcat/zmore/zless/zgrep</h4><h4 id="8-2-2-bzip-bcat-x2F-bzmore-x2F-bzless-x2F-bzgrep"><a href="#8-2-2-bzip-bcat-x2F-bzmore-x2F-bzless-x2F-bzgrep" class="headerlink" title="8.2.2 bzip,bcat/bzmore/bzless/bzgrep"></a>8.2.2 bzip,bcat/bzmore/bzless/bzgrep</h4><h4 id="8-2-3-xz-xzcat-x2F-xzmore-x2F-xzless-x2F-xzgrep"><a href="#8-2-3-xz-xzcat-x2F-xzmore-x2F-xzless-x2F-xzgrep" class="headerlink" title="8.2.3 xz,xzcat/xzmore/xzless/xzgrep"></a>8.2.3 xz,xzcat/xzmore/xzless/xzgrep</h4><h3 id="8-3打包命令：tar"><a href="#8-3打包命令：tar" class="headerlink" title="8.3打包命令：tar"></a>8.3打包命令：tar</h3><h3 id="8-4-XFS文件系统的备份与还原"><a href="#8-4-XFS文件系统的备份与还原" class="headerlink" title="8.4 XFS文件系统的备份与还原"></a>8.4 XFS文件系统的备份与还原</h3><h4 id="8-4-1-XFS文件系统备份xfsdump"><a href="#8-4-1-XFS文件系统备份xfsdump" class="headerlink" title="8.4.1 XFS文件系统备份xfsdump"></a>8.4.1 XFS文件系统备份xfsdump</h4><h4 id="8-4-2-XFS文件系统还原xfsreestore"><a href="#8-4-2-XFS文件系统还原xfsreestore" class="headerlink" title="8.4.2 XFS文件系统还原xfsreestore"></a>8.4.2 XFS文件系统还原xfsreestore</h4><h3 id="8-5光盘写入工具"><a href="#8-5光盘写入工具" class="headerlink" title="8.5光盘写入工具"></a>8.5光盘写入工具</h3><h4 id="8-5-1-mkisofs-建立镜像文件"><a href="#8-5-1-mkisofs-建立镜像文件" class="headerlink" title="8.5.1 mkisofs:建立镜像文件"></a>8.5.1 mkisofs:建立镜像文件</h4><h4 id="8-5-2-cdrecord-光盘刻录文件"><a href="#8-5-2-cdrecord-光盘刻录文件" class="headerlink" title="8.5.2 cdrecord:光盘刻录文件"></a>8.5.2 cdrecord:光盘刻录文件</h4><h3 id="8-6其他常见的压缩与备份工具"><a href="#8-6其他常见的压缩与备份工具" class="headerlink" title="8.6其他常见的压缩与备份工具"></a>8.6其他常见的压缩与备份工具</h3><h4 id="8-6-1-dd"><a href="#8-6-1-dd" class="headerlink" title="8.6.1 dd"></a>8.6.1 dd</h4><h4 id="8-6-2-cpio"><a href="#8-6-2-cpio" class="headerlink" title="8.6.2 cpio"></a>8.6.2 cpio</h4><h3 id="8-7重点回顾"><a href="#8-7重点回顾" class="headerlink" title="8.7重点回顾"></a>8.7重点回顾</h3>
                 
             </div>
             <hr/>
@@ -657,7 +674,15 @@ var _hmt = _hmt || [];
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">读书笔记</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -854,11 +879,27 @@ var _hmt = _hmt || [];
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            dragon
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C/" class="post-category">
+                                    鸟哥的linux私房菜
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">读书笔记</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1101,7 +1142,7 @@ var _hmt = _hmt || [];
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">13.4k</span>
+                        class="white-color">16.8k</span>
             
             
             
