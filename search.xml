@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>鸟哥的linux私房菜笔记</title>
+      <link href="/2022/037207c204b0/"/>
+      <url>/2022/037207c204b0/</url>
+      
+        <content type="html"><![CDATA[<p>1.版权制度是促进社会进步的手段，版权本身不是自然权利。</p><p>2.FAQ  在linux自己的文件数据/usr/share/doc;</p><ul><li><p>在Windows里面，程式有问题时，如果可能的话先将所有其它程式保存并结束，然后尝试按救命三键 (Ctrl+Alt+Delete)，将有问题的程式(不要选错了程式哦)『结束工作』，看看能不能恢复系统。不要动不动就直接关机或reset。</p></li><li><p>有系统地设计档案目录，不要随便到处保存档案以至以后不知道放哪里了， 或找到档案也不知道为何物。</p></li><li><p>养成一个做记录的习惯。尤其是发现问题的时候， 把错误信息和引发状况以及解决方法记录清楚，同时最后归类及定期整理。别以为您还年轻，等你再弄多几年电脑了， 您将会非常庆幸您有此一习惯。</p></li><li><p>如果看在网路上看到任何好文章，可以为自己留一份copy，同时定好题目，归类存档。(鸟哥注：需要注意智慧财产权！)</p></li><li><p>作为一个使用者，人要迁就机器；做为一个开发者，要机器迁就人。</p></li><li><p>学写script 的确没设定server 那么好玩，不过以我自己的感觉是：关键是会得『偷』， 偷了会得改，改了会得变，变则通矣。</p></li><li><p>在Windows里面，设定不好设备，您可以骂它；在Linux里面，如果设定好设备了，您得要感激它</p></li></ul><p>3.SATA接口的硬盘文件名/dev/sd[a-d]</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220626224907925.png"></p><ul><li>其实所谓的『分割』只是针对那个64 bytes的分割表进行设定而已！</li><li>硬碟预设的分割表仅能写入四组分割资讯</li><li>这四组分割资讯我们称为主要(Primary)或延伸(Extended)分割槽</li><li>分割槽的最小单位『通常』为磁柱(cylinder)</li><li>当系统要写入磁碟时，一定会参考磁碟分割表，才能针对某个分割槽进行资料的处理</li></ul><p>4.MBR分区和GPT磁盘分区</p><p>5.固件就是写在硬件上的一个应用程序，CMOS是记录各项硬件参数且嵌在主板上的存储器，BIOS是一个写入到主板上的一个固件。BIOS是在启动时，计算机系统主动执行的第一个程序，BIOS回去分析计算机里有哪些存储设备，以硬盘为例，BIOS会依据用户的设置来取得能够启动的硬盘，并且到该硬盘里面读取第一个扇区的MBR位置，MBR仅有446个字节的硬盘容量里面回放置最基本的启动引导程序，此时BIOS成功加载，接下来就是MBR内的启动引导程序的工作了。启动引导程序的目的在于加载内核文件。Boot Loader的主要任务有1.提供选项：用户可以选择不同的启动程序，这也是多重引导的重要功能。2.加载内核文件：直接指向可使用的程序区段来启动操作系统。3.转交其他启动引导程序：将启动管理功能转交给其他启动引导程序负责。</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220629154921757.png"></p><ul><li>每个分区都有自己的启动扇区，图中的系统分区为第一及第二分区，实际可启动的内核文件是放置到各分区中的，启动引导程序只会认识自己的系统分区内的可启动的内核文件，以及其他启动引导程序而已，启动引导程序可直接指向或是简介将管理权转交给另一个管理程序。</li></ul><p>6.centos的密码、登陆时所做的选项会被记录到root/anaconda-ks.cfg文件内，搜索kickstart可以获得帮助。</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220702093422555.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常见专业词</title>
+      <link href="/2022/059ace60db36/"/>
+      <url>/2022/059ace60db36/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>英文名</th><th>简称</th><th>汉语名</th></tr></thead><tbody><tr><td>GNU   C   Complie</td><td>gcc</td><td>C语言的一种编译器</td></tr><tr><td>Free   Software   Foundation</td><td>FSF</td><td>自由软件基金会</td></tr><tr><td>GNU  C   Library</td><td>glibc</td><td>C函数库</td></tr><tr><td>General  Public   License</td><td>GPL</td><td>通用公共许可证</td></tr><tr><td>copyright</td><td></td><td>专利</td></tr><tr><td>copyleft</td><td></td><td>相对于专利软件的copyright</td></tr><tr><td>Graphical   User   Interface</td><td>GUI</td><td>图形用户接口</td></tr><tr><td>GNU’s   Not   Unix</td><td>GNU</td><td>打造一个自由、开放的UNIX操作系统</td></tr><tr><td>Digital  Rights   Management</td><td>DRM</td><td>数字版权管理</td></tr><tr><td>Portable  Operating  System  Interface</td><td>POSIX</td><td>可移植操作系统接口</td></tr><tr><td>Unified  extensible  Firmware  Interface</td><td>UEFI</td><td>统一可扩展固件接口</td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 常见专业词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>温暖一下吧！</title>
       <link href="/2022/4fdee1c6de7b/"/>
       <url>/2022/4fdee1c6de7b/</url>
