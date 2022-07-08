@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2022-07-02T04:03:01.052Z</updated>
+  <updated>2022-07-08T13:37:26.860Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -17,11 +17,56 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>放下吧，好累！</title>
+    <link href="http://huahai2022.github.io/2022/62d8d5bd77e0/"/>
+    <id>http://huahai2022.github.io/2022/62d8d5bd77e0/</id>
+    <published>2022-07-08T13:01:00.000Z</published>
+    <updated>2022-07-08T13:37:26.860Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;放下吧dragon,不要再去浪费你的精力了，毫无意义。我已经付出了真心，不求回报了，但也不会继续在乎她。&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="文学" scheme="http://huahai2022.github.io/tags/%E6%96%87%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>keep my heart</title>
+    <link href="http://huahai2022.github.io/2022/cf7dfebab810/"/>
+    <id>http://huahai2022.github.io/2022/cf7dfebab810/</id>
+    <published>2022-07-03T05:33:00.000Z</published>
+    <updated>2022-07-03T05:35:33.578Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有一个早晨我扔掉了所有的昨天，从此我就脚步轻盈了。那么，祝好！祝下半年顺利！&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>鸟哥的linux私房菜笔记</title>
     <link href="http://huahai2022.github.io/2022/037207c204b0/"/>
     <id>http://huahai2022.github.io/2022/037207c204b0/</id>
     <published>2022-06-25T14:29:42.000Z</published>
-    <updated>2022-07-02T04:03:01.052Z</updated>
+    <updated>2022-07-08T12:57:43.014Z</updated>
     
     
       
@@ -45,7 +90,7 @@
     <link href="http://huahai2022.github.io/2022/059ace60db36/"/>
     <id>http://huahai2022.github.io/2022/059ace60db36/</id>
     <published>2022-06-25T14:05:42.000Z</published>
-    <updated>2022-06-29T08:11:03.499Z</updated>
+    <updated>2022-07-08T12:57:37.382Z</updated>
     
     
       
@@ -443,45 +488,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>csapp 阅读说明</title>
-    <link href="http://huahai2022.github.io/2022/207aa8bcfbc9/"/>
-    <id>http://huahai2022.github.io/2022/207aa8bcfbc9/</id>
-    <published>2022-06-07T12:00:46.000Z</published>
-    <updated>2022-06-07T12:00:46.125Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>csapp 第一章：计算机系统漫游</title>
-    <link href="http://huahai2022.github.io/2022/8e8ef11763d9/"/>
-    <id>http://huahai2022.github.io/2022/8e8ef11763d9/</id>
-    <published>2022-06-07T12:00:17.000Z</published>
-    <updated>2022-06-07T12:18:28.522Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;第一章通过描述一个经典的”hello  world”程序来讲解程序运行时，计算机软、硬件之间的协调合作。&lt;/p&gt;
-&lt;h3 id=&quot;1-1信息就是位加上下文&quot;&gt;&lt;a href=&quot;#1-1信息就是位加上下文&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="csapp" scheme="http://huahai2022.github.io/categories/csapp/"/>
-    
-    
-    <category term="计算机基础" scheme="http://huahai2022.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

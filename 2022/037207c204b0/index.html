@@ -560,21 +560,21 @@ var _hmt = _hmt || [];
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-02
+                    2022-07-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    970
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -632,6 +632,37 @@ var _hmt = _hmt || [];
 </ul>
 <p>6.centos的密码、登陆时所做的选项会被记录到root/anaconda-ks.cfg文件内，搜索kickstart可以获得帮助。</p>
 <p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220702093422555.png"></p>
+<p>7.linux就是一款软件而已。</p>
+<p>/etc/passwd,/etc/shadow,/etc/group</p>
+<p>文件种类</p>
+<ul>
+<li><p>常规文件（regular  file0：纯文本文件（ASCII)；二进制文件（binary）；数据文件（data）</p>
+</li>
+<li><p>链接文件(link)：l开头</p>
+</li>
+<li><p>设备与设备文件(device)：/dev目录下，</p>
+<ul>
+<li>区块（block）设备文件：一些存储数据，提供系统随机存取的接口设备，硬盘和软盘。/dev/sda第一个属性为[b]</li>
+<li>字符（character）设备文件：串行端口的接口设备，如键盘，鼠标，一次性读取，不能够阶段输出，第一个属性为[c]</li>
+</ul>
+</li>
+<li><p>数据接口文件(sockets)：用于网络上的数据交换，如：启动一个程序来监听客户端的需求，客户端就可以通过socket来进行数据的沟通，第一个属性为[s]</p>
+</li>
+<li><p>数据传输文件(FIFO,pipe)：first-in-first-out，先进先出文件，解决多个程序同时读写一个文件所造成的错误。</p>
+</li>
+</ul>
+<p>8.具有可执行权限和能否执行成功是两个不同的概念，将文件后面加上x，表示文件具有可执行的权限，但是能否执行成功要看文件是否具有可执行的程序代码。</p>
+<ul>
+<li>/（root）:与启动程序有关</li>
+<li>/usr(unix software resource):与软件安装/执行有关</li>
+<li>var (variable):与系统运行过程有关</li>
+</ul>
+<p>8.显示日期与时间的命令：data;显示日历的命令：cal；简单好用的计算机：bc</p>
+<p>[Ctrl]+c按键，命令中断；[Ctrl]+d键盘输入结束</p>
+<p>man,info,/usr/share/doc求助文件</p>
+<p>将数据同步写入硬盘的命令：sync；常用的关机命令：shutdown;重新启动，关机：reboot,halt,poweroff.</p>
+<p>chgrp:修改文件所属用户组；chown:修改文件用户组；chmod:修改文件的权限，SUID、SGID、SBIT等的特征。</p>
+<p>9.uname -r 查看内核版本；uname -m查看操作系统的架构版本</p>
 
                 
             </div>
@@ -867,18 +898,17 @@ var _hmt = _hmt || [];
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/037207c204b0/">
+                <a href="/2022/cf7dfebab810/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="鸟哥的linux私房菜笔记">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="keep my heart">
                         
-                        <span class="card-title">鸟哥的linux私房菜笔记</span>
+                        <span class="card-title">keep my heart</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -888,9 +918,9 @@ var _hmt = _hmt || [];
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -899,7 +929,6 @@ var _hmt = _hmt || [];
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1133,7 +1162,7 @@ var _hmt = _hmt || [];
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">24.2k</span>
+                        class="white-color">25.4k</span>
             
             
             
