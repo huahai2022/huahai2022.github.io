@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2022-07-08T13:37:26.860Z</updated>
+  <updated>2022-07-14T13:56:35.409Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RAID</title>
+    <link href="http://huahai2022.github.io/2022/178ca3f912ae/"/>
+    <id>http://huahai2022.github.io/2022/178ca3f912ae/</id>
+    <published>2022-07-14T13:46:35.000Z</published>
+    <updated>2022-07-14T13:56:35.409Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;RAID&quot;&gt;&lt;a href=&quot;#RAID&quot; class=&quot;headerlink&quot; title=&quot;RAID&quot;&gt;&lt;/a&gt;RAID&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;简介&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;RAID是英文Redundant Array of Independent</summary>
+        
+      
+    
+    
+    
+    
+    <category term="RAID" scheme="http://huahai2022.github.io/tags/RAID/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络安全正式开始系统学习</title>
+    <link href="http://huahai2022.github.io/2022/4510075c1f50/"/>
+    <id>http://huahai2022.github.io/2022/4510075c1f50/</id>
+    <published>2022-07-14T13:03:41.000Z</published>
+    <updated>2022-07-14T13:57:55.711Z</updated>
+    
+    
+    
+    
+    
+    <category term="网络安全" scheme="http://huahai2022.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux文件特殊权限</title>
+    <link href="http://huahai2022.github.io/2022/4d9d4d3bda31/"/>
+    <id>http://huahai2022.github.io/2022/4d9d4d3bda31/</id>
+    <published>2022-07-10T23:18:14.000Z</published>
+    <updated>2022-07-10T23:18:14.847Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>放下吧，好累！</title>
@@ -66,7 +120,7 @@
     <link href="http://huahai2022.github.io/2022/037207c204b0/"/>
     <id>http://huahai2022.github.io/2022/037207c204b0/</id>
     <published>2022-06-25T14:29:42.000Z</published>
-    <updated>2022-07-08T12:57:43.014Z</updated>
+    <updated>2022-07-10T14:19:58.794Z</updated>
     
     
       
@@ -443,47 +497,6 @@
     <id>http://huahai2022.github.io/2022/1bfcef28269f/</id>
     <published>2022-06-07T12:41:11.000Z</published>
     <updated>2022-06-07T12:41:11.763Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>csapp 第四章：处理器体系结构</title>
-    <link href="http://huahai2022.github.io/2022/05c34f352328/"/>
-    <id>http://huahai2022.github.io/2022/05c34f352328/</id>
-    <published>2022-06-07T12:03:08.000Z</published>
-    <updated>2022-06-25T10:24:09.971Z</updated>
-    
-    
-    
-    
-    
-    <category term="11" scheme="http://huahai2022.github.io/tags/11/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>csapp 第三章：程序的机器级指令</title>
-    <link href="http://huahai2022.github.io/2022/738039201ed8/"/>
-    <id>http://huahai2022.github.io/2022/738039201ed8/</id>
-    <published>2022-06-07T12:02:03.000Z</published>
-    <updated>2022-06-07T12:02:03.567Z</updated>
-    
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>csapp 第二章：信息的表示和处理</title>
-    <link href="http://huahai2022.github.io/2022/a87674e764b0/"/>
-    <id>http://huahai2022.github.io/2022/a87674e764b0/</id>
-    <published>2022-06-07T12:01:21.000Z</published>
-    <updated>2022-06-07T12:01:21.095Z</updated>
     
     
     

@@ -4,6 +4,57 @@
   
     
     <entry>
+      <title>RAID</title>
+      <link href="/2022/178ca3f912ae/"/>
+      <url>/2022/178ca3f912ae/</url>
+      
+        <content type="html"><![CDATA[<h1 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h1><ul><li>简介</li></ul><p>RAID是英文Redundant Array of Independent Disks的缩写，翻译成中文即为独立磁盘冗余阵列，或简称磁盘阵列。简单的说，RAID是一种把多块独立的硬盘(物理硬盘)按不同方式组合起来形成一个硬盘组(逻辑硬盘)，从而提供比单个硬盘更高的存储性能和提供数据冗余的技术。组成磁盘阵列的不同方式成为RAID级别(RAID Levels)。</p><ul><li>为什么采用RAID</li></ul><p>　　1.增强了速度</p><p>　　2.扩容了存储能力(以及更多的便利)</p><p>　　3.可高效恢复磁盘</p><ul><li>分类</li></ul><blockquote><p>1.硬磁盘阵列和软磁盘阵列的区分。</p></blockquote><blockquote><p>2.软磁盘阵列安全性不好，当有一块硬盘损坏时，它不能实现重建的功能，而且它的局限性也在。</p></blockquote><blockquote><p>3.硬磁盘阵列有硬盘丢失时，它可以实现重建，以及如果阵列卡损坏时，它可以通过更换阵列卡，实现不丢失数据的功能。</p></blockquote><p>通过用硬件来实现RAID功能的就是硬RAID，比如：各种RAID卡，还有主板集成能够做的RAID的都是硬RAID。</p><p>通过用操作系统来完成RAID功能的就是软RAID，比如：在Windows2000操作系统下，用三块硬盘做的RAID5.</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> RAID </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网络安全正式开始系统学习</title>
+      <link href="/2022/4510075c1f50/"/>
+      <url>/2022/4510075c1f50/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 网络安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux文件特殊权限</title>
+      <link href="/2022/4d9d4d3bda31/"/>
+      <url>/2022/4d9d4d3bda31/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>放下吧，好累！</title>
       <link href="/2022/62d8d5bd77e0/"/>
       <url>/2022/62d8d5bd77e0/</url>
@@ -40,7 +91,7 @@
       <link href="/2022/037207c204b0/"/>
       <url>/2022/037207c204b0/</url>
       
-        <content type="html"><![CDATA[<p>1.版权制度是促进社会进步的手段，版权本身不是自然权利。</p><p>2.FAQ  在linux自己的文件数据/usr/share/doc;</p><ul><li><p>在Windows里面，程式有问题时，如果可能的话先将所有其它程式保存并结束，然后尝试按救命三键 (Ctrl+Alt+Delete)，将有问题的程式(不要选错了程式哦)『结束工作』，看看能不能恢复系统。不要动不动就直接关机或reset。</p></li><li><p>有系统地设计档案目录，不要随便到处保存档案以至以后不知道放哪里了， 或找到档案也不知道为何物。</p></li><li><p>养成一个做记录的习惯。尤其是发现问题的时候， 把错误信息和引发状况以及解决方法记录清楚，同时最后归类及定期整理。别以为您还年轻，等你再弄多几年电脑了， 您将会非常庆幸您有此一习惯。</p></li><li><p>如果看在网路上看到任何好文章，可以为自己留一份copy，同时定好题目，归类存档。(鸟哥注：需要注意智慧财产权！)</p></li><li><p>作为一个使用者，人要迁就机器；做为一个开发者，要机器迁就人。</p></li><li><p>学写script 的确没设定server 那么好玩，不过以我自己的感觉是：关键是会得『偷』， 偷了会得改，改了会得变，变则通矣。</p></li><li><p>在Windows里面，设定不好设备，您可以骂它；在Linux里面，如果设定好设备了，您得要感激它</p></li></ul><p>3.SATA接口的硬盘文件名/dev/sd[a-d]</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220626224907925.png"></p><ul><li>其实所谓的『分割』只是针对那个64 bytes的分割表进行设定而已！</li><li>硬碟预设的分割表仅能写入四组分割资讯</li><li>这四组分割资讯我们称为主要(Primary)或延伸(Extended)分割槽</li><li>分割槽的最小单位『通常』为磁柱(cylinder)</li><li>当系统要写入磁碟时，一定会参考磁碟分割表，才能针对某个分割槽进行资料的处理</li></ul><p>4.MBR分区和GPT磁盘分区</p><p>5.固件就是写在硬件上的一个应用程序，CMOS是记录各项硬件参数且嵌在主板上的存储器，BIOS是一个写入到主板上的一个固件。BIOS是在启动时，计算机系统主动执行的第一个程序，BIOS回去分析计算机里有哪些存储设备，以硬盘为例，BIOS会依据用户的设置来取得能够启动的硬盘，并且到该硬盘里面读取第一个扇区的MBR位置，MBR仅有446个字节的硬盘容量里面回放置最基本的启动引导程序，此时BIOS成功加载，接下来就是MBR内的启动引导程序的工作了。启动引导程序的目的在于加载内核文件。Boot Loader的主要任务有1.提供选项：用户可以选择不同的启动程序，这也是多重引导的重要功能。2.加载内核文件：直接指向可使用的程序区段来启动操作系统。3.转交其他启动引导程序：将启动管理功能转交给其他启动引导程序负责。</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220629154921757.png"></p><ul><li>每个分区都有自己的启动扇区，图中的系统分区为第一及第二分区，实际可启动的内核文件是放置到各分区中的，启动引导程序只会认识自己的系统分区内的可启动的内核文件，以及其他启动引导程序而已，启动引导程序可直接指向或是简介将管理权转交给另一个管理程序。</li></ul><p>6.centos的密码、登陆时所做的选项会被记录到root/anaconda-ks.cfg文件内，搜索kickstart可以获得帮助。</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220702093422555.png"></p><p>7.linux就是一款软件而已。</p><p>/etc/passwd,/etc/shadow,/etc/group</p><p>文件种类</p><ul><li><p>常规文件（regular  file0：纯文本文件（ASCII)；二进制文件（binary）；数据文件（data）</p></li><li><p>链接文件(link)：l开头</p></li><li><p>设备与设备文件(device)：/dev目录下，</p><ul><li>区块（block）设备文件：一些存储数据，提供系统随机存取的接口设备，硬盘和软盘。/dev/sda第一个属性为[b]</li><li>字符（character）设备文件：串行端口的接口设备，如键盘，鼠标，一次性读取，不能够阶段输出，第一个属性为[c]</li></ul></li><li><p>数据接口文件(sockets)：用于网络上的数据交换，如：启动一个程序来监听客户端的需求，客户端就可以通过socket来进行数据的沟通，第一个属性为[s]</p></li><li><p>数据传输文件(FIFO,pipe)：first-in-first-out，先进先出文件，解决多个程序同时读写一个文件所造成的错误。</p></li></ul><p>8.具有可执行权限和能否执行成功是两个不同的概念，将文件后面加上x，表示文件具有可执行的权限，但是能否执行成功要看文件是否具有可执行的程序代码。</p><ul><li>/（root）:与启动程序有关</li><li>/usr(unix software resource):与软件安装/执行有关</li><li>var (variable):与系统运行过程有关</li></ul><p>8.显示日期与时间的命令：data;显示日历的命令：cal；简单好用的计算机：bc</p><p>[Ctrl]+c按键，命令中断；[Ctrl]+d键盘输入结束</p><p>man,info,/usr/share/doc求助文件</p><p>将数据同步写入硬盘的命令：sync；常用的关机命令：shutdown;重新启动，关机：reboot,halt,poweroff.</p><p>chgrp:修改文件所属用户组；chown:修改文件用户组；chmod:修改文件的权限，SUID、SGID、SBIT等的特征。</p><p>9.uname -r 查看内核版本；uname -m查看操作系统的架构版本</p>]]></content>
+        <content type="html"><![CDATA[<p>1.版权制度是促进社会进步的手段，版权本身不是自然权利。</p><p>2.FAQ  在linux自己的文件数据/usr/share/doc;</p><ul><li><p>在Windows里面，程式有问题时，如果可能的话先将所有其它程式保存并结束，然后尝试按救命三键 (Ctrl+Alt+Delete)，将有问题的程式(不要选错了程式哦)『结束工作』，看看能不能恢复系统。不要动不动就直接关机或reset。</p></li><li><p>有系统地设计档案目录，不要随便到处保存档案以至以后不知道放哪里了， 或找到档案也不知道为何物。</p></li><li><p>养成一个做记录的习惯。尤其是发现问题的时候， 把错误信息和引发状况以及解决方法记录清楚，同时最后归类及定期整理。别以为您还年轻，等你再弄多几年电脑了， 您将会非常庆幸您有此一习惯。</p></li><li><p>如果看在网路上看到任何好文章，可以为自己留一份copy，同时定好题目，归类存档。(鸟哥注：需要注意智慧财产权！)</p></li><li><p>作为一个使用者，人要迁就机器；做为一个开发者，要机器迁就人。</p></li><li><p>学写script 的确没设定server 那么好玩，不过以我自己的感觉是：关键是会得『偷』， 偷了会得改，改了会得变，变则通矣。</p></li><li><p>在Windows里面，设定不好设备，您可以骂它；在Linux里面，如果设定好设备了，您得要感激它</p></li></ul><p>3.SATA接口的硬盘文件名/dev/sd[a-d]</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220626224907925.png"></p><ul><li>其实所谓的『分割』只是针对那个64 bytes的分割表进行设定而已！</li><li>硬碟预设的分割表仅能写入四组分割资讯</li><li>这四组分割资讯我们称为主要(Primary)或延伸(Extended)分割槽</li><li>分割槽的最小单位『通常』为磁柱(cylinder)</li><li>当系统要写入磁碟时，一定会参考磁碟分割表，才能针对某个分割槽进行资料的处理</li></ul><p>4.MBR分区和GPT磁盘分区</p><p>5.固件就是写在硬件上的一个应用程序，CMOS是记录各项硬件参数且嵌在主板上的存储器，BIOS是一个写入到主板上的一个固件。BIOS是在启动时，计算机系统主动执行的第一个程序，BIOS回去分析计算机里有哪些存储设备，以硬盘为例，BIOS会依据用户的设置来取得能够启动的硬盘，并且到该硬盘里面读取第一个扇区的MBR位置，MBR仅有446个字节的硬盘容量里面回放置最基本的启动引导程序，此时BIOS成功加载，接下来就是MBR内的启动引导程序的工作了。启动引导程序的目的在于加载内核文件。Boot Loader的主要任务有1.提供选项：用户可以选择不同的启动程序，这也是多重引导的重要功能。2.加载内核文件：直接指向可使用的程序区段来启动操作系统。3.转交其他启动引导程序：将启动管理功能转交给其他启动引导程序负责。</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220629154921757.png"></p><ul><li>每个分区都有自己的启动扇区，图中的系统分区为第一及第二分区，实际可启动的内核文件是放置到各分区中的，启动引导程序只会认识自己的系统分区内的可启动的内核文件，以及其他启动引导程序而已，启动引导程序可直接指向或是简介将管理权转交给另一个管理程序。</li></ul><p>6.centos的密码、登陆时所做的选项会被记录到root/anaconda-ks.cfg文件内，搜索kickstart可以获得帮助。</p><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220702093422555.png"></p><p>7.linux就是一款软件而已。</p><p>/etc/passwd,/etc/shadow,/etc/group</p><p>文件种类</p><ul><li><p>常规文件（regular  file0：纯文本文件（ASCII)；二进制文件（binary）；数据文件（data）</p></li><li><p>链接文件(link)：l开头</p></li><li><p>设备与设备文件(device)：/dev目录下，</p><ul><li>区块（block）设备文件：一些存储数据，提供系统随机存取的接口设备，硬盘和软盘。/dev/sda第一个属性为[b]</li><li>字符（character）设备文件：串行端口的接口设备，如键盘，鼠标，一次性读取，不能够阶段输出，第一个属性为[c]</li></ul></li><li><p>数据接口文件(sockets)：用于网络上的数据交换，如：启动一个程序来监听客户端的需求，客户端就可以通过socket来进行数据的沟通，第一个属性为[s]</p></li><li><p>数据传输文件(FIFO,pipe)：first-in-first-out，先进先出文件，解决多个程序同时读写一个文件所造成的错误。</p></li></ul><p>8.具有可执行权限和能否执行成功是两个不同的概念，将文件后面加上x，表示文件具有可执行的权限，但是能否执行成功要看文件是否具有可执行的程序代码。</p><ul><li>/（root）:与启动程序有关</li><li>/usr(unix software resource):与软件安装/执行有关</li><li>var (variable):与系统运行过程有关</li></ul><p>8.显示日期与时间的命令：data;显示日历的命令：cal；简单好用的计算机：bc</p><p>[Ctrl]+c按键，命令中断；[Ctrl]+d键盘输入结束</p><p>man,info,/usr/share/doc求助文件</p><p>将数据同步写入硬盘的命令：sync；常用的关机命令：shutdown;重新启动，关机：reboot,halt,poweroff.</p><p>chgrp:修改文件所属用户组；chown:修改文件用户组；chmod:修改文件的权限，SUID、SGID、SBIT等的特征。</p><p>9.uname -r 查看内核版本；uname -m查看操作系统的架构版本</p><p>指定环境变量PATH=”${PATH}:/root”，basename查看文件名，dirname查看目录文件名</p><p>cat(concatenate)串联，一般DOS文件要特别注意一些奇怪的符号，例如Tab与换行等要显示。</p><p>mtime(modification time)修改时间；ctime(status time)状态时间；access time(atime)读取时间</p><p>chattr配置文件隐藏属性；lsattr显示文件隐藏属性；SUID对于目录是无效的；SGID可以针对文件或目录来设置；SBIT针对目录有效，分别为rwsr-xr-x,rwx–s–x,rwxrwxrwxrwt.<img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20220710182025539.png"></p><p>SUID为4，SGID为2，SBIT为1，</p><p>10.更新locate数据库：updatedb.</p><ul><li>updatedb:根据/etc/updatedb.conf的设置去查找系统硬盘内的文件，并更新/var/lib/mlocate内的数据库文件。</li><li>locate:依据/var/lib/mlocate内的数据库记录，找出用户所输入关键词的文件名。</li></ul><p>文件查找whereis,locate,find,</p><p>50c表示50Bytes，1k表示1024Bytes，</p>]]></content>
       
       
       
