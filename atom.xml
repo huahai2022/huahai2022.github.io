@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2023-07-04T00:42:57.543Z</updated>
+  <updated>2023-07-26T13:40:14.291Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -17,11 +17,173 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>概率扩展模型</title>
+    <link href="http://huahai2022.github.io/2023/07/25/gai-lu-kuo-zhan-mo-xing/"/>
+    <id>http://huahai2022.github.io/2023/07/25/gai-lu-kuo-zhan-mo-xing/</id>
+    <published>2023-07-25T00:15:08.000Z</published>
+    <updated>2023-07-26T13:40:14.291Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="http://huahai2022.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多维向量的乘积</title>
+    <link href="http://huahai2022.github.io/2023/07/19/duo-wei-xiang-liang-de-cheng-ji/"/>
+    <id>http://huahai2022.github.io/2023/07/19/duo-wei-xiang-liang-de-cheng-ji/</id>
+    <published>2023-07-19T05:18:48.000Z</published>
+    <updated>2023-07-19T05:23:01.091Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;shape=[2,2,3]的三维矩阵，可以视为2个shape=[2,3]的二维矩阵堆叠在一起！！最后两维才是有数据的矩阵，前面的维度只是矩阵的排列而已！&lt;/p&gt;
+&lt;p&gt;所以在矩阵运算的时候，其实最后都可以转成我们常见的二维矩阵运算，遵循的原则是：在多维矩阵相乘中，需最后两维</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="http://huahai2022.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>百度AI</title>
+    <link href="http://huahai2022.github.io/2023/07/17/bai-du-ai/"/>
+    <id>http://huahai2022.github.io/2023/07/17/bai-du-ai/</id>
+    <published>2023-07-16T23:34:18.000Z</published>
+    <updated>2023-07-21T23:52:18.855Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230717090749273.png&quot; alt=&quot;image-20230717090749273&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="http://huahai2022.github.io/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java中的数据结构</title>
+    <link href="http://huahai2022.github.io/2023/07/15/java-zhong-de-shu-ju-jie-gou/"/>
+    <id>http://huahai2022.github.io/2023/07/15/java-zhong-de-shu-ju-jie-gou/</id>
+    <published>2023-07-15T07:45:36.000Z</published>
+    <updated>2023-07-15T09:00:31.734Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h5 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="http://huahai2022.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>leetcode</title>
+    <link href="http://huahai2022.github.io/2023/07/15/leetcode/"/>
+    <id>http://huahai2022.github.io/2023/07/15/leetcode/</id>
+    <published>2023-07-15T02:26:33.000Z</published>
+    <updated>2023-07-16T04:11:35.580Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h5 id=&quot;leetcode1362-最接近的因数&quot;&gt;&lt;a href=&quot;#leetcode1362-最接近的因数&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="算法" scheme="http://huahai2022.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LLM实现本地知识库问答项目中的一些笔记</title>
+    <link href="http://huahai2022.github.io/2023/07/10/llm-shi-xian-ben-di-zhi-shi-ku-wen-da-xiang-mu-zhong-de-yi-xie-bi-ji/"/>
+    <id>http://huahai2022.github.io/2023/07/10/llm-shi-xian-ben-di-zhi-shi-ku-wen-da-xiang-mu-zhong-de-yi-xie-bi-ji/</id>
+    <published>2023-07-10T05:27:17.000Z</published>
+    <updated>2023-07-10T05:27:53.704Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230620085336168.png&quot; alt=&quot;image-20230620085336168&quot;&gt;&lt;/p&gt;
+&lt;h5</summary>
+        
+      
+    
+    
+    
+    
+    <category term="chatgpt" scheme="http://huahai2022.github.io/tags/chatgpt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://huahai2022.github.io/2023/07/05/top-down-lun-wen-fen-xi/"/>
+    <id>http://huahai2022.github.io/2023/07/05/top-down-lun-wen-fen-xi/</id>
+    <published>2023-07-05T13:30:18.154Z</published>
+    <updated>2023-07-06T01:15:43.823Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h5 id=&quot;MIXUP技术对模型的影响&quot;&gt;&lt;a href=&quot;#MIXUP技术对模型的影响&quot; class=&quot;headerlink&quot; title=&quot;MIXUP技术对模型的影响&quot;&gt;&lt;/a&gt;MIXUP技术对模型的影响&lt;/h5&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>人间观察</title>
     <link href="http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/"/>
     <id>http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/</id>
     <published>2023-06-30T10:52:25.000Z</published>
-    <updated>2023-07-04T00:42:57.543Z</updated>
+    <updated>2023-07-26T11:16:26.584Z</updated>
     
     
       
@@ -42,36 +204,11 @@
   </entry>
   
   <entry>
-    <title>汉语语义转化为向量</title>
-    <link href="http://huahai2022.github.io/2023/06/25/han-yu-yu-yi-zhuan-hua-wei-xiang-liang/"/>
-    <id>http://huahai2022.github.io/2023/06/25/han-yu-yu-yi-zhuan-hua-wei-xiang-liang/</id>
-    <published>2023-06-25T01:35:18.000Z</published>
-    <updated>2023-06-25T03:55:32.071Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;将汉语语义转化为向量可以通过使用自然语言处理（NLP）技术中的词嵌入（word</summary>
-        
-      
-    
-    
-    
-    <category term="人工智能" scheme="http://huahai2022.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    
-    <category term="langchain" scheme="http://huahai2022.github.io/tags/langchain/"/>
-    
-  </entry>
-  
-  <entry>
     <title>一晌贪欢</title>
     <link href="http://huahai2022.github.io/2023/06/23/yi-shang-tan-huan/"/>
     <id>http://huahai2022.github.io/2023/06/23/yi-shang-tan-huan/</id>
     <published>2023-06-23T13:10:35.000Z</published>
-    <updated>2023-07-03T05:32:17.335Z</updated>
+    <updated>2023-07-14T04:11:07.185Z</updated>
     
     
       
