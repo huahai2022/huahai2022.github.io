@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2023-07-26T13:40:14.291Z</updated>
+  <updated>2023-07-29T06:11:24.980Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -17,11 +17,81 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>红与黑</title>
+    <link href="http://huahai2022.github.io/2023/07/29/hong-yu-hei/"/>
+    <id>http://huahai2022.github.io/2023/07/29/hong-yu-hei/</id>
+    <published>2023-07-29T06:09:05.000Z</published>
+    <updated>2023-07-29T06:11:24.980Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;“要看一个人是不是真有价值，且在他的欲望前面、在他的事业前面，设下重重障碍，若真本领，自会克服困难或绕过障碍的。”——《红与黑》&lt;/p&gt;
+&lt;p&gt;红色是什么？鲜血？激情？抑或是警告？就像我们的祖先看见鲜血后的不安和躁动。黑色是什么？是黑夜？是压抑？抑或是未知？就像我们我们的祖</summary>
+        
+      
+    
+    
+    
+    
+    <category term="读书笔记" scheme="http://huahai2022.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python神经网络编程</title>
+    <link href="http://huahai2022.github.io/2023/07/29/python-shen-jing-wang-luo-bian-cheng/"/>
+    <id>http://huahai2022.github.io/2023/07/29/python-shen-jing-wang-luo-bian-cheng/</id>
+    <published>2023-07-29T00:05:55.000Z</published>
+    <updated>2023-08-04T13:59:20.073Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h5 id=&quot;sigmod函数&quot;&gt;&lt;a href=&quot;#sigmod函数&quot; class=&quot;headerlink&quot; title=&quot;sigmod函数&quot;&gt;&lt;/a&gt;sigmod函数&lt;/h5&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="读书笔记" scheme="http://huahai2022.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《噪声》</title>
+    <link href="http://huahai2022.github.io/2023/07/27/zao-sheng/"/>
+    <id>http://huahai2022.github.io/2023/07/27/zao-sheng/</id>
+    <published>2023-07-27T00:05:20.000Z</published>
+    <updated>2023-07-27T02:58:21.041Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;决策的质量决定了我们的人生质量。关于如何提高决策质量的问题，就是决策与心理学研究的范畴，这个领域的集大成者就是著名的经济学家、诺贝尔经济奖得主——丹尼尔-卡尼曼。在科学决策领域有一本神书叫做《思考，快与慢》，就像每一个互联网人，每一个产品经理都会买一本《失控》一样。&lt;/p&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="读书笔记" scheme="http://huahai2022.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>概率扩展模型</title>
     <link href="http://huahai2022.github.io/2023/07/25/gai-lu-kuo-zhan-mo-xing/"/>
     <id>http://huahai2022.github.io/2023/07/25/gai-lu-kuo-zhan-mo-xing/</id>
     <published>2023-07-25T00:15:08.000Z</published>
-    <updated>2023-07-26T13:40:14.291Z</updated>
+    <updated>2023-07-28T00:36:41.596Z</updated>
     
     
       
@@ -68,7 +138,7 @@
     <link href="http://huahai2022.github.io/2023/07/17/bai-du-ai/"/>
     <id>http://huahai2022.github.io/2023/07/17/bai-du-ai/</id>
     <published>2023-07-16T23:34:18.000Z</published>
-    <updated>2023-07-21T23:52:18.855Z</updated>
+    <updated>2023-08-11T22:51:26.220Z</updated>
     
     
       
@@ -115,7 +185,7 @@
     <link href="http://huahai2022.github.io/2023/07/15/leetcode/"/>
     <id>http://huahai2022.github.io/2023/07/15/leetcode/</id>
     <published>2023-07-15T02:26:33.000Z</published>
-    <updated>2023-07-16T04:11:35.580Z</updated>
+    <updated>2023-08-10T05:55:33.454Z</updated>
     
     
       
@@ -183,7 +253,7 @@
     <link href="http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/"/>
     <id>http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/</id>
     <published>2023-06-30T10:52:25.000Z</published>
-    <updated>2023-07-26T11:16:26.584Z</updated>
+    <updated>2023-08-11T22:38:20.533Z</updated>
     
     
       
@@ -208,20 +278,14 @@
     <link href="http://huahai2022.github.io/2023/06/23/yi-shang-tan-huan/"/>
     <id>http://huahai2022.github.io/2023/06/23/yi-shang-tan-huan/</id>
     <published>2023-06-23T13:10:35.000Z</published>
-    <updated>2023-07-14T04:11:07.185Z</updated>
+    <updated>2023-08-01T03:00:52.136Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;阴阳怪气：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;人生本就五颜六色，你却卡在了黄色和绿色。&lt;/li&gt;
-&lt;li&gt;癞蛤蟆沾点海水，真当自己是海鲜了。&lt;/li&gt;
-&lt;li&gt;多照照镜子，你就明白其中的原因了。&lt;/li&gt;
-&lt;li&gt;上帝往人间洒满智慧，唯独你打开了伞。&lt;/li&gt;
-&lt;li&gt;你一来，这一</summary>
+    <summary type="html">&lt;h5 id=&quot;阴阳怪气：&quot;&gt;&lt;a href=&quot;#阴阳怪气：&quot; class=&quot;headerlink&quot;</summary>
         
       
     
