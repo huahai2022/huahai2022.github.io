@@ -1097,6 +1097,147 @@ def find_max_repeated(arr):
 if __name__ == '__main__':
 	main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h5 id="码蹄集：单条件和"><a href="#码蹄集：单条件和" class="headerlink" title="码蹄集：单条件和"></a>码蹄集：单条件和</h5><p><img src="C:/Users/zhang/AppData/Roaming/Typora/typora-user-images/image-20230817215843540.png" alt="image-20230817215843540"></p>
+<pre class="line-numbers language-none"><code class="language-none">#include&lt;bits/stdc++.h&gt; 
+
+using namespace std;
+int n;
+unsigned int ans,a;
+int main( )
+{   
+    cin&gt;&gt;n;
+    scanf("%u",&amp;ans);
+    for(int i=2;i&lt;=n;i++){
+        scanf("%u",&amp;a);
+        ans=~ans|a;
+    }
+    cout&lt;&lt;ans;
+    return 0;
+}
+C++
+
+
+
+
+n = int(input())
+ans = int(input()) &amp; 0xffffffff  # 将 ans 转换为无符号数
+for i in range(2, n + 1):
+    a = int(input()) &amp; 0xffffffff  # 将 a 转换为无符号数
+    ans = ~ans | a
+print(ans)
+python
+
+
+
+
+package main
+
+import "fmt"
+
+func main() {
+    var n int
+    fmt.Scan(&amp;n)
+    var ans uint32
+    fmt.Scan(&amp;ans)
+    var a uint32
+    for i := 2; i &lt;= n; i++ {
+        fmt.Scan(&amp;a)
+        ans = ^ans | a
+    }
+    fmt.Println(ans)
+}
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：查找未出现的二进制"><a href="#码蹄集：查找未出现的二进制" class="headerlink" title="码蹄集：查找未出现的二进制"></a>码蹄集：查找未出现的二进制</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230825111600537.png" alt="image-20230825111600537"></p>
+<pre class="line-numbers language-none"><code class="language-none">str=input().split()
+str2=[]
+for i in range(pow(2,len(str[0]))):
+	str2.append(format(i,"0%db"%len(str)))
+print(str2)
+result=[x for x in str2 if x not in str]
+print(result[0])
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：对称三进制"><a href="#码蹄集：对称三进制" class="headerlink" title="码蹄集：对称三进制"></a>码蹄集：对称三进制</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230825113907248.png" alt="image-20230825113907248"></p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230825113915928.png" alt="image-20230825113915928"></p>
+<pre class="line-numbers language-none"><code class="language-none">'''
+@File    :   ternary.py    
+@Contact :   zhangzhilong2022@gmail.com
+@Modify Time      @Author    @Version    @Desciption
+------------      -------    --------    -----------
+2023/8/25 11:28   huahai2022      1.0         None
+'''
+def ternary2d(str):
+	str_len=len(str)
+	count=0
+	for i in range(str_len):
+		if str[i]=="-":
+			count+=-1*3**(str_len-1-i)
+		if str[i]=="0":
+			pass
+		if str[i]=="1":
+			count+=1*3**(str_len-1-i)
+	return count
+n = int(input())
+for i in range(n):
+	s=input()
+	print(ternary2d(s))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：三进制转化为十进制"><a href="#码蹄集：三进制转化为十进制" class="headerlink" title="码蹄集：三进制转化为十进制"></a>码蹄集：三进制转化为十进制</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230825121046878.png" alt="image-20230825121046878"></p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230825121100944.png" alt="image-20230825121100944"></p>
+<pre class="line-numbers language-none"><code class="language-none">'''
+@File    :   d2ternary.py    
+@Contact :   zhangzhilong2022@gmail.com
+@Modify Time      @Author    @Version    @Desciption
+------------      -------    --------    -----------
+2023/8/25 11:45   huahai2022      1.0         None
+'''
+def d2ternary(str):
+	ternary=""
+	num=int(str)
+	if num==0:
+		return 0
+	if num&gt;0:
+		while num&gt;0:
+			remainder=num%3
+			if remainder==0:
+				ternary='0'+ternary
+				num=num//3
+			elif remainder==1:
+				ternary='1'+ternary
+				num=num//3
+			else:
+				ternary='-'+ternary
+				num=num//3+1
+	if num&lt;0:
+		num=abs(num)
+		while num&gt;0:
+			remainder=num%3
+			if remainder==0:
+				ternary='0'+ternary
+				num=num//3
+			elif remainder==1:
+				ternary='1'+ternary
+				num=num//3
+			else:
+				ternary='-'+ternary
+				num=num//3+1
+		ternary_list = list(ternary)
+		for i in range(len(ternary)):
+			if ternary[i]=='1':
+				ternary_list[i]="-"
+			elif ternary[i]=="-":
+				ternary_list[i]="1"
+		ternary="".join(ternary_list)
+	return ternary
+n=int(input())
+for i in range(n):
+	s=input()
+	print(d2ternary(s))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>

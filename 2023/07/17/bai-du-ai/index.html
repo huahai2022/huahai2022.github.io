@@ -790,6 +790,52 @@ returnMat[index, :] = listFromLine[0:3]
 
 因此，数据归一化可以帮助消除特征之间的尺度差异，提高模型的性能和稳定性。在某些情况下，数据归一化可以显著降低错误率，并帮助模型更好地利用数据特征。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h5 id="cv2-imread-函数介绍"><a href="#cv2-imread-函数介绍" class="headerlink" title="cv2.imread()函数介绍"></a>cv2.imread()函数介绍</h5><pre class="line-numbers language-none"><code class="language-none">`cv2.imread`是OpenCV库中的一个函数，用于从磁盘上的图像文件中读取图像数据，并将其加载为NumPy数组。
+
+函数的基本语法如下：
+
+```python
+cv2.imread(filename, flags)
+```
+
+其中，`filename`是要读取的图像文件的路径，可以是绝对路径或相对路径。`flags`是一个可选参数，用于指定图像的读取方式。常用的`flags`取值如下：
+
+- `cv2.IMREAD_COLOR`：默认值，读取彩色图像，忽略图像的透明度（如果有）。
+- `cv2.IMREAD_GRAYSCALE`：以灰度模式读取图像。
+- `cv2.IMREAD_UNCHANGED`：读取图像，并包括图像的所有通道，包括透明度（如果有）。
+
+`cv2.imread`函数会返回一个包含图像数据的NumPy数组。对于彩色图像，返回的数组的形状为 `(高度, 宽度, 通道数)`，通道数为3，分别表示红色、绿色和蓝色通道。对于灰度图像，返回的数组的形状为 `(高度, 宽度)`，只有一个通道，表示灰度值。
+
+以下是一个示例：
+
+```python
+import cv2
+
+# 读取彩色图像
+image_color = cv2.imread('image.jpg', cv2.IMREAD_COLOR)
+
+# 读取灰度图像
+image_gray = cv2.imread('image.jpg', cv2.IMREAD_GRAYSCALE)
+```
+
+在使用`cv2.imread`函数时，需要确保指定的图像文件路径是正确的，并且程序对该路径具有读取权限。如果路径错误或文件不存在，函数将返回空值（`None`）。因此，在使用返回值之前，建议进行错误检查。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="jieba-lcut"><a href="#jieba-lcut" class="headerlink" title="jieba.lcut()"></a>jieba.lcut()</h5><pre class="line-numbers language-none"><code class="language-none">`jieba.lcut()`是`jieba`中文分词库中的一个函数，用于对中文文本进行分词操作。该函数采用了基于统计的分词方法以及一些其他的规则和技巧来实现中文分词。
+
+下面是`jieba.lcut()`函数的分词过程简要描述：
+
+1. 加载内置的词典：`jieba.lcut()`函数在执行之前会先加载内置的中文词典。这些词典包含了常见的词汇和词语，用于基本的分词操作。
+
+1. 构建有向无环图（DAG）：根据输入的文本，`jieba.lcut()`函数会根据词典中的词语构建一个有向无环图（DAG）。DAG中的节点表示文本中的字符，边表示可能的词语。
+
+1. 应用动态规划算法：基于构建的DAG，`jieba.lcut()`函数使用动态规划算法来计算最大概率路径，以确定最可能的分词结果。在计算最大概率路径时，考虑了词语的频率、词语长度、上下文信息等因素。
+
+1. 返回分词结果：根据计算得到的最大概率路径，`jieba.lcut()`函数将文本切分成词语，并返回一个包含分词结果的列表。
+
+需要注意的是，`jieba.lcut()`函数默认使用精确模式进行分词，即尽可能多地切分出词语。此外，`jieba`库还提供了其他分词函数，如`jieba.cut()`和`jieba.lcut()`，可以根据需要选择不同的分词模式。
+
+总的来说，`jieba.lcut()`函数通过利用统计算法、动态规划和内置词典等技术，实现了对中文文本的分词操作，将文本切分成有意义的词语，并返回分词结果的列表。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>

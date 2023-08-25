@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2023-07-29T06:11:24.980Z</updated>
+  <updated>2023-08-25T05:02:56.377Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="http://huahai2022.github.io/2023/08/25/zheng-ze-biao-da-shi/"/>
+    <id>http://huahai2022.github.io/2023/08/25/zheng-ze-biao-da-shi/</id>
+    <published>2023-08-25T05:02:56.000Z</published>
+    <updated>2023-08-25T05:02:56.377Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AI工程师调研</title>
+    <link href="http://huahai2022.github.io/2023/08/22/ai-gong-cheng-shi-diao-yan/"/>
+    <id>http://huahai2022.github.io/2023/08/22/ai-gong-cheng-shi-diao-yan/</id>
+    <published>2023-08-22T07:13:12.000Z</published>
+    <updated>2023-08-22T08:45:31.568Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;每天要学习一点算法，然后是机器学习&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230822164524095.png&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AI studio实践</title>
+    <link href="http://huahai2022.github.io/2023/08/13/ai-studio-shi-jian/"/>
+    <id>http://huahai2022.github.io/2023/08/13/ai-studio-shi-jian/</id>
+    <published>2023-08-13T09:45:45.000Z</published>
+    <updated>2023-08-21T02:43:10.461Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;机器学习实践&quot;&gt;&lt;a href=&quot;#机器学习实践&quot; class=&quot;headerlink&quot; title=&quot;机器学习实践&quot;&gt;&lt;/a&gt;机器学习实践&lt;/h2&gt;&lt;h3 id=&quot;一：海量文件遍历&quot;&gt;&lt;a href=&quot;#一：海量文件遍历&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="http://huahai2022.github.io/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>红与黑</title>
@@ -138,7 +197,7 @@
     <link href="http://huahai2022.github.io/2023/07/17/bai-du-ai/"/>
     <id>http://huahai2022.github.io/2023/07/17/bai-du-ai/</id>
     <published>2023-07-16T23:34:18.000Z</published>
-    <updated>2023-08-11T22:51:26.220Z</updated>
+    <updated>2023-08-13T13:54:41.249Z</updated>
     
     
       
@@ -185,7 +244,7 @@
     <link href="http://huahai2022.github.io/2023/07/15/leetcode/"/>
     <id>http://huahai2022.github.io/2023/07/15/leetcode/</id>
     <published>2023-07-15T02:26:33.000Z</published>
-    <updated>2023-08-10T05:55:33.454Z</updated>
+    <updated>2023-08-25T04:11:08.851Z</updated>
     
     
       
@@ -253,7 +312,7 @@
     <link href="http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/"/>
     <id>http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/</id>
     <published>2023-06-30T10:52:25.000Z</published>
-    <updated>2023-08-11T22:38:20.533Z</updated>
+    <updated>2023-08-19T05:06:40.148Z</updated>
     
     
       
