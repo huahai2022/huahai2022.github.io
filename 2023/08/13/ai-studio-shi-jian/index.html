@@ -1146,10 +1146,9 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>（1）uci-housing数据集介绍</p>
+<h4 id="1-准备数据"><a href="#1-准备数据" class="headerlink" title="1.准备数据"></a>1.准备数据</h4><p>（1）uci-housing数据集介绍</p>
 <p>数据集共506行,每行14列。前13列用来描述房屋的各种信息，最后一列为该类房屋价格中位数。</p>
-<p>PaddlePaddle提供了读取uci_housing训练集和测试集的接口，分别为paddle.dataset.uci_housing.train()和paddle.dataset.uci_housing.test()。</p>
-<p>(2)train_reader和test_reader</p>
+<p>(2)train_reader和test_reader(这个没看到懂)</p>
 <p>paddle.reader.shuffle()表示每次缓存BUF_SIZE个数据项，并进行打乱</p>
 <p>paddle.batch()表示每BATCH_SIZE组成一个batch</p>
 <pre class="line-numbers language-none"><code class="language-none">
@@ -1167,6 +1166,412 @@ import matplotlib.pyplot as plt<span aria-hidden="true" class="line-numbers-rows
 #                           buf_size=BUF_SIZE),
 #     batch_size=BATCH_SIZE) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>加载数据</p>
+<pre class="line-numbers language-none"><code class="language-none">#设置默认的全局dtype为float64
+paddle.set_default_dtype("float64")
+#下载数据
+print('下载并加载训练数据')
+train_dataset = paddle.text.datasets.UCIHousing(mode='train')
+eval_dataset = paddle.text.datasets.UCIHousing(mode='test')
+print(len(eval_dataset))
+train_loader = paddle.io.DataLoader(train_dataset, batch_size=32, shuffle=True)
+eval_loader = paddle.io.DataLoader(eval_dataset, batch_size = 8, shuffle=False)
+
+print('加载完成')<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-网络配置"><a href="#2-网络配置" class="headerlink" title="2.网络配置"></a>2.网络配置</h4><p>对于线性回归来讲，它就是一个从输入到输出的简单的全连接层。</p>
+<p>对于波士顿房价数据集，假设属性和房价之间的关系可以被属性间的线性组合描述。</p>
+<p><img src="C:/Users/zhang/AppData/Roaming/Typora/typora-user-images/image-20230827091240945.png" alt="image-20230827091240945"></p>
+<pre class="line-numbers language-none"><code class="language-none">
+# 定义全连接网络
+class Regressor(paddle.nn.Layer):
+    def __init__(self):
+        super(Regressor, self).__init__()
+        # 定义一层全连接层，输出维度是1，激活函数为None，即不使用激活函数
+        self.linear = paddle.nn.Linear(13, 1, None)
+    
+    # 网络的前向计算函数
+    def forward(self, inputs):
+        x = self.linear(inputs)
+        return x
+        
+        
+        
+        
+
+        
+Batch=0
+Batchs=[]
+all_train_accs=[]
+def draw_train_acc(Batchs, train_accs):
+    title="training accs"
+    plt.title(title, fontsize=24)
+    plt.xlabel("batch", fontsize=14)
+    plt.ylabel("acc", fontsize=14)
+    plt.plot(Batchs, train_accs, color='green', label='training accs')
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+all_train_loss=[]
+def draw_train_loss(Batchs, train_loss):
+    title="training loss"
+    plt.title(title, fontsize=24)
+    plt.xlabel("batch", fontsize=14)
+    plt.ylabel("loss", fontsize=14)
+    plt.plot(Batchs, train_loss, color='red', label='training loss')
+    plt.legend()
+    plt.grid()
+    plt.show()
+    
+    
+    
+    
+    
+model=Regressor() # 模型实例化
+model.train() # 训练模式
+mse_loss = paddle.nn.MSELoss()
+opt=paddle.optimizer.SGD(learning_rate=0.0005, parameters=model.parameters())
+
+epochs_num=200 #迭代次数
+for pass_num in range(epochs_num):
+    for batch_id,data in enumerate(train_loader()):
+        image = data[0]
+        label = data[1]
+        predict=model(image) #数据传入model
+        # print(predict)
+        # print(np.argmax(predict,axis=1))
+        loss=mse_loss(predict,label)
+        # acc=paddle.metric.accuracy(predict,label.reshape([-1,1]))#计算精度
+        # acc = np.mean(label==np.argmax(predict,axis=1))
+        
+        if batch_id!=0 and batch_id%10==0:
+            Batch = Batch+10
+            Batchs.append(Batch)
+            all_train_loss.append(loss.numpy()[0])
+            # all_train_accs.append(acc.numpy()[0]) 
+            print("epoch:{},step:{},train_loss:{}".format(pass_num,batch_id,loss.numpy()[0])  )      
+        loss.backward()       
+        opt.step()
+        opt.clear_grad()   #opt.clear_grad()来重置梯度
+paddle.save(model.state_dict(),'Regressor')#保存模型
+draw_train_loss(Batchs,all_train_loss)
+
+
+
+
+#模型评估
+para_state_dict = paddle.load("Regressor") 
+model = Regressor()
+model.set_state_dict(para_state_dict) #加载模型参数
+model.eval() #验证模式
+
+losses = []
+infer_results=[]
+groud_truths=[]
+for batch_id,data in enumerate(eval_loader()):#测试集
+    image=data[0]
+    label=data[1] 
+    groud_truths.extend(label.numpy())    
+    predict=model(image) 
+    infer_results.extend(predict.numpy())      
+    loss=mse_loss(predict,label)
+    losses.append(loss.numpy()[0])
+    avg_loss = np.mean(losses)
+print("当前模型在验证集上的损失值为:",avg_loss)
+
+
+
+
+#绘制真实值和预测值对比图
+def draw_infer_result(groud_truths,infer_results):
+    title='Boston'
+    plt.title(title, fontsize=24)
+    x = np.arange(1,20) 
+    y = x
+    plt.plot(x, y)
+    plt.xlabel('ground truth', fontsize=14)
+    plt.ylabel('infer result', fontsize=14)
+    plt.scatter(groud_truths, infer_results,color='green',label='training cost') 
+    plt.grid()
+    plt.show()
+
+draw_infer_result(groud_truths,infer_results)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="九：使用k-means算法实现鸢尾花聚类"><a href="#九：使用k-means算法实现鸢尾花聚类" class="headerlink" title="九：使用k-means算法实现鸢尾花聚类"></a>九：使用k-means算法实现鸢尾花聚类</h3><p>对于给定的样本集，按照样本之间的距离大小，将样本集划分为K个簇，让簇内的点尽量紧密的连在一起，而让簇间的距离尽量的大</p>
+<h4 id="1-利用包完成"><a href="#1-利用包完成" class="headerlink" title="1.利用包完成"></a>1.利用包完成</h4><h5 id="鸢尾花数据集描述"><a href="#鸢尾花数据集描述" class="headerlink" title="鸢尾花数据集描述"></a>鸢尾花数据集描述</h5><p>包含3种类型数据集，共150条数据 ；2、包含4项特征：花萼长度、花萼宽度、花瓣长度、花瓣宽度</p>
+<h5 id="导入相关包"><a href="#导入相关包" class="headerlink" title="导入相关包"></a>导入相关包</h5><pre class="line-numbers language-none"><code class="language-none">import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.cluster import KMeans 
+from sklearn import datasets <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="直接从sklearn-datasets中加载数据集"><a href="#直接从sklearn-datasets中加载数据集" class="headerlink" title="直接从sklearn.datasets中加载数据集"></a>直接从sklearn.datasets中加载数据集</h5><pre class="line-numbers language-none"><code class="language-none"># 直接从sklearn中获取数据集
+iris = datasets.load_iris()
+X = iris.data[:, :4]    # 表示我们取特征空间中的4个维度
+print(X.shape)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="绘制二维数据分布图"><a href="#绘制二维数据分布图" class="headerlink" title="绘制二维数据分布图"></a>绘制二维数据分布图</h5><pre class="line-numbers language-none"><code class="language-none"># 取前两个维度（萼片长度、萼片宽度），绘制数据分布图
+plt.scatter(X[:, 0], X[:, 1], c="red", marker='o', label='see')
+plt.xlabel('sepal length')
+plt.ylabel('sepal width')
+plt.legend(loc=2)
+plt.show() <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="实例化K-means，定义训练函数"><a href="#实例化K-means，定义训练函数" class="headerlink" title="实例化K-means，定义训练函数"></a>实例化K-means，定义训练函数</h5><pre class="line-numbers language-none"><code class="language-none">def Model(n_clusters):
+    estimator = KMeans(n_clusters=n_clusters)# 构造聚类器
+    return estimator
+
+def train(estimator):
+    estimator.fit(X)  # 聚类
+    
+    
+# 初始化实例，并开启训练拟合
+estimator=Model(3)     
+train(estimator) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="可视化展示"><a href="#可视化展示" class="headerlink" title="可视化展示"></a>可视化展示</h5><pre class="line-numbers language-none"><code class="language-none">label_pred = estimator.labels_  # 获取聚类标签
+# 绘制k-means结果
+x0 = X[label_pred == 0]
+x1 = X[label_pred == 1]
+x2 = X[label_pred == 2]
+plt.scatter(x0[:, 0], x0[:, 1], c="red", marker='o', label='label0')
+plt.scatter(x1[:, 0], x1[:, 1], c="green", marker='*', label='label1')
+plt.scatter(x2[:, 0], x2[:, 1], c="blue", marker='+', label='label2')
+plt.xlabel('sepal length')
+plt.ylabel('sepal width')
+plt.legend(loc=2)
+plt.show() <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="手写完成"><a href="#手写完成" class="headerlink" title="手写完成"></a>手写完成</h4><pre class="line-numbers language-none"><code class="language-none"># 法一：直接手写实现
+# 欧氏距离计算
+def distEclud(x,y):
+    return np.sqrt(np.sum((x-y)**2))  # 计算欧氏距离
+ 
+# 为给定数据集构建一个包含K个随机质心centroids的集合
+def randCent(dataSet,k):
+    m,n = dataSet.shape #m=150,n=4
+    centroids = np.zeros((k,n)) #4*4
+    for i in range(k): # 执行四次
+        index = int(np.random.uniform(0,m)) # 产生0到150的随机数（在数据集中随机挑一个向量做为质心的初值）
+        centroids[i,:] = dataSet[index,:] #把对应行的四个维度传给质心的集合
+    return centroids
+ 
+# k均值聚类算法
+def KMeans(dataSet,k):
+    m = np.shape(dataSet)[0]  #行数150
+    # 第一列存每个样本属于哪一簇(四个簇)
+    # 第二列存每个样本的到簇的中心点的误差
+    clusterAssment = np.mat(np.zeros((m,2)))# .mat()创建150*2的矩阵
+    clusterChange = True
+ 
+    # 1.初始化质心centroids
+    centroids = randCent(dataSet,k)#4*4
+    while clusterChange:
+        # 样本所属簇不再更新时停止迭代
+        clusterChange = False
+ 
+        # 遍历所有的样本（行数150）
+        for i in range(m):
+            minDist = 100000.0
+            minIndex = -1
+ 
+            # 遍历所有的质心
+            #2.找出最近的质心
+            for j in range(k):
+                # 计算该样本到4个质心的欧式距离，找到距离最近的那个质心minIndex
+                distance = distEclud(centroids[j,:],dataSet[i,:])
+                if distance &lt; minDist:
+                    minDist = distance
+                    minIndex = j
+            # 3.更新该行样本所属的簇
+            if clusterAssment[i,0] != minIndex:
+                clusterChange = True
+                clusterAssment[i,:] = minIndex,minDist**2
+        #4.更新质心
+        for j in range(k):
+            # np.nonzero(x)返回值不为零的元素的下标，它的返回值是一个长度为x.ndim(x的轴数)的元组
+            # 元组的每个元素都是一个整数数组，其值为非零元素的下标在对应轴上的值。
+            # 矩阵名.A 代表将 矩阵转化为array数组类型
+            
+            # 这里取矩阵clusterAssment所有行的第一列，转为一个array数组，与j（簇类标签值）比较，返回true or false
+            # 通过np.nonzero产生一个array，其中是对应簇类所有的点的下标值（x个）
+            # 再用这些下标值求出dataSet数据集中的对应行，保存为pointsInCluster（x*4）
+            pointsInCluster = dataSet[np.nonzero(clusterAssment[:,0].A == j)[0]]  # 获取对应簇类所有的点（x*4）
+            centroids[j,:] = np.mean(pointsInCluster,axis=0)   # 求均值，产生新的质心
+            # axis=0，那么输出是1行4列，求的是pointsInCluster每一列的平均值，即axis是几，那就表明哪一维度被压缩成1
+ 
+    print("cluster complete")
+    return centroids,clusterAssment
+
+def draw(data,center,assment):
+    length=len(center)
+    fig=plt.figure
+    data1=data[np.nonzero(assment[:,0].A == 0)[0]]
+    data2=data[np.nonzero(assment[:,0].A == 1)[0]]
+    data3=data[np.nonzero(assment[:,0].A == 2)[0]]
+    # 选取前两个维度绘制原始数据的散点图
+    plt.scatter(data1[:,0],data1[:,1],c="red",marker='o',label='label0')
+    plt.scatter(data2[:,0],data2[:,1],c="green", marker='*', label='label1')
+    plt.scatter(data3[:,0],data3[:,1],c="blue", marker='+', label='label2')
+    # 绘制簇的质心点
+    for i in range(length):
+        plt.annotate('center',xy=(center[i,0],center[i,1]),xytext=\
+        (center[i,0]+1,center[i,1]+1),arrowprops=dict(facecolor='yellow'))
+        #  plt.annotate('center',xy=(center[i,0],center[i,1]),xytext=\
+        # (center[i,0]+1,center[i,1]+1),arrowprops=dict(facecolor='red'))
+    plt.show()
+    
+    # 选取后两个维度绘制原始数据的散点图
+    plt.scatter(data1[:,2],data1[:,3],c="red",marker='o',label='label0')
+    plt.scatter(data2[:,2],data2[:,3],c="green", marker='*', label='label1')
+    plt.scatter(data3[:,2],data3[:,3],c="blue", marker='+', label='label2')
+    # 绘制簇的质心点
+    for i in range(length):
+        plt.annotate('center',xy=(center[i,2],center[i,3]),xytext=\
+        (center[i,2]+1,center[i,3]+1),arrowprops=dict(facecolor='yellow'))
+    plt.show()
+    
+    
+
+dataSet = X
+k = 3
+centroids,clusterAssment = KMeans(dataSet,k)
+draw(dataSet,centroids,clusterAssment)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="十：基于逻辑回归模型实现手写数字识别"><a href="#十：基于逻辑回归模型实现手写数字识别" class="headerlink" title="十：基于逻辑回归模型实现手写数字识别"></a>十：基于逻辑回归模型实现手写数字识别</h3><p>sklearn是Python的一个机器学习的库，它有比较完整的监督学习与非监督学习的模型。本文将使用sklearn库里的分类模型来对手写数字（MNIST）做分类实践。</p>
+<h4 id="1-数据介绍"><a href="#1-数据介绍" class="headerlink" title="1.数据介绍"></a>1.数据介绍</h4><blockquote>
+<p>MNIST 数据集来自美国国家标准与技术研究所, National Institute of Standards and Technology (NIST). 训练集 (training set) 由来自 250 个不同人手写的数字构成, 其中 50% 是高中学生, 50% 来自人口普查局 (the Census Bureau) 的工作人员. 测试集(test set) 也是同样比例的手写数字数据.<br>MNIST 数据集可在 <a target="_blank" rel="noopener" href="http://yann.lecun.com/exdb/mnist/">http://yann.lecun.com/exdb/mnist/</a> 获取, 它包含了四个部分:</p>
+</blockquote>
+<ul>
+<li>Training set images: train-images-idx3-ubyte.gz (9.9 MB, 解压后 47 MB, 包含 60,000 个样本)</li>
+<li>Training set labels: train-labels-idx1-ubyte.gz (29 KB, 解压后 60 KB, 包含 60,000 个标签)</li>
+<li>Test set images: t10k-images-idx3-ubyte.gz (1.6 MB, 解压后 7.8 MB, 包含 10,000 个样本)</li>
+<li>Test set labels: t10k-labels-idx1-ubyte.gz (5KB, 解压后 10 KB, 包含 10,000 个标签)</li>
+</ul>
+<h4 id="2-数据读取与存储形式"><a href="#2-数据读取与存储形式" class="headerlink" title="2.数据读取与存储形式"></a>2.数据读取与存储形式</h4><p>将下载好的数据解压带代码目录下即可。 <strong>此处直接挂在数据集</strong>，数据文件时二进制格式的，所以要按字节读取。代码如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">!unzip data/data7869/mnist.zip #解压文件
+!gzip -dfq mnist/train-labels-idx1-ubyte.gz
+!gzip -dfq mnist/t10k-labels-idx1-ubyte.gz
+!gzip -dfq mnist/train-images-idx3-ubyte.gz
+!gzip -dfq mnist/t10k-images-idx3-ubyte.gz<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">import struct,os	#struct 模块用于处理二进制数据的解析和打包，而 os 模块提供了与操作系统交互的功能。
+import numpy as np		#array 函数用于创建和操作基本的数组对象。
+from array import array as pyarray	
+from numpy import append, array, int8, uint8, zeros		#append 函数用于在数组末尾添加元素，array 函数用于创建数组对象，int8 和 uint8 是整数类型，分别表示有符号和无符号的 8 位整数，zeros 函数用于创建一个全零的数组。
+import matplotlib.pyplot as plt		
+
+%matplotlib inline 		#这个魔术命令（magic command）是 Jupyter Notebook 或 JupyterLab 的特殊命令，用于在 Notebook 中内联显示 matplotlib 绘图，并在代码块执行后自动显示图形。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">def load_mnist(image_file, label_file, path="data/mnist"):
+    digits=np.arange(10)
+
+    fname_image = os.path.join(path, image_file)
+    fname_label = os.path.join(path, label_file)
+
+    flbl = open(fname_label, 'rb')
+    magic_nr, size = struct.unpack("&gt;II", flbl.read(8))
+    lbl = pyarray("b", flbl.read())
+    flbl.close()
+
+    fimg = open(fname_image, 'rb')
+    magic_nr, size, rows, cols = struct.unpack("&gt;IIII", fimg.read(16))
+    img = pyarray("B", fimg.read())
+    fimg.close()
+
+    ind = [ k for k in range(size) if lbl[k] in digits ]
+    N = len(ind)
+
+    images = zeros((N, rows*cols), dtype=uint8)
+    labels = zeros((N, 1), dtype=int8)
+    for i in range(len(ind)):
+        images[i] = array(img[ ind[i]*rows*cols : (ind[i]+1)*rows*cols ]).reshape((1, rows*cols))
+        labels[i] = lbl[ind[i]]
+
+    return images, labels
+
+
+train_image, train_label = load_mnist("train-images-idx3-ubyte", "train-labels-idx1-ubyte")
+test_image, test_label = load_mnist("t10k-images-idx3-ubyte", "t10k-labels-idx1-ubyte")<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="3-数据展示"><a href="#3-数据展示" class="headerlink" title="3.数据展示"></a>3.数据展示</h4><p>image和label都是数组，image内的每个元素为一个784维的向量，label内的每个元素为image同下标下元素表示的数字。<br>可以将读取到的灰度图通过matplotlib.pyplot展示出来：</p>
+<pre class="line-numbers language-none"><code class="language-none">import matplotlib.pyplot as plt
+
+def show_image(imgdata,imgtarget,show_column, show_row):
+    #注意这里的show_column*show_row==len(imgdata)
+    for index,(im,it) in enumerate(list(zip(imgdata,imgtarget))):
+        xx = im.reshape(28,28)
+        plt.subplots_adjust(left=1, bottom=None, right=3, top=2, wspace=None, hspace=None)
+        plt.subplot(show_row, show_column, index+1)
+        plt.axis('off')
+        plt.imshow(xx , cmap='gray',interpolation='nearest')
+        plt.title('label:%i' % it)
+# 显示训练集前50数字
+show_image(train_image[:50], train_label[:50], 10,5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230902171038869.png" alt="image-20230902171038869"></p>
+<h4 id="4-sklearn分类模型"><a href="#4-sklearn分类模型" class="headerlink" title="4.sklearn分类模型"></a>4.sklearn分类模型</h4><p>本文使用的sklearn分类模型有：</p>
+<ul>
+<li>K-Nearest Neighbor Classification</li>
+<li>Naive Bayes</li>
+<li>Decision Tree</li>
+<li>Random Forest</li>
+<li>Logistic Regression</li>
+<li>Support Vector Machine</li>
+</ul>
+<h4 id="5-数据归一化"><a href="#5-数据归一化" class="headerlink" title="5.数据归一化"></a>5.数据归一化</h4><p>此处采用min-max标准化将数据进行归一化操作。 <code>image = [im/255.0 for im in image]</code></p>
+<h4 id="K-Nearest-Neighbor-Classification"><a href="#K-Nearest-Neighbor-Classification" class="headerlink" title="K-Nearest Neighbor Classification"></a>K-Nearest Neighbor Classification</h4><pre class="line-numbers language-none"><code class="language-none">from sklearn.metrics import accuracy_score,classification_report
+from sklearn.neighbors import KNeighborsClassifier
+
+knc = KNeighborsClassifier(n_neighbors=10)
+knc.fit(train_image,train_label.ravel())
+predict = knc.predict(test_image)
+print("accuracy_score: %.4lf" % accuracy_score(predict,test_label))
+print("Classification report for classifier %s:\n%s\n" % (knc, classification_report(test_label, predict)))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h4><pre class="line-numbers language-none"><code class="language-none">from sklearn.naive_bayes import MultinomialNB
+
+mnb = MultinomialNB()
+mnb.fit(train_image,train_label)
+predict = mnb.predict(test_image)
+print("accuracy_score: %.4lf" % accuracy_score(predict,test_label))
+print("Classification report for classifier %s:\n%s\n" % (mnb, classification_report(test_label, predict)))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Decision-Tree"><a href="#Decision-Tree" class="headerlink" title="Decision Tree"></a>Decision Tree</h4><pre class="line-numbers language-none"><code class="language-none">from sklearn.tree import DecisionTreeClassifier
+
+dtc = DecisionTreeClassifier()
+dtc.fit(train_image,train_label)
+predict = dtc.predict(test_image)
+print("accuracy_score: %.4lf" % accuracy_score(predict,test_label))
+print("Classification report for classifier %s:\n%s\n" % (dtc, classification_report(test_label, predict)))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Random-Forest"><a href="#Random-Forest" class="headerlink" title="Random Forest"></a>Random Forest</h4><pre class="line-numbers language-none"><code class="language-none">from sklearn.ensemble import RandomForestClassifier
+
+rfc = RandomForestClassifier()
+rfc.fit(train_image,train_label)
+predict = rfc.predict(test_image)
+print("accuracy_score: %.4lf" % accuracy_score(predict,test_label))
+print("Classification report for classifier %s:\n%s\n" % (rfc, classification_report(test_label, predict)))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h4><pre class="line-numbers language-none"><code class="language-none">from sklearn.linear_model import LogisticRegression
+
+lr = LogisticRegression()
+lr.fit(train_image,train_label)
+predict = lr.predict(test_image)
+print("accuracy_score: %.4lf" % accuracy_score(predict,test_label))
+print("Classification report for classifier %s:\n%s\n" % (lr, classification_report(test_label, predict)))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Support-Vector-Machine"><a href="#Support-Vector-Machine" class="headerlink" title="Support Vector Machine"></a>Support Vector Machine</h4><pre class="line-numbers language-none"><code class="language-none">from sklearn.svm import SVC
+
+svc = SVC()
+svc.fit(train_image,train_label)
+predict = svc.predict(test_image)
+print("accuracy_score: %.4lf" % accuracy_score(predict,test_label))
+print("Classification report for classifier %s:\n%s\n" % (svc, classification_report(test_label, predict)))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230902171601564.png" alt="image-20230902171601564"></p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230902172438530.png" alt="image-20230902172438530"></p>
 
                 
             </div>

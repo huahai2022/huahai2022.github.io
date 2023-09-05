@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2023-08-25T05:02:56.377Z</updated>
+  <updated>2023-09-05T07:52:41.140Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -17,12 +17,79 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>spider</title>
+    <link href="http://huahai2022.github.io/2023/09/05/spider/"/>
+    <id>http://huahai2022.github.io/2023/09/05/spider/</id>
+    <published>2023-09-05T07:52:41.000Z</published>
+    <updated>2023-09-05T07:52:41.140Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>代码随想录笔记</title>
+    <link href="http://huahai2022.github.io/2023/08/25/dai-ma-sui-xiang-lu-bi-ji/"/>
+    <id>http://huahai2022.github.io/2023/08/25/dai-ma-sui-xiang-lu-bi-ji/</id>
+    <published>2023-08-25T11:51:15.000Z</published>
+    <updated>2023-09-02T04:17:38.802Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;选择一些重点进行记录，不要求多，但要求熟练，笔记上的内容全会。&lt;/p&gt;
+&lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;h3 id=&quot;1-数组基础理论&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>日常笔记</title>
+    <link href="http://huahai2022.github.io/2023/08/25/ri-chang-bi-ji/"/>
+    <id>http://huahai2022.github.io/2023/08/25/ri-chang-bi-ji/</id>
+    <published>2023-08-25T11:44:44.000Z</published>
+    <updated>2023-08-29T00:36:38.185Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230825194527495.png&quot; alt=&quot;image-20230825194527495&quot;&gt;&lt;/p&gt;
+&lt;h4</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>正则表达式</title>
     <link href="http://huahai2022.github.io/2023/08/25/zheng-ze-biao-da-shi/"/>
     <id>http://huahai2022.github.io/2023/08/25/zheng-ze-biao-da-shi/</id>
     <published>2023-08-25T05:02:56.000Z</published>
-    <updated>2023-08-25T05:02:56.377Z</updated>
+    <updated>2023-09-01T11:51:07.226Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;学了很多遍，忘了无数遍O(∩_∩)O(来源于菜鸟教程)&lt;/p&gt;
+&lt;p&gt;正则表达式是一种用于模式匹配和搜索文本的工具。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
     
     
     
@@ -57,7 +124,7 @@
     <link href="http://huahai2022.github.io/2023/08/13/ai-studio-shi-jian/"/>
     <id>http://huahai2022.github.io/2023/08/13/ai-studio-shi-jian/</id>
     <published>2023-08-13T09:45:45.000Z</published>
-    <updated>2023-08-21T02:43:10.461Z</updated>
+    <updated>2023-09-02T09:24:40.865Z</updated>
     
     
       
@@ -244,7 +311,7 @@
     <link href="http://huahai2022.github.io/2023/07/15/leetcode/"/>
     <id>http://huahai2022.github.io/2023/07/15/leetcode/</id>
     <published>2023-07-15T02:26:33.000Z</published>
-    <updated>2023-08-25T04:11:08.851Z</updated>
+    <updated>2023-08-30T06:16:22.526Z</updated>
     
     
       
@@ -312,7 +379,7 @@
     <link href="http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/"/>
     <id>http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/</id>
     <published>2023-06-30T10:52:25.000Z</published>
-    <updated>2023-08-19T05:06:40.148Z</updated>
+    <updated>2023-09-05T07:26:36.653Z</updated>
     
     
       

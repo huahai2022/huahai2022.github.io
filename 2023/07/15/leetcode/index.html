@@ -1238,6 +1238,172 @@ for i in range(n):
 	s=input()
 	print(d2ternary(s))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h5 id="码蹄集：进制的综合"><a href="#码蹄集：进制的综合" class="headerlink" title="码蹄集：进制的综合"></a>码蹄集：进制的综合</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230825154233293.png" alt="image-20230825154233293"></p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230825154322766.png" alt="image-20230825154322766"></p>
+<pre class="line-numbers language-none"><code class="language-none">'''
+@File    :   excel.py
+@Contact :   zhangzhilong2022@gmail.com
+@Modify Time      @Author    @Version    @Desciption
+------------      -------    --------    -----------
+2023/8/25 12:17   huahai2022      1.0         None
+'''
+import re
+def num2letter(num):
+	letter=""
+	while num&gt;0:
+		a=num%26
+		if a==0:
+			letter='Z'+letter
+			num=num//26-1
+		else:
+			letter=chr(a+64)+letter
+			num=num//26
+	return letter
+def letter2num(letter):
+	length=len(letter)
+	num=0
+	for i in range(length):
+		num+=(ord(letter[i])-64)*26**(length-i-1)
+	return num
+def A2B(s):
+	pattern="\\d+"
+	matchs=re.findall(pattern,s)
+	num2=int(matchs[1])
+	return num2letter(num2)+matchs[0]
+
+	#R 12 C 3转化为C12
+
+def B2A(s):
+	pattern=r"([A-Z]+)(\d+)"
+	match=re.match(pattern,s)
+	letter=match.group(1)
+	num=match.group(2)
+	letters="R"+num+"C"+str(letter2num(letter))
+	return letters
+n= int(input())
+str_list=[]
+for i in range(n):
+	s=input()
+	str_list.append(s)
+	
+for i in range(n):
+	if re.match("R[0-9]*C[0-9]*",str_list[i]) is not None:
+		print(A2B(str_list[i]))
+	else:
+		print(B2A(str_list[i]))
+
+
+
+b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：Good-Num的数量"><a href="#码蹄集：Good-Num的数量" class="headerlink" title="码蹄集：Good Num的数量"></a>码蹄集：Good Num的数量</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230830122553474.png" alt="image-20230830122553474"></p>
+<pre class="line-numbers language-none"><code class="language-none">#思路：快速求幂的方法
+def fast_power(base, exponent):
+    result = 1
+    while exponent &gt; 0:
+        if exponent % 2 == 1:
+            result *= base%(10**9+7)
+        base *= base%(10**9+7)
+        exponent //= 2
+    return result
+def main():
+    #code here
+    k=int(input())
+    mid1=k//2       #表示奇数
+    if k%2==0:
+        mid2=mid1
+    else:
+        mid2=mid1+1 #表示偶数
+    print(fast_power(4,mid1)*fast_power(5,mid2)%(10**9+7))
+
+
+
+if __name__ == '__main__':
+    main();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：幂和"><a href="#码蹄集：幂和" class="headerlink" title="码蹄集：幂和"></a>码蹄集：幂和</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230830124348680.png" alt="image-20230830124348680"></p>
+<pre class="line-numbers language-none"><code class="language-none">#和上面一题的思路一致
+def fast_power(base,exp):
+    res=1
+    while exp&gt;0:
+        if exp%2==1:
+            res*=base%(998244353)
+        base*=base%(998244353)
+        exp=exp//2
+    return res%998244353
+def main():
+    #code here
+    n=int(input())
+    count=0
+    for i in range(1,n+1):
+        count+=fast_power(i,i)%(998244353)
+    print(count%998244353)
+
+
+if __name__ == '__main__':
+    main();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：个数统计"><a href="#码蹄集：个数统计" class="headerlink" title="码蹄集：个数统计"></a>码蹄集：个数统计</h5><p><img src="C:/Users/zhang/AppData/Roaming/Typora/typora-user-images/image-20230830132826446.png" alt="image-20230830132826446"></p>
+<pre class="line-numbers language-none"><code class="language-none">
+def main():
+    line=input()
+    n=int(line.split(" ")[0])
+    a=line.split(" ")[1]
+    count=1
+    count2=0
+    for i in range(1,n+1):
+        count=count*i
+    for i in str(count):
+        if i==a:
+            count2+=1
+    print(count2)
+
+
+if __name__ == '__main__':
+    main();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：个数统计2"><a href="#码蹄集：个数统计2" class="headerlink" title="码蹄集：个数统计2"></a>码蹄集：个数统计2</h5><p><img src="C:/Users/zhang/AppData/Roaming/Typora/typora-user-images/image-20230830132859709.png" alt="image-20230830132859709"></p>
+<pre class="line-numbers language-none"><code class="language-none">#编写代码要规范
+def main():
+    #code here
+    line=input()
+    n=int(line.split(" ")[0])
+    b=line.split(" ")[1]
+    len_b=len(b)
+    count=1
+    for i in range(1,n+1):
+        count*=i
+    count2=0
+    count_str=str(count)
+    for i in range(len(count_str)-len_b+1):
+        if count_str[i:i+len_b]==b:
+            count2+=1
+    print(count2)
+
+
+if __name__ == '__main__':
+    main();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：快速幂"><a href="#码蹄集：快速幂" class="headerlink" title="码蹄集：快速幂"></a>码蹄集：快速幂</h5><p><img src="C:/Users/zhang/AppData/Roaming/Typora/typora-user-images/image-20230830135848517.png" alt="image-20230830135848517"></p>
+<pre class="line-numbers language-none"><code class="language-none">
+def main():
+    #code here
+    line=input()
+    a,b,c=line.split(" ")
+    a=int(a)
+    b=int(b)
+    c=int(c)
+    count=1
+    while b&gt;0:
+        if b%2==1:
+            count*=a%c
+        a=a*a%c
+        b=b//2
+    print(count%c)
+
+if __name__ == '__main__':
+    main();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
