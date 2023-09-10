@@ -58,9 +58,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="忧郁小王子的乌托邦" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="忧郁小王子的乌托邦" type="application/atom+xml">
 </head>
 
 
@@ -1985,6 +1985,528 @@ class Solution:
     def empty(self) -&gt; bool:
         return not self.que<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="4-有效的括号"><a href="#4-有效的括号" class="headerlink" title="4.有效的括号"></a>4.有效的括号</h3><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<ul>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+<li>注意空字符串可被认为是有效字符串。</li>
+</ul>
+<p>示例 1:</p>
+<ul>
+<li>输入: “()”</li>
+<li>输出: true</li>
+</ul>
+<p>示例 2:</p>
+<ul>
+<li>输入: “()[]{}”</li>
+<li>输出: true</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none"># 方法一，仅使用栈，更省空间
+class Solution:
+    def isValid(self, s: str) -&gt; bool:
+        stack = []
+        
+        for item in s:
+            if item == '(':
+                stack.append(')')
+            elif item == '[':
+                stack.append(']')
+            elif item == '{':
+                stack.append('}')
+            elif not stack or stack[-1] != item:
+                return False
+            else:
+                stack.pop()
+        
+        return True if not stack else False<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># 方法二，使用字典
+class Solution:
+    def isValid(self, s: str) -&gt; bool:
+        stack = []
+        mapping = {
+            '(': ')',
+            '[': ']',
+            '{': '}'
+        }
+        for item in s:
+            if item in mapping.keys():
+                stack.append(mapping[item])
+            elif not stack or stack[-1] != item: 
+                return False
+            else: 
+                stack.pop()
+        return True if not stack else False<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-删除字符串中的所有相邻重复项"><a href="#5-删除字符串中的所有相邻重复项" class="headerlink" title="5.删除字符串中的所有相邻重复项"></a>5.删除字符串中的所有相邻重复项</h3><p>给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。</p>
+<p>在 S 上反复执行重复项删除操作，直到无法继续删除。</p>
+<p>在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。</p>
+<p>示例：</p>
+<ul>
+<li>输入：”abbaca”</li>
+<li>输出：”ca”</li>
+<li>解释：例如，在 “abbaca” 中，我们可以删除 “bb” 由于两字母相邻且相同，这是此时唯一可以执行删除操作的重复项。之后我们得到字符串 “aaca”，其中又只有 “aa” 可以执行重复项删除操作，所以最后的字符串为 “ca”。</li>
+</ul>
+<p>提示：</p>
+<ul>
+<li>1 &lt;= S.length &lt;= 20000</li>
+<li>S 仅由小写英文字母组成。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def removeDuplicates(self, s: str) -&gt; str:
+        stack=[]
+        for item in s:
+            if stack and stack[-1]==item:
+                stack.pop()
+            else:
+                stack.append(item)
+        return "".join(stack)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># 方法二，使用双指针模拟栈，如果不让用栈可以作为备选方法。
+class Solution:
+    def removeDuplicates(self, s: str) -&gt; str:
+        res = list(s)
+        slow = fast = 0
+        length = len(res)
+
+        while fast &lt; length:
+            # 如果一样直接换，不一样会把后面的填在slow的位置
+            res[slow] = res[fast]
+            
+            # 如果发现和前一个一样，就退一格指针
+            if slow &gt; 0 and res[slow] == res[slow - 1]:
+                slow -= 1
+            else:
+                slow += 1
+            fast += 1
+            
+        return ''.join(res[0: slow])<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-逆波兰表达式"><a href="#6-逆波兰表达式" class="headerlink" title="6.逆波兰表达式"></a>6.逆波兰表达式</h3><p>根据 逆波兰表示法，求表达式的值。</p>
+<p>有效的运算符包括 + , - , * , / 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。</p>
+<p>说明：</p>
+<p>整数除法只保留整数部分。 给定逆波兰表达式总是有效的。换句话说，表达式总会得出有效数值且不存在除数为 0 的情况。</p>
+<p>示例 1：</p>
+<ul>
+<li>输入: [“2”, “1”, “+”, “3”, “ * “]</li>
+<li>输出: 9</li>
+<li>解释: 该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9</li>
+</ul>
+<p>示例 2：</p>
+<ul>
+<li>输入: [“4”, “13”, “5”, “/“, “+”]</li>
+<li>输出: 6</li>
+<li>解释: 该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6</li>
+</ul>
+<p>示例 3：</p>
+<ul>
+<li>输入: [“10”, “6”, “9”, “3”, “+”, “-11”, “ * “, “/“, “ * “, “17”, “+”, “5”, “+”]</li>
+<li>输出: 22</li>
+<li>解释:该算式转化为常见的中缀算术表达式为：</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def evalRPN(self, tokens: List[str]) -&gt; int:
+        stack=[]
+        for item in tokens:
+            if item=='+':
+                stack.append(stack.pop()+stack.pop())
+            elif item=="-":
+                stack.append(-stack.pop()+stack.pop())
+            elif item=='*':
+                stack.append(stack.pop()*stack.pop())
+            elif item=='/':
+                a1=stack.pop()
+                a2=stack.pop()
+                stack.append(int(a2/a1))
+            else:
+                stack.append(int(item))
+        return stack[0]
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">from operator import add, sub, mul
+
+class Solution:
+    op_map = {'+': add, '-': sub, '*': mul, '/': lambda x, y: int(x / y)}
+    
+    def evalRPN(self, tokens: List[str]) -&gt; int:
+        stack = []
+        for token in tokens:
+            if token not in {'+', '-', '*', '/'}:
+                stack.append(int(token))
+            else:
+                op2 = stack.pop()
+                op1 = stack.pop()
+                stack.append(self.op_map[token](op1, op2))  # 第一个出来的在运算符后面
+        return stack.pop()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">from operator import add, sub, mul
+
+class Solution:
+    op_map = {'+': add, '-': sub, '*': mul, '/': lambda x, y: int(x / y)}
+    
+    def evalRPN(self, tokens: List[str]) -&gt; int:
+        stack = []
+        for token in tokens:
+            if token not in {'+', '-', '*', '/'}:
+                stack.append(int(token))
+            else:
+                op2 = stack.pop()
+                op1 = stack.pop()
+                stack.append(self.op_map[token](op1, op2))  # 第一个出来的在运算符后面
+        return stack.pop()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="7-滑动窗口最大值"><a href="#7-滑动窗口最大值" class="headerlink" title="7.滑动窗口最大值"></a>7.滑动窗口最大值</h3><p>给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。</p>
+<p>返回滑动窗口中的最大值。</p>
+<p>进阶：</p>
+<p>你能在线性时间复杂度内解决此题吗？</p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230907154713171.png" alt="image-20230907154713171"></p>
+<p>这是使用单调队列的经典题目。</p>
+<p>难点是如何求一个区间里的最大值呢？ （这好像是废话），暴力一下不就得了。</p>
+<p>暴力方法，遍历一遍的过程中每次从窗口中再找到最大的数值，这样很明显是O(n × k)的算法。</p>
+<p>有的同学可能会想用一个大顶堆（优先级队列）来存放这个窗口里的k个数字，这样就可以知道最大的最大值是多少了， <strong>但是问题是这个窗口是移动的，而大顶堆每次只能弹出最大值，我们无法移除其他数值，这样就造成大顶堆维护的不是滑动窗口里面的数值了。所以不能用大顶堆。</strong></p>
+<p>此时我们需要一个队列，这个队列呢，放进去窗口里的元素，然后随着窗口的移动，队列也一进一出，每次移动之后，队列告诉我们里面的最大值是什么。</p>
+<pre class="line-numbers language-none"><code class="language-none">#这题目，使用双指针的方法会超时，其实双指针也就是类似于暴力求解，只不过利用了简枝操作
+
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]:
+        length=len(nums)
+        max_num_list=[]
+        max_num=max(nums[0:k])
+        max_num_list.append(max_num)
+        slow,fast=0,k-1
+        for i in range(0,length-k):
+            if nums[fast+1]&gt;max_num:
+                max_num=nums[fast+1]
+                max_num_list.append(max_num)
+                fast+=1
+                slow+=1
+            else:
+                if nums[slow]==max_num:
+                    if nums[fast+1]&gt;max(nums[slow+1:fast+2]):
+                        max_num=nums[fast+1]
+                        max_num_list.append(max_num)
+                        fast+=1
+                        slow+=1
+                    else:
+                        max_num=max(nums[slow+1:fast+2])
+                        max_num_list.append(max_num)
+                        fast+=1
+                        slow+=1
+                else:
+                    if nums[fast+1]&gt;max(nums[slow+1:fast+2]):
+                        max_num=nums[fast+1]
+                        max_num_list.append(max_num)
+                        fast+=1
+                        slow+=1
+                    else:
+                        max_num=max(nums[slow+1:fast+2])
+                        max_num_list.append(max_num)
+                        fast+=1
+                        slow+=1
+        return max_num_list
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#使用一个单调队列，然后在头部维护一个最大值，每次就是返回队列的头部即可
+from collections import deque
+class MyQueue:  #单调队列，从大到小
+    def __init__(self):
+        self.queue=deque()
+    def pop(self,val):
+        if self.queue and val==self.queue[0]:
+            self.queue.popleft()
+    def push(self,val):
+        while self.queue and val&gt;self.queue[-1]:
+            self.queue.pop()
+        self.queue.append(val)
+    def front(self):
+        return self.queue[0]
+
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]:
+        que=MyQueue()
+        result=[]
+        for i in range(k):  #先将前k个元素放入队列
+            que.push(nums[i])
+        result.append(que.front())
+        for i in range(k,len(nums)):
+            que.pop(nums[i-k])
+            que.push(nums[i])
+            result.append(que.front())
+        return result
+#很巧妙<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]:
+        n = len(nums)
+        # 注意 Python 默认的优先队列是小根堆
+        q = [(-nums[i], i) for i in range(k)]
+        heapq.heapify(q)
+
+        ans = [-q[0][0]]
+        for i in range(k, n):
+            heapq.heappush(q, (-nums[i], i))
+            while q[0][1] &lt;= i - k:
+                heapq.heappop(q)
+            ans.append(-q[0][0])
+        
+        return ans
+对于「最大值」，我们可以想到一种非常合适的数据结构，那就是优先队列（堆），其中的大根堆可以帮助我们实时维护一系列元素中的最大值。
+
+对于本题而言，初始时，我们将数组 nums 的前 kkk 个元素放入优先队列中。每当我们向右移动窗口时，我们就可以把一个新的元素放入优先队列中，此时堆顶的元素就是堆中所有元素的最大值。然而这个最大值可能并不在滑动窗口中，在这种情况下，这个值在数组 nums 中的位置出现在滑动窗口左边界的左侧。因此，当我们后续继续向右移动窗口时，这个值就永远不可能出现在滑动窗口中了，我们可以将其永久地从优先队列中移除。
+
+我们不断地移除堆顶的元素，直到其确实出现在滑动窗口中。此时，堆顶元素就是滑动窗口中的最大值。为了方便判断堆顶元素与滑动窗口的位置关系，我们可以在优先队列中存储二元组 (num,index)，表示元素 num 在数组中的下标为 index。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]:
+        n = len(nums)
+        q = collections.deque()
+        for i in range(k):
+            while q and nums[i] &gt;= nums[q[-1]]:
+                q.pop()
+            q.append(i)
+
+        ans = [nums[q[0]]]
+        for i in range(k, n):
+            while q and nums[i] &gt;= nums[q[-1]]:
+                q.pop()
+            q.append(i)
+            while q[0] &lt;= i - k:
+                q.popleft()
+            ans.append(nums[q[0]])
+        
+        return ans
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="8-前k个高频词汇"><a href="#8-前k个高频词汇" class="headerlink" title="8.前k个高频词汇"></a>8.前k个高频词汇</h3><p>给定一个非空的整数数组，返回其中出现频率前 k 高的元素。</p>
+<p>示例 1:</p>
+<ul>
+<li>输入: nums = [1,1,1,2,2,3], k = 2</li>
+<li>输出: [1,2]</li>
+</ul>
+<p>示例 2:</p>
+<ul>
+<li>输入: nums = [1], k = 1</li>
+<li>输出: [1]</li>
+</ul>
+<p>提示：</p>
+<ul>
+<li>你可以假设给定的 k 总是合理的，且 1 ≤ k ≤ 数组中不相同的元素的个数。</li>
+<li>你的算法的时间复杂度必须优于 $O(n \log n)$ , n 是数组的大小。</li>
+<li>题目数据保证答案唯一，换句话说，数组中前 k 个高频元素的集合是唯一的。</li>
+<li>你可以按任意顺序返回答案。</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">#利用堆
+import heapq
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -&gt; List[int]:
+        #要统计元素出现频率
+        map_ = {} #nums[i]:对应出现的次数
+        for i in range(len(nums)):
+            map_[nums[i]] = map_.get(nums[i], 0) + 1
+        
+        #对频率排序
+        #定义一个小顶堆，大小为k
+        pri_que = [] #小顶堆
+        
+        #用固定大小为k的小顶堆，扫描所有频率的数值
+        for key, freq in map_.items():
+            heapq.heappush(pri_que, (freq, key))
+            if len(pri_que) &gt; k: #如果堆的大小大于了K，则队列弹出，保证堆的大小一直为k
+                heapq.heappop(pri_que)
+        
+        #找出前K个高频元素，因为小顶堆先弹出的是最小的，所以倒序来输出到数组
+        result = [0] * k
+        for i in range(k-1, -1, -1):
+            result[i] = heapq.heappop(pri_que)[1]
+        return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -&gt; List[int]:
+        my_dict={}
+        for item in nums:
+            if item not in my_dict:
+                my_dict[item]=1
+            else:
+                my_dict[item]+=1
+        sorted_dict = dict(sorted(my_dict.items(), key=lambda x: x[1]reverse=True))
+        # print(sorted_dict)
+        dict_list=list(sorted_dict.keys())
+        return dict_list[:k]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="二叉树理论基础"><a href="#二叉树理论基础" class="headerlink" title="二叉树理论基础"></a>二叉树理论基础</h3><h5 id="两种形式：满二叉树和完全二叉树"><a href="#两种形式：满二叉树和完全二叉树" class="headerlink" title="两种形式：满二叉树和完全二叉树"></a>两种形式：满二叉树和完全二叉树</h5><p>满二叉树：如果一棵二叉树只有度为0的结点和度为2的结点，并且度为0的结点在同一层上，则这棵二叉树为满二叉树。也可以说是深度为k,有2的k次方-1个节点</p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230908194624678.png" alt="image-20230908194624678"></p>
+<p>完全二叉树的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层（h从1开始），则该层包含 1~ 2^(h-1) 个节点。<img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230908194759577.png" alt="image-20230908194759577"></p>
+<h5 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h5><p>前面介绍的树，都没有数值的，而二叉搜索树是有数值的了，<strong>二叉搜索树是一个有序树</strong>。</p>
+<ul>
+<li>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</li>
+<li>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</li>
+<li>它的左、右子树也分别为二叉排序树</li>
+</ul>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230908194914804.png" alt="image-20230908194914804"></p>
+<h5 id="平衡二叉搜索树"><a href="#平衡二叉搜索树" class="headerlink" title="平衡二叉搜索树"></a>平衡二叉搜索树</h5><p>平衡二叉搜索树：又被称为AVL（Adelson-Velsky and Landis）树，且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。<img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230908194946159.png" alt="image-20230908194946159"></p>
+<h5 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h5><ul>
+<li>深度优先遍历<ul>
+<li>前序遍历（递归法，迭代法）</li>
+<li>中序遍历（递归法，迭代法）</li>
+<li>后序遍历（递归法，迭代法）</li>
+</ul>
+</li>
+<li>广度优先遍历<ul>
+<li>层次遍历（迭代法）</li>
+</ul>
+</li>
+</ul>
+<h3 id="二叉树的递归遍历"><a href="#二叉树的递归遍历" class="headerlink" title="二叉树的递归遍历"></a>二叉树的递归遍历</h3><pre class="line-numbers language-none"><code class="language-none"># 前序遍历-递归-LC144_二叉树的前序遍历
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+    def preorderTraversal(self, root: TreeNode) -&gt; List[int]:
+        if not root:
+            return []
+
+        left = self.preorderTraversal(root.left)
+        right = self.preorderTraversal(root.right)
+
+        return  [root.val] + left +  right
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># 中序遍历-递归-LC94_二叉树的中序遍历
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -&gt; List[int]:
+        if root is None:
+            return []
+
+        left = self.inorderTraversal(root.left)
+        right = self.inorderTraversal(root.right)
+
+        return left + [root.val] + right<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># 后序遍历-递归-LC145_二叉树的后序遍历
+class Solution:
+    def postorderTraversal(self, root: TreeNode) -&gt; List[int]:
+        if not root:
+            return []
+
+        left = self.postorderTraversal(root.left)
+        right = self.postorderTraversal(root.right)
+
+        return left + right + [root.val]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="二叉树的迭代遍历"><a href="#二叉树的迭代遍历" class="headerlink" title="二叉树的迭代遍历"></a>二叉树的迭代遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def preorderTraversal(self, root: TreeNode) -&gt; List[int]:
+        # 根结点为空则返回空列表
+        if not root:
+            return []
+        stack = [root]
+        result = []
+        while stack:
+            node = stack.pop()
+            # 中结点先处理
+            result.append(node.val)
+            # 右孩子先入栈
+            if node.right:
+                stack.append(node.right)
+            # 左孩子后入栈
+            if node.left:
+                stack.append(node.left)
+        return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+   def postorderTraversal(self, root: TreeNode) -&gt; List[int]:
+       if not root:
+           return []
+       stack = [root]
+       result = []
+       while stack:
+           node = stack.pop()
+           # 中结点先处理
+           result.append(node.val)
+           # 左孩子先入栈
+           if node.left:
+               stack.append(node.left)
+           # 右孩子后入栈
+           if node.right:
+               stack.append(node.right)
+       # 将最终的数组翻转
+       return result[::-1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># 后序遍历-迭代-LC145_二叉树的后序遍历
+class Solution:
+   def postorderTraversal(self, root: TreeNode) -&gt; List[int]:
+       if not root:
+           return []
+       stack = [root]
+       result = []
+       while stack:
+           node = stack.pop()
+           # 中结点先处理
+           result.append(node.val)
+           # 左孩子先入栈
+           if node.left:
+               stack.append(node.left)
+           # 右孩子后入栈
+           if node.right:
+               stack.append(node.right)
+       # 将最终的数组翻转
+       return result[::-1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="二叉树的层次遍历"><a href="#二叉树的层次遍历" class="headerlink" title="二叉树的层次遍历"></a>二叉树的层次遍历</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230910180835619.png" alt="image-20230910180835619"></p>
+<pre class="line-numbers language-none"><code class="language-none"># 利用长度法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -&gt; List[List[int]]:
+        if not root:
+            return []
+        queue = collections.deque([root])
+        result = []
+        while queue:
+            level = []
+            for _ in range(len(queue)):
+                cur = queue.popleft()
+                level.append(cur.val)
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+            result.append(level)
+        return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none"># 递归法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -&gt; List[List[int]]:
+        levels = []
+        self.helper(root, 0, levels)
+        return levels
+    
+    def helper(self, node, level, levels):
+        if not node:
+            return
+        if len(levels) == level:
+            levels.append([])
+        levels[level].append(node.val)
+        self.helper(node.left, level + 1, levels)
+        self.helper(node.right, level + 1, levels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -2155,6 +2677,14 @@ class Solution:
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/AI/">
+                        <span class="chip bg-color">AI</span>
+                    </a>
+                    
                 </div>
                 
             </div>

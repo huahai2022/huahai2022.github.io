@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="AI工程师调研, sb">
-    <meta name="description" content="1
-每天要学习一点算法，然后是机器学习
+    <meta name="keywords" content="python中collections模块, sb">
+    <meta name="description" content="简介collections是python中的一个集合模块，也就是容器，里面提供了，python标准容器dict,list,set,tuple的替代选择。
+import collections
 
-">
+print(dir(collections))">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>AI工程师调研 | 忧郁小王子的乌托邦</title>
+    <title>python中collections模块 | 忧郁小王子的乌托邦</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -340,12 +340,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">AI工程师调研</h1>
+                    <h1 class="description center-align post-title">python中collections模块</h1>
                 </div>
             </div>
         </div>
@@ -367,9 +367,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -381,7 +385,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-22
+                    2023-09-08
                 </div>
                 
 
@@ -405,9 +409,201 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1</p>
-<p>每天要学习一点算法，然后是机器学习</p>
-<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230822164524095.png" alt="image-20230822164524095"></p>
+                <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>collections是python中的一个集合模块，也就是容器，里面提供了，python标准容器dict,list,set,tuple的替代选择。</p>
+<pre class="line-numbers language-none"><code class="language-none">import collections
+
+print(dir(collections))
+['ChainMap', 'Counter', 'OrderedDict', 'UserDict', 'UserList', 'UserString', '_Link', '_OrderedDictItemsView', '_OrderedDictKeysView', '_OrderedDictValuesView', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', '_chain', '_collections_abc', '_count_elements', '_eq', '_iskeyword', '_itemgetter', '_proxy', '_recursive_repr', '_repeat', '_starmap', '_sys', '_tuplegetter', 'abc', 'defaultdict', 'deque', 'namedtuple']
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p>namedtuple():创建一个命名元组子类的工厂函数</p>
+<p>deque:高效增删改双向列表，类似于列表的容器，实现了在两端快速添加(append)和弹出(pop)</p>
+<p>defaultdict:当字典查询时，为key不存在提供一个默认值</p>
+<p>OrderedDict:有序词典，就是记住了插入顺序</p>
+<p>Counter:计数功能</p>
+<h4 id="namedtuple"><a href="#namedtuple" class="headerlink" title="namedtuple()"></a>namedtuple()</h4><pre class="line-numbers language-none"><code class="language-none">point = collections.namedtuple('Points', ['x', 'y'])
+p1 = point(2, 3)
+p2 = point(4, 2)
+
+print(p1) # Points(x=2, y=3)
+print(p2) # Points(x=4, y=2)
+
+
+print(isinstance(p1, point)) # True
+print(isinstance(p1, tuple)) # True
+
+#使用_make赋值
+a= [11, 3]
+p1._make(a)
+print(p1) # Points(x=11, y=3)
+
+#使用_replace更改值
+p1._replace(x=5)
+print(p1) # Points(x=5, y=3)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="deque双端队列"><a href="#deque双端队列" class="headerlink" title="deque双端队列"></a>deque双端队列</h4><pre class="line-numbers language-none"><code class="language-none">from collections import deque
+
+q = deque(['a', 'b', 'c'], maxlen=10)
+# 从右边添加一个元素
+q.append('d')
+print(q) # deque(['a', 'b', 'c', 'd'], maxlen=10)
+
+# 从左边删除一个元素
+print(q.popleft()) # a
+print(q) # deque(['b', 'c', 'd'], maxlen=10)
+
+# 扩展队列
+q.extend(['i', 'j'])
+print(q) # deque(['b', 'c', 'd', 'i', 'j'], maxlen=10)
+
+# 查找下标
+print(q.index('c')) # 1
+
+# 移除第一个'd'
+q.remove('d')
+print(q) # deque(['b', 'c', 'i', 'j'], maxlen=10)
+
+# 逆序
+q.reverse()
+print(q) # deque(['j', 'i', 'c', 'b'], maxlen=10)
+
+# 最大长度
+print(q.maxlen) # 10
+
+
+append(x)：添加 x 到右端。
+
+appendleft(x)：添加 x 到左端。
+
+clear()：移除所有元素，使其长度为0.
+
+copy()：创建一份浅拷贝。3.5 新版功能.
+
+count(x)：计算deque中个数等于 x 的元素。3.2 新版功能.
+
+extend(iterable)：扩展deque的右侧，通过添加iterable参数中的元素。
+
+extendleft(iterable)：扩展deque的左侧，通过添加iterable参数中的元素。注意，左添加时，在结果中iterable参数中的顺序将被反过来添加。
+
+index(x[, start[, stop]])：返回第 x 个元素（从 start 开始计算，在 stop 之前）。返回第一个匹配，如果没找到的话，升起 ValueError 。3.5 新版功能.
+
+insert(i, x)：在位置 i 插入 x 。如果插入会导致一个限长deque超出长度 maxlen 的话，就升起一个 IndexError 。3.5 新版功能.
+
+pop()：移去并且返回一个元素，deque最右侧的那一个。如果没有元素的话，就升起 IndexError 索引错误。
+
+popleft()：移去并且返回一个元素，deque最左侧的那一个。如果没有元素的话，就升起 IndexError 索引错误。
+
+remove(value)：移去找到的第一个 value。 如果没有的话就升起 ValueError 。
+
+reverse()：将deque逆序排列。返回 None 。3.2 新版功能.
+
+rotate(n=1)：向右循环移动 n 步。 如果 n 是负数，就向左循环。如果deque不是空的，向右循环移动一步就等价于 d.appendleft(d.pop()) ， 向左循环一步就等价于 d.append(d.popleft()) 。
+
+Deque对象同样提供了一个只读属性:
+maxlen：Deque的最大尺寸，如果没有限定的话就是 None 。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a>defaultdict</h4><pre class="line-numbers language-none"><code class="language-none">from collections import defaultdict
+dd = defaultdict(lambda: 'not exist')
+dd['key1'] = 'abc'
+print(dd['key1']) # key1存在  
+# 'abc'
+print(dd['key2']) # key2不存在，返回默认值
+# 'not exist'
+
+
+from collections import defaultdict
+
+d = defaultdict(list)
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+
+for k, v in s:
+    d[k].append(v)
+
+print(d) # defaultdict(&lt;class 'list'&gt;, {'yellow': [1, 3], 'blue': [2, 4], 'red': [1]})
+#相当于
+d = {}
+s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+
+for k, v in s:
+    d.setdefault(k, []).append(v)
+
+print(d) # {'yellow': [1, 3], 'blue': [2, 4], 'red': [1]}
+
+#设置为int方便计数
+s = 'mississippi'
+d = defaultdict(int)
+for k in s:
+    d[k] += 1
+
+print(d) # defaultdict(&lt;class 'int'&gt;, {'m': 1, 'i': 4, 's': 4, 'p': 2})
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="OrderedDict-有序字典"><a href="#OrderedDict-有序字典" class="headerlink" title="OrderedDict()有序字典"></a>OrderedDict()有序字典</h4><p>有序字典中添加了一些排序操作的额外功能</p>
+<p>popitem(last=True) ：有序字典的 popitem() 方法移除并返回一个 (key, value) 键值对。 如果 last 值为真，则按 LIFO 后进先出的顺序返回键值对，否则就按 FIFO 先进先出的顺序返回键值对。</p>
+<pre class="line-numbers language-none"><code class="language-none">from collections import OrderedDict
+
+d = OrderedDict(a=1, b=2, c=3, d=4,e=5)
+print(d) # OrderedDict([('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)])
+print(d.popitem(last=True)) # ('e', 5)
+print(d.popitem(last=False)) # ('a', 1)
+print(d) # OrderedDict([('b', 2), ('c', 3), ('d', 4)]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>move_to_end(key, last=True)</code>：将现有 key 移动到有序字典的任一端。 如果 last 为真值（默认）则将元素移至末尾；如果 last 为假值则将元素移至开头。如果 key 不存在则会触发 KeyError。</p>
+<pre class="line-numbers language-none"><code class="language-none">from collections import OrderedDict
+
+
+d = OrderedDict(a=1, b=2, c=3, d=4,e=5)
+print(d) # OrderedDict([('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5)])
+
+d.move_to_end(key='c', last=True)
+print(d) # OrderedDict([('a', 1), ('b', 2), ('d', 4), ('e', 5), ('c', 3)])
+
+d.move_to_end(key='b', last=False)
+print(d) # OrderedDict([('b', 2), ('a', 1), ('d', 4), ('e', 5), ('c', 3)])
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="Counter计数"><a href="#Counter计数" class="headerlink" title="Counter计数"></a>Counter计数</h4><p>Counter 是一个 dict 的子类，用于计数可哈希对象。特别方便！</p>
+<pre class="line-numbers language-none"><code class="language-none">from collections import Counter
+#字符串
+c = Counter()
+for i in 'sfsadfsdjklgsdla':
+    c[i] +=  1
+
+print(isinstance(c,Counter)) # True
+print(isinstance(c,dict)) # True
+print(c) # Counter({'s': 4, 'd': 3, 'f': 2, 'a': 2, 'l': 2, 'j': 1, 'k': 1, 'g': 1})
+
+c2 = Counter('asfjslfjsdlfjgkls')
+print(c2) # Counter({'s': 4, 'd': 3, 'f': 2, 'a': 2, 'l': 2, 'j': 1, 'k': 1, 'g': 1})
+
+
+#列表
+from collections import Counter
+
+c = Counter(['red', 'blue', 'red', 'green', 'blue', 'blue'])
+print(c) # Counter({'blue': 3, 'red': 2, 'green': 1})
+
+
+#elements() ：返回一个迭代器，其中每个元素将重复出现计数值所指定次。 元素会按首次出现的顺序返回。 如果一个元素的计数值小于一， #elements() 将会忽略它。
+c = Counter(a=4, b=2, c=0, d=-2)
+print(sorted(c.elements())) # ['a', 'a', 'a', 'a', 'b', 'b']
+
+
+most_common([n]) ：返回一个列表，其中包含 n 个最常见的元素及出现次数，按常见程度由高到低排序。 如果 n 被省略或为 None， most_common() 将返回计数器中的 所有 元素。 计数值相等的元素按首次出现的顺序排序：
+c = Counter('abracadabra')
+print(c.most_common(3)) # [('a', 5), ('b', 2), ('r', 2)]
+
+
+subtract([iterable-or-mapping]) ：从 迭代对象 或 映射对象 减去元素。像 dict.update() 但是是减去，而不是替换。输入和输出都可以是0或者负数。
+c = Counter(a=4, b=2, c=0, d=-2)
+d = Counter(a=1, b=2, c=3, d=4)
+c.subtract(d)
+print(c) # Counter({'a': 3, 'b': 0, 'c': -3, 'd': -6})
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -434,7 +630,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://huahai2022.github.io/2023/08/22/ai-gong-cheng-shi-diao-yan/">http://huahai2022.github.io/2023/08/22/ai-gong-cheng-shi-diao-yan/</a>
+                    <a href="http://huahai2022.github.io/2023/09/08/python-zhong-collections-mo-kuai/">http://huahai2022.github.io/2023/09/08/python-zhong-collections-mo-kuai/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -471,7 +667,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -548,17 +748,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/08/25/zheng-ze-biao-da-shi/">
+                <a href="/2023/09/08/python-zhong-collections-mo-kuai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="正则表达式">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python中collections模块">
                         
-                        <span class="card-title">正则表达式</span>
+                        <span class="card-title">python中collections模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -568,9 +769,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -578,6 +779,15 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -589,13 +799,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/08/13/ai-studio-shi-jian/">
+                <a href="/2023/09/05/spider/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="AI studio实践">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="spider">
                         
-                        <span class="card-title">AI studio实践</span>
+                        <span class="card-title">spider</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -606,7 +816,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-05
                             </span>
                         <span class="publish-author">
                             

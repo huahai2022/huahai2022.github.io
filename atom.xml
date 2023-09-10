@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2023-09-05T07:52:41.140Z</updated>
+  <updated>2023-09-08T05:49:52.875Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -17,15 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>python中collections模块</title>
+    <link href="http://huahai2022.github.io/2023/09/08/python-zhong-collections-mo-kuai/"/>
+    <id>http://huahai2022.github.io/2023/09/08/python-zhong-collections-mo-kuai/</id>
+    <published>2023-09-08T05:26:11.000Z</published>
+    <updated>2023-09-08T05:49:52.875Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="http://huahai2022.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>spider</title>
     <link href="http://huahai2022.github.io/2023/09/05/spider/"/>
     <id>http://huahai2022.github.io/2023/09/05/spider/</id>
     <published>2023-09-05T07:52:41.000Z</published>
-    <updated>2023-09-05T07:52:41.140Z</updated>
+    <updated>2023-09-05T13:11:19.113Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;形势所迫，不学一点爬虫是不行的了！&lt;/p&gt;
+</summary>
+        
+      
     
     
     
     
+    <category term="AI" scheme="http://huahai2022.github.io/tags/AI/"/>
     
   </entry>
   
@@ -34,7 +68,7 @@
     <link href="http://huahai2022.github.io/2023/08/25/dai-ma-sui-xiang-lu-bi-ji/"/>
     <id>http://huahai2022.github.io/2023/08/25/dai-ma-sui-xiang-lu-bi-ji/</id>
     <published>2023-08-25T11:51:15.000Z</published>
-    <updated>2023-09-02T04:17:38.802Z</updated>
+    <updated>2023-09-10T10:36:46.299Z</updated>
     
     
       
@@ -56,7 +90,7 @@
     <link href="http://huahai2022.github.io/2023/08/25/ri-chang-bi-ji/"/>
     <id>http://huahai2022.github.io/2023/08/25/ri-chang-bi-ji/</id>
     <published>2023-08-25T11:44:44.000Z</published>
-    <updated>2023-08-29T00:36:38.185Z</updated>
+    <updated>2023-09-05T13:11:44.029Z</updated>
     
     
       
@@ -379,7 +413,7 @@
     <link href="http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/"/>
     <id>http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/</id>
     <published>2023-06-30T10:52:25.000Z</published>
-    <updated>2023-09-05T07:26:36.653Z</updated>
+    <updated>2023-09-10T11:38:42.739Z</updated>
     
     
       
