@@ -6,7 +6,7 @@
   <link href="http://huahai2022.github.io/atom.xml" rel="self"/>
   
   <link href="http://huahai2022.github.io/"/>
-  <updated>2023-09-08T05:49:52.875Z</updated>
+  <updated>2023-09-23T05:13:43.052Z</updated>
   <id>http://huahai2022.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>欧拉函数</title>
+    <link href="http://huahai2022.github.io/2023/09/23/ou-la-han-shu/"/>
+    <id>http://huahai2022.github.io/2023/09/23/ou-la-han-shu/</id>
+    <published>2023-09-23T04:28:16.000Z</published>
+    <updated>2023-09-23T05:13:43.052Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="数学" scheme="http://huahai2022.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>python中collections模块</title>
@@ -68,7 +91,7 @@
     <link href="http://huahai2022.github.io/2023/08/25/dai-ma-sui-xiang-lu-bi-ji/"/>
     <id>http://huahai2022.github.io/2023/08/25/dai-ma-sui-xiang-lu-bi-ji/</id>
     <published>2023-08-25T11:51:15.000Z</published>
-    <updated>2023-09-10T10:36:46.299Z</updated>
+    <updated>2023-09-12T03:21:38.478Z</updated>
     
     
       
@@ -90,7 +113,7 @@
     <link href="http://huahai2022.github.io/2023/08/25/ri-chang-bi-ji/"/>
     <id>http://huahai2022.github.io/2023/08/25/ri-chang-bi-ji/</id>
     <published>2023-08-25T11:44:44.000Z</published>
-    <updated>2023-09-05T13:11:44.029Z</updated>
+    <updated>2023-09-19T05:11:53.232Z</updated>
     
     
       
@@ -122,29 +145,6 @@
     <summary type="html">&lt;p&gt;学了很多遍，忘了无数遍O(∩_∩)O(来源于菜鸟教程)&lt;/p&gt;
 &lt;p&gt;正则表达式是一种用于模式匹配和搜索文本的工具。&lt;/p&gt;
 &lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>AI工程师调研</title>
-    <link href="http://huahai2022.github.io/2023/08/22/ai-gong-cheng-shi-diao-yan/"/>
-    <id>http://huahai2022.github.io/2023/08/22/ai-gong-cheng-shi-diao-yan/</id>
-    <published>2023-08-22T07:13:12.000Z</published>
-    <updated>2023-08-22T08:45:31.568Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;1&lt;/p&gt;
-&lt;p&gt;每天要学习一点算法，然后是机器学习&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230822164524095.png&quot;</summary>
         
       
     
@@ -345,7 +345,7 @@
     <link href="http://huahai2022.github.io/2023/07/15/leetcode/"/>
     <id>http://huahai2022.github.io/2023/07/15/leetcode/</id>
     <published>2023-07-15T02:26:33.000Z</published>
-    <updated>2023-08-30T06:16:22.526Z</updated>
+    <updated>2023-09-23T13:04:06.737Z</updated>
     
     
       
@@ -413,7 +413,7 @@
     <link href="http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/"/>
     <id>http://huahai2022.github.io/2023/06/30/ren-jian-guan-cha/</id>
     <published>2023-06-30T10:52:25.000Z</published>
-    <updated>2023-09-10T11:38:42.739Z</updated>
+    <updated>2023-09-30T13:49:54.482Z</updated>
     
     
       
@@ -438,14 +438,16 @@
     <link href="http://huahai2022.github.io/2023/06/23/yi-shang-tan-huan/"/>
     <id>http://huahai2022.github.io/2023/06/23/yi-shang-tan-huan/</id>
     <published>2023-06-23T13:10:35.000Z</published>
-    <updated>2023-08-01T03:00:52.136Z</updated>
+    <updated>2023-10-04T05:11:48.563Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h5 id=&quot;阴阳怪气：&quot;&gt;&lt;a href=&quot;#阴阳怪气：&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;p&gt;y&lt;/p&gt;
+&lt;p&gt;要读的书：《苏格拉底的申辩》&lt;/p&gt;
+&lt;h5 id=&quot;阴阳怪气：&quot;&gt;&lt;a href=&quot;#阴阳怪气：&quot; class=&quot;headerlink&quot;</summary>
         
       
     

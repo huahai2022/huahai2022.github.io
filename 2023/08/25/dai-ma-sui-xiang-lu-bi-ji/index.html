@@ -2337,7 +2337,7 @@ class Solution:
         return dict_list[:k]
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="二叉树理论基础"><a href="#二叉树理论基础" class="headerlink" title="二叉树理论基础"></a>二叉树理论基础</h3><h5 id="两种形式：满二叉树和完全二叉树"><a href="#两种形式：满二叉树和完全二叉树" class="headerlink" title="两种形式：满二叉树和完全二叉树"></a>两种形式：满二叉树和完全二叉树</h5><p>满二叉树：如果一棵二叉树只有度为0的结点和度为2的结点，并且度为0的结点在同一层上，则这棵二叉树为满二叉树。也可以说是深度为k,有2的k次方-1个节点</p>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><h3 id="1-二叉树理论基础"><a href="#1-二叉树理论基础" class="headerlink" title="1.二叉树理论基础"></a>1.二叉树理论基础</h3><h5 id="两种形式：满二叉树和完全二叉树"><a href="#两种形式：满二叉树和完全二叉树" class="headerlink" title="两种形式：满二叉树和完全二叉树"></a>两种形式：满二叉树和完全二叉树</h5><p>满二叉树：如果一棵二叉树只有度为0的结点和度为2的结点，并且度为0的结点在同一层上，则这棵二叉树为满二叉树。也可以说是深度为k,有2的k次方-1个节点</p>
 <p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230908194624678.png" alt="image-20230908194624678"></p>
 <p>完全二叉树的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层（h从1开始），则该层包含 1~ 2^(h-1) 个节点。<img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230908194759577.png" alt="image-20230908194759577"></p>
 <h5 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h5><p>前面介绍的树，都没有数值的，而二叉搜索树是有数值的了，<strong>二叉搜索树是一个有序树</strong>。</p>
@@ -2360,7 +2360,7 @@ class Solution:
 </ul>
 </li>
 </ul>
-<h3 id="二叉树的递归遍历"><a href="#二叉树的递归遍历" class="headerlink" title="二叉树的递归遍历"></a>二叉树的递归遍历</h3><pre class="line-numbers language-none"><code class="language-none"># 前序遍历-递归-LC144_二叉树的前序遍历
+<h3 id="2-二叉树的递归遍历"><a href="#2-二叉树的递归遍历" class="headerlink" title="2.二叉树的递归遍历"></a>2.二叉树的递归遍历</h3><pre class="line-numbers language-none"><code class="language-none"># 前序遍历-递归-LC144_二叉树的前序遍历
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -2401,7 +2401,7 @@ class Solution:
 
         return left + right + [root.val]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉树的迭代遍历"><a href="#二叉树的迭代遍历" class="headerlink" title="二叉树的迭代遍历"></a>二叉树的迭代遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution:
+<h3 id="3-二叉树的迭代遍历"><a href="#3-二叉树的迭代遍历" class="headerlink" title="3.二叉树的迭代遍历"></a>3.二叉树的迭代遍历</h3><pre class="line-numbers language-none"><code class="language-none">class Solution:
     def preorderTraversal(self, root: TreeNode) -&gt; List[int]:
         # 根结点为空则返回空列表
         if not root:
@@ -2459,7 +2459,7 @@ class Solution:
        # 将最终的数组翻转
        return result[::-1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="二叉树的层次遍历"><a href="#二叉树的层次遍历" class="headerlink" title="二叉树的层次遍历"></a>二叉树的层次遍历</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230910180835619.png" alt="image-20230910180835619"></p>
+<h3 id="4-二叉树的层次遍历"><a href="#4-二叉树的层次遍历" class="headerlink" title="4.二叉树的层次遍历"></a>4.二叉树的层次遍历</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230910180835619.png" alt="image-20230910180835619"></p>
 <pre class="line-numbers language-none"><code class="language-none"># 利用长度法
 # Definition for a binary tree node.
 # class TreeNode:
@@ -2506,6 +2506,796 @@ class Solution:
         levels[level].append(node.val)
         self.helper(node.left, level + 1, levels)
         self.helper(node.right, level + 1, levels)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="二叉树层次遍历II"><a href="#二叉树层次遍历II" class="headerlink" title="二叉树层次遍历II"></a>二叉树层次遍历II</h4><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911094953186.png" alt="image-20230911094953186"></p>
+<pre class="line-numbers language-none"><code class="language-none"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def levelOrderBottom(self, root: Optional[TreeNode]) -&gt; List[List[int]]:
+        if not root:
+            return []
+        result=[]
+        queue=collections.deque([root])
+        while queue:
+            level=[]
+            for _ in range(len(queue)):
+                cur=queue.popleft()
+                level.append(cur.val)
+                if cur.left is not None:
+                    queue.append(cur.left)
+                if  cur.right is not None:
+                    queue.append(cur.right)
+            result.append(level)
+        return result[::-1]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="二叉树的右视图"><a href="#二叉树的右视图" class="headerlink" title="二叉树的右视图"></a>二叉树的右视图</h4><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911100031869.png" alt="image-20230911100031869"></p>
+<pre class="line-numbers language-none"><code class="language-none"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -&gt; List[int]:
+        if not root:
+            return []
+        queue=collections.deque([root])
+        result=[]
+        while queue:
+            level_size=len(queue)
+            for i in range(level_size):
+                node=queue.popleft()
+                if i ==level_size-1:
+                    result.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+        return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="二叉树的层平均值"><a href="#二叉树的层平均值" class="headerlink" title="二叉树的层平均值"></a>二叉树的层平均值</h4><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911101006571.png" alt="image-20230911101006571"></p>
+<pre class="line-numbers language-none"><code class="language-none"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def averageOfLevels(self, root: Optional[TreeNode]) -&gt; List[float]:
+        if not root:
+            return []
+        queue=collections.deque([root])
+        result=[]
+        while queue:
+            level=[]
+            for i in range(len(queue)):
+                cur=queue.popleft()
+                level.append(cur.val)
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+            result.append(level)
+        result1=[]
+        for i in result:
+            result1.append(sum(i)/len(i))
+        return result1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    """二叉树层平均值迭代解法"""
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def averageOfLevels(self, root: TreeNode) -&gt; List[float]:
+        if not root:
+            return []
+
+        queue = collections.deque([root])
+        averages = []
+        
+        while queue:
+            size = len(queue)
+            level_sum = 0
+            
+            for i in range(size):
+                node = queue.popleft()
+                
+                
+                level_sum += node.val
+                    
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+            
+            averages.append(level_sum / size)
+        
+        return averages<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="N叉树的层次遍历"><a href="#N叉树的层次遍历" class="headerlink" title="N叉树的层次遍历"></a>N叉树的层次遍历</h4><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911101216966.png" alt="image-20230911101216966"></p>
+<pre class="line-numbers language-none"><code class="language-none">"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val=None, children=None):
+        self.val = val
+        self.children = children
+"""
+
+class Solution:
+    def levelOrder(self, root: 'Node') -&gt; List[List[int]]:
+        if not root:
+            return []
+        result=[]
+        queue=collections.deque([root])
+        while queue:
+            level=[]
+            for i in range(len(queue)):
+                cur=queue.popleft()
+                level.append(cur.val)
+                for child in cur.children:
+                    queue.append(child)
+            result.append(level)
+        return result
+                
+
+            
+        <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="在每个树中找最大值"><a href="#在每个树中找最大值" class="headerlink" title="在每个树中找最大值"></a>在每个树中找最大值</h4><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911103352018.png" alt="image-20230911103352018"></p>
+<pre class="line-numbers language-none"><code class="language-none"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def largestValues(self, root: Optional[TreeNode]) -&gt; List[int]:
+        if not root:
+            return []
+        result=[]
+        queue=collections.deque([root])
+        while queue:
+            max=float("-inf")
+            for _ in range(len(queue)):
+                cur=queue.popleft()
+                if cur.val&gt;max:
+                    max=cur.val
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+            result.append(max)
+        return result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="填充每个节点的下一个右侧节点指针"><a href="#填充每个节点的下一个右侧节点指针" class="headerlink" title="填充每个节点的下一个右侧节点指针"></a>填充每个节点的下一个右侧节点指针</h4><p>给定一个完美二叉树，其所有叶子节点都在同一层，每个父节点都有两个子节点。二叉树定义如下：</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">struct</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
+  <span class="token keyword">int</span> val<span class="token punctuation">;</span>
+  Node <span class="token operator">*</span>left<span class="token punctuation">;</span>
+  Node <span class="token operator">*</span>right<span class="token punctuation">;</span>
+  Node <span class="token operator">*</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>填充它的每个 next 指针，让这个指针指向其下一个右侧节点。如果找不到下一个右侧节点，则将 next 指针设置为 NULL。</p>
+<p>初始状态下，所有 next 指针都被设置为 NULL。</p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911103640333.png" alt="image-20230911103640333"></p>
+<pre class="line-numbers language-none"><code class="language-none">"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""
+
+class Solution:
+    def connect(self, root: 'Optional[Node]') -&gt; 'Optional[Node]':
+        if not root:
+            return root
+        queue=collections.deque([root])
+        while queue:
+            length=len(queue)
+            prev=None
+            for i in range(length):
+                cur=queue.popleft()
+                if prev:
+                    prev.next=cur
+                prev=cur
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+        return root
+
+                
+        <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="二叉树的最大深度"><a href="#二叉树的最大深度" class="headerlink" title="二叉树的最大深度"></a>二叉树的最大深度</h4><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911112416050.png" alt="image-20230911112416050"></p>
+<pre class="line-numbers language-none"><code class="language-none"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def maxDepth(self, root: Optional[TreeNode]) -&gt; int:
+        #层次遍历
+        if not root:
+            return 0
+        queue=collections.deque([root])
+        depth=0
+        while queue:
+            depth+=1
+            for _ in range(len(queue)):
+                cur=queue.popleft()
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+        return depth<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def maxDepth(self, root):
+        if root is None: 
+            return 0 
+        else: 
+            left_height = self.maxDepth(root.left) 
+            right_height = self.maxDepth(root.right) 
+            return max(left_height, right_height) + 1 
+
+#回溯<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="二叉树的最小深度"><a href="#二叉树的最小深度" class="headerlink" title="二叉树的最小深度"></a>二叉树的最小深度</h4><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911113548587.png" alt="image-20230911113548587"></p>
+<pre class="line-numbers language-none"><code class="language-none"># Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -&gt; int:
+        if not root:
+            return 0
+        queue=collections.deque([root])
+        depth=0
+        while queue:
+            depth+=1
+            length=len(queue)
+            for _ in range(length):
+                cur=queue.popleft()
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+                if not cur.left and not cur.right:
+                    return depth
+                <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="5-翻转二叉树"><a href="#5-翻转二叉树" class="headerlink" title="5.翻转二叉树"></a>5.翻转二叉树</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911114940478.png" alt="image-20230911114940478"></p>
+<pre class="line-numbers language-none"><code class="language-none">#前序遍历，递归法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -&gt; Optional[TreeNode]:
+        if not root:
+            return root
+        left=root.left
+        root.left=root.right
+        root.right=left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#前序遍历，迭代法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: TreeNode) -&gt; TreeNode:
+        if not root:
+            return None      
+        stack = [root]        
+        while stack:
+            node = stack.pop()   
+            node.left, node.right = node.right, node.left                   
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)  
+        return root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#中序遍历，递归法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: TreeNode) -&gt; TreeNode:
+        if not root:
+            return None
+        self.invertTree(root.left)
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        return root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#中序遍历，迭代法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: TreeNode) -&gt; TreeNode:
+        if not root:
+            return None      
+        stack = [root]        
+        while stack:
+            node = stack.pop()                   
+            if node.left:
+                stack.append(node.left)
+            node.left, node.right = node.right, node.left               
+            if node.left:
+                stack.append(node.left)       
+        return root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">后序遍历：递归法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: TreeNode) -&gt; TreeNode:
+        if not root:
+            return None
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        root.left, root.right = root.right, root.left
+        return root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#后序遍历，迭代法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: TreeNode) -&gt; TreeNode:
+        if not root:
+            return None      
+        stack = [root]        
+        while stack:
+            node = stack.pop()                   
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)  
+            node.left, node.right = node.right, node.left               
+     
+        return root<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#层次法，广度优先遍历
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: TreeNode) -&gt; TreeNode:
+        if not root: 
+            return None
+
+        queue = collections.deque([root])    
+        while queue:
+            for i in range(len(queue)):
+                node = queue.popleft()
+                node.left, node.right = node.right, node.left
+                if node.left: queue.append(node.left)
+                if node.right: queue.append(node.right)
+        return root   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="6-对称二叉树"><a href="#6-对称二叉树" class="headerlink" title="6.对称二叉树"></a>6.对称二叉树</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911170929852.png" alt="image-20230911170929852"></p>
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def isSymmetric(self, root: TreeNode) -&gt; bool:
+        if not root:
+            return True
+        return self.compare(root.left, root.right)
+        
+    def compare(self, left, right):
+        #首先排除空节点的情况
+        if left == None and right != None: return False
+        elif left != None and right == None: return False
+        elif left == None and right == None: return True
+        #排除了空节点，再排除数值不相同的情况
+        elif left.val != right.val: return False
+        
+        #此时就是：左右节点都不为空，且数值相同的情况
+        #此时才做递归，做下一层的判断
+        outside = self.compare(left.left, right.right) #左子树：左、 右子树：右
+        inside = self.compare(left.right, right.left) #左子树：右、 右子树：左
+        isSame = outside and inside #左子树：中、 右子树：中 （逻辑处理）
+        return isSame<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#迭代法，利用队列
+import collections
+class Solution:
+    def isSymmetric(self, root: TreeNode) -&gt; bool:
+        if not root:
+            return True
+        queue = collections.deque()
+        queue.append(root.left) #将左子树头结点加入队列
+        queue.append(root.right) #将右子树头结点加入队列
+        while queue: #接下来就要判断这这两个树是否相互翻转
+            leftNode = queue.popleft()
+            rightNode = queue.popleft()
+            if not leftNode and not rightNode: #左节点为空、右节点为空，此时说明是对称的
+                continue
+            
+            #左右一个节点不为空，或者都不为空但数值不相同，返回false
+            if not leftNode or not rightNode or leftNode.val != rightNode.val:
+                return False
+            queue.append(leftNode.left) #加入左节点左孩子
+            queue.append(rightNode.right) #加入右节点右孩子
+            queue.append(leftNode.right) #加入左节点右孩子
+            queue.append(rightNode.left) #加入右节点左孩子
+        return True<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#迭代法，使用栈
+class Solution:
+    def isSymmetric(self, root: TreeNode) -&gt; bool:
+        if not root:
+            return True
+        st = [] #这里改成了栈
+        st.append(root.left)
+        st.append(root.right)
+        while st:
+            rightNode = st.pop()
+            leftNode = st.pop()
+            if not leftNode and not rightNode:
+                continue
+            if not leftNode or not rightNode or leftNode.val != rightNode.val:
+                return False
+            st.append(leftNode.left)
+            st.append(rightNode.right)
+            st.append(leftNode.right)
+            st.append(rightNode.left)
+        return True<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#层次遍历
+class Solution:
+    def isSymmetric(self, root: TreeNode) -&gt; bool:
+        if not root:
+            return True
+        
+        queue = collections.deque([root.left, root.right])
+        
+        while queue:
+            level_size = len(queue)
+            
+            if level_size % 2 != 0:
+                return False
+            
+            level_vals = []
+            for i in range(level_size):
+                node = queue.popleft()
+                if node:
+                    level_vals.append(node.val)
+                    queue.append(node.left)
+                    queue.append(node.right)
+                else:
+                    level_vals.append(None)
+                    
+            if level_vals != level_vals[::-1]:
+                return False
+            
+        return True<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="7-完全二叉树的节点个数"><a href="#7-完全二叉树的节点个数" class="headerlink" title="7.完全二叉树的节点个数"></a>7.完全二叉树的节点个数</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230911172250413.png" alt="image-20230911172250413"></p>
+<pre class="line-numbers language-none"><code class="language-none">#层次遍历
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def countNodes(self, root: Optional[TreeNode]) -&gt; int:
+        if not root:
+            return 0
+        count=0
+        queue=collections.deque([root])
+        while queue:
+            length=len(queue)
+            count+=length
+            for _ in range(length):
+                cur=queue.popleft()
+                if cur.left:
+                    queue.append(cur.left)
+                if cur.right:
+                    queue.append(cur.right)
+        return count
+                
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#递归法
+class Solution:
+    def countNodes(self, root: TreeNode) -&gt; int:
+        return self.getNodesNum(root)
+        
+    def getNodesNum(self, cur):
+        if not cur:
+            return 0
+        leftNum = self.getNodesNum(cur.left) #左
+        rightNum = self.getNodesNum(cur.right) #右
+        treeNum = leftNum + rightNum + 1 #中
+        return treeNum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#w
+class Solution:
+    def countNodes(self, root: TreeNode) -&gt; int:
+        if not root:
+            return 0
+        left = root.left
+        right = root.right
+        leftDepth = 0 #这里初始为0是有目的的，为了下面求指数方便
+        rightDepth = 0
+        while left: #求左子树深度
+            left = left.left
+            leftDepth += 1
+        while right: #求右子树深度
+            right = right.right
+            rightDepth += 1
+        if leftDepth == rightDepth:
+            return (2 &lt;&lt; leftDepth) - 1 #注意(2&lt;&lt;1) 相当于2^2，所以leftDepth初始为0
+        return self.countNodes(root.left) + self.countNodes(root.right) + 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="8-平衡二叉树"><a href="#8-平衡二叉树" class="headerlink" title="8.平衡二叉树"></a>8.平衡二叉树</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230912085242696.png" alt="image-20230912085242696"></p>
+<pre class="line-numbers language-none"><code class="language-none">#递归法
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -&gt; bool:
+        if self.get_height(root)!=-1:
+            return True
+        else:
+            return False
+    
+
+    def get_height(self,root:TreeNode)-&gt;int:
+        if not root:
+            return 0
+        if (left_height:=self.get_height(root.left))==-1:
+            return -1
+        if (right_height:=self.get_height(root.right))==-1:
+            return -1
+        if abs(left_height-right_height)&gt;1:
+            return -1
+        else:
+            return 1+max(left_height,right_height)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -&gt; bool:
+        return self.get_hight(root) != -1
+    def get_hight(self, node):
+        if not node:
+            return 0
+        left = self.get_hight(node.left)
+        right = self.get_hight(node.right)
+        if left == -1 or right == -1 or abs(left - right) &gt; 1:
+            return -1
+        return max(left, right) + 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#迭代法
+class Solution:
+    def getDepth(self, cur):
+        st = []
+        if cur is not None:
+            st.append(cur)
+        depth = 0
+        result = 0
+        while st:
+            node = st[-1]
+            if node is not None:
+                st.pop()
+                st.append(node)                           # 中
+                st.append(None)
+                depth += 1
+                if node.right:
+                    st.append(node.right)                 # 右
+                if node.left:
+                    st.append(node.left)                   # 左
+
+            else:               
+                node = st.pop()
+                st.pop()
+                depth -= 1
+            result = max(result, depth)
+        return result
+
+    def isBalanced(self, root):
+        st = []
+        if root is None:
+            return True
+        st.append(root)
+        while st:
+            node = st.pop()                                 # 中
+            if abs(self.getDepth(node.left) - self.getDepth(node.right)) &gt; 1:
+                return False
+            if node.right:
+                st.append(node.right)                       # 右（空节点不入栈）
+            if node.left:
+                st.append(node.left)                         # 左（空节点不入栈）
+        return True
+        
+        
+#迭代精简法     
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -&gt; bool:
+        if not root:
+            return True
+
+        height_map = {}
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            if node:
+                stack.append(node)
+                stack.append(None)
+                if node.left: stack.append(node.left)
+                if node.right: stack.append(node.right)
+            else:
+                real_node = stack.pop()
+                left, right = height_map.get(real_node.left, 0), height_map.get(real_node.right, 0)
+                if abs(left - right) &gt; 1:
+                    return False
+                height_map[real_node] = 1 + max(left, right)
+        return True<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#leetcode官方题解，简单明了
+class Solution:
+    def isBalanced(self, root: TreeNode) -&gt; bool:
+        def height(root: TreeNode) -&gt; int:
+            if not root:
+                return 0
+            return max(height(root.left), height(root.right)) + 1
+
+        if not root:
+            return True
+        return abs(height(root.left) - height(root.right)) &lt;= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><h3 id="1-回溯算法理论基础"><a href="#1-回溯算法理论基础" class="headerlink" title="1.回溯算法理论基础"></a>1.回溯算法理论基础</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230912090835126.png" alt="image-20230912090835126"></p>
+<p><strong>回溯的本质是穷举，穷举所有可能，然后选出我们想要的答案</strong>，如果想让回溯法高效一些，可以加一些剪枝的操作，但也改不了回溯法就是穷举的本质。</p>
+<ul>
+<li>组合问题：N个数里面按一定规则找出k个数的集合</li>
+<li>切割问题：一个字符串按一定规则有几种切割方式</li>
+<li>子集问题：一个N个数的集合里有多少符合条件的子集</li>
+<li>排列问题：N个数按一定规则全排列，有几种排列方式</li>
+<li>棋盘问题：N皇后，解数独等等</li>
+</ul>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230912091143678.png" alt="image-20230912091143678"></p>
+<p>回溯算法的好模板。</p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230912101311835.png" alt="image-20230912101311835"></p>
+<h3 id="2-组合问题"><a href="#2-组合问题" class="headerlink" title="2.组合问题"></a>2.组合问题</h3><p>给定两个整数 n 和 k，返回 1 … n 中所有可能的 k 个数的组合。</p>
+<p>示例: 输入: n = 4, k = 2 输出: [ [2,4], [3,4], [2,3], [1,2], [1,3], [1,4], ]</p>
+<pre class="line-numbers language-none"><code class="language-none">#回溯算法，不好理解，多看看
+class Solution:
+    def combine(self, n: int, k: int) -&gt; List[List[int]]:
+        result = []  # 存放结果集
+        self.backtracking(n, k, 1, [], result)
+        return result
+    def backtracking(self, n, k, startIndex, path, result):
+        if len(path) == k:
+            result.append(path[:])
+            return
+        for i in range(startIndex, n + 1):  # 需要优化的地方
+            path.append(i)  # 处理节点
+            self.backtracking(n, k, i + 1, path, result)
+            path.pop()  # 回溯，撤销处理的节点<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">class Solution:
+    def combine(self, n: int, k: int) -&gt; List[List[int]]:
+        result = []  # 存放结果集
+        self.backtracking(n, k, 1, [], result)
+        return result
+    def backtracking(self, n, k, startIndex, path, result):
+        if len(path) == k:
+            result.append(path[:])
+            return
+        for i in range(startIndex, n - (k - len(path)) + 2):  # 优化的地方
+            path.append(i)  # 处理节点
+            self.backtracking(n, k, i + 1, path, result)
+            path.pop()  # 回溯，撤销处理的节点<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-组合问题II"><a href="#3-组合问题II" class="headerlink" title="3.组合问题II"></a>3.组合问题II</h3><p>找出所有相加之和为 n 的 k 个数的组合。组合中只允许含有 1 - 9 的正整数，并且每种组合中不存在重复的数字。</p>
+<p>说明：</p>
+<ul>
+<li>所有数字都是正整数。</li>
+<li>解集不能包含重复的组合。</li>
+</ul>
+<p>示例 1: 输入: k = 3, n = 7 输出: [[1,2,4]]</p>
+<p>示例 2: 输入: k = 3, n = 9 输出: [[1,2,6], [1,3,5], [2,3,4]]</p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230912105732480.png" alt="image-20230912105732480"></p>
+<pre class="line-numbers language-none"><code class="language-none">模板题，但是我不会！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+class Solution:
+    def combinationSum3(self, k: int, n: int) -&gt; List[List[int]]:
+        result = []  # 存放结果集
+        self.backtracking(n, k, 0, 1, [], result)
+        return result
+
+    def backtracking(self, targetSum, k, currentSum, startIndex, path, result):
+        if currentSum &gt; targetSum:  # 剪枝操作
+            return  # 如果path的长度等于k但currentSum不等于targetSum，则直接返回
+        if len(path) == k:
+            if currentSum == targetSum:
+                result.append(path[:])
+            return
+        for i in range(startIndex, 9 - (k - len(path)) + 2):  # 剪枝
+            currentSum += i  # 处理
+            path.append(i)  # 处理
+            self.backtracking(targetSum, k, currentSum, i + 1, path, result)  # 注意i+1调整startIndex
+            currentSum -= i  # 回溯
+            path.pop()  # 回溯<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><h3 id="贪心算法理论基础"><a href="#贪心算法理论基础" class="headerlink" title="贪心算法理论基础"></a>贪心算法理论基础</h3><p>本质是选择每一段的局部最优，达到全局最优</p>
+<p>常识性推导加上举反例</p>
+<h3 id="分发饼干"><a href="#分发饼干" class="headerlink" title="分发饼干"></a>分发饼干</h3><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230912111810855.png" alt="image-20230912111810855"></p>
+<pre class="line-numbers language-none"><code class="language-none">#贪心，大饼干优先
+class Solution:
+    def findContentChildren(self, g: List[int], s: List[int]) -&gt; int:
+        g.sort()
+        s.sort()
+        index=len(s)-1
+        result=0
+        for i in range(len(g)-1,-1,-1):
+            if index&gt;=0 and s[index]&gt;=g[i]:
+                result+=1
+                index-=1
+        return result
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">#贪心，小饼干y
+class Solution:
+    def findContentChildren(self, g: List[int], s: List[int]) -&gt; int:
+        g.sort()
+        s.sort()
+        index=len(s)-1
+        result=0
+        for i in range(len(g)-1,-1,-1):
+            if index&gt;=0 and s[index]&gt;=g[i]:
+                result+=1
+                index-=1
+        return result
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 

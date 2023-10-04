@@ -1404,6 +1404,94 @@ def main():
 if __name__ == '__main__':
     main();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h5 id="码蹄集：全部相同"><a href="#码蹄集：全部相同" class="headerlink" title="码蹄集：全部相同"></a>码蹄集：全部相同</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230915094849448.png" alt="image-20230915094849448"></p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230915094859146.png" alt="image-20230915094859146"></p>
+<pre class="line-numbers language-none"><code class="language-none">def getMax(my_set:list):
+    if len(my_set)==1:
+        return my_set[0]
+    for i in range(len(my_set)-1):
+        if my_set[i]%my_set[-1]!=0:
+            return 1
+    return my_set[-1]
+def main():
+    #code here
+    n=int(input())
+    for i in range(n):
+        m=int(input())
+        list_m=[int(x) for x in input().split(" ")]
+        my_set=set(list_m)
+        my_set=sorted(my_set,reverse=True)
+        if (len(my_set))==1:
+            print("-1")
+            return
+        last_ele=my_set.pop()
+        new_set=[x-last_ele for x in my_set]
+        print(getMax(new_set))
+        
+
+if __name__ == '__main__':
+    main();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：石头剪刀布"><a href="#码蹄集：石头剪刀布" class="headerlink" title="码蹄集：石头剪刀布"></a>码蹄集：石头剪刀布</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230915103816182.png" alt="image-20230915103816182"></p>
+<p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230915103825619.png" alt="image-20230915103825619"></p>
+<pre class="line-numbers language-none"><code class="language-none">#注意这个题目，不能直接将字符串扩展到n,会超时和超内存，另外注意整数和浮点数之间的
+import math
+def getMax(m1:int,m2:int):
+    return int(m1*m2/math.gcd(m1,m2))
+def main():
+    n = int(input())
+    m1 = input()
+    m2 = input()
+    m1_len=len(m1)
+    m2_len=len(m2)
+    toge=getMax(m1_len,m2_len)
+    m1=m1*int(toge/m1_len)
+    m2=m2*int(toge/m2_len)
+    count1=0
+    count2=0
+    for i in range(toge):
+        if m1[i]!=m2[i]:
+            if (m1[i]=='R' and m2[i]=="P") or (m1[i]=="P" and m2[i]=="S") or (m1[i]=="S" and m2[i]=="R"):
+                count1+=1
+            else:
+                count2+=1
+    bei=int(n/toge)
+    yu=int(n%toge)
+    count3=0
+    count4=0
+    for i in range(yu):
+        if m1[i]!=m2[i]:
+            if (m1[i]=='R' and m2[i]=="P") or (m1[i]=="P" and m2[i]=="S") or (m1[i]=="S" and m2[i]=="R"):
+                count3+=1
+            else:
+                count4+=1
+    print(" ".join([str(count1*bei+count3),str(count2*bei+count4)]))
+
+
+
+if __name__ == '__main__':
+    main()<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="码蹄集：欧拉函数"><a href="#码蹄集：欧拉函数" class="headerlink" title="码蹄集：欧拉函数"></a>码蹄集：欧拉函数</h5><p><img src="https://dradon.oss-cn-hangzhou.aliyuncs.com/img/image-20230923190821783.png" alt="image-20230923190821783"></p>
+<pre class="line-numbers language-none"><code class="language-none">from math import sqrt
+def main():
+    #code here
+    n=int(input())
+    ans=n
+    for i in range(2,int(sqrt(n))+1):
+        if n%i==0:
+            ans=ans//i*(i-1)
+        while n%i==0:
+            n//=i
+    if n&gt;1:
+        ans=ans//n*(n-1)
+    print(ans)
+    pass
+
+
+if __name__ == '__main__':
+    main();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
