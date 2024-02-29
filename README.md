@@ -1,1 +1,1 @@
-网站已经被启用，欢迎访问www.huahai2022.top
+网站已经被弃用，欢迎访问www.huahai2022.top
